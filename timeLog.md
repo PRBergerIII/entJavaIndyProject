@@ -23,7 +23,7 @@
 
 ### 2022.01.30 - Week 2
 - Complete Activities 2-4
-- Complete Exeercize
+- Complete Exercise
 
 
 
