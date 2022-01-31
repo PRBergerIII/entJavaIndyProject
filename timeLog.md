@@ -1,10 +1,11 @@
 # Daily Time log
 
-| Date             | Time | Description                  |
-|------------------|------|------------------------------|
-| 2022.01.18       | 1:30 | [Set-up](#20220118---set-up) |
-| 2022.01.25       | 1:30 | [Week 1](#20220125---week-1) |
-| 2022.01.30       |      | [Week 2](#20220130---week-2) |
+| Date       | Time | Description                                        |
+|------------|------|----------------------------------------------------|
+| 2022.01.18 | 1:30 | [Set-up](#20220118---set-up)                       |
+| 2022.01.25 | 1:30 | [Week 1](#20220125---week-1)                       |
+| 2022.01.30 | 4:00 | [Week 2 Activities](#20220130---week-2-activities) |
+| 2022.01.31 |      | [Week 2 Exercise](#20220131---week-2-exercise)     |
 
 
 
@@ -21,9 +22,13 @@
 - Finish set-up of environment
 - Complete all week 1 activities and exercise.
 
-### 2022.01.30 - Week 2
+### 2022.01.30 - Week 2 Activities
+- Watch videos
 - Complete Activities 2-4
-- Complete Exercise
+- Start Exercise
+
+### 2022.01.30 - Week 2 Exercise
+- 
 
 
 
