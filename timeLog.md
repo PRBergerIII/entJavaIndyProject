@@ -5,13 +5,13 @@
 | 2022.01.18 | 1:30 | [Set-up](#20220118---set-up)                       |
 | 2022.01.25 | 1:30 | [Week 1](#20220125---week-1)                       |
 | 2022.01.30 | 4:00 | [Week 2 Activities](#20220130---week-2-activities) |
-| 2022.01.31 |      | [Week 2 Exercise](#20220131---week-2-exercise)     |
+| 2022.01.31 | 3:00 | [Week 2 Exercise](#20220131---week-2-exercise)     |
 
 
 
 
-| Total Hours : | 7:00 |
-|:--------------|-----:|
+| Total Hours : | 10:00 |
+|:--------------|------:|
 
 ## Work day details
 
@@ -30,6 +30,8 @@
     figure out how to calculate age.
 
 ### 2022.01.31 - Week 2 Exercise
+- Finish Exercise
+  - No additional outside resources used
 
 
 
