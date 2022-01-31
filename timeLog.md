@@ -10,7 +10,7 @@
 
 
 
-| Total Hours : | 3:00 |
+| Total Hours : | 7:00 |
 |:--------------|-----:|
 
 ## Work day details
