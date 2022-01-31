@@ -26,12 +26,11 @@
 - Watch videos
 - Complete Activities 2-4
 - Start Exercise
+<<<<<<< HEAD
   - Used [this page](https://stackoverflow.com/questions/1116123/how-do-i-calculate-someones-age-in-java) to help 
     figure out how to calculate age.
 
 ### 2022.01.31 - Week 2 Exercise
-- 
-
 
 
 
