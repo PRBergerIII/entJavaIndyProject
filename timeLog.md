@@ -6,6 +6,7 @@
 | 2022.01.25 | 1:30 | [Week 1](#002)            |
 | 2022.01.30 | 4:00 | [Week 2 Activities](#003) |
 | 2022.01.31 | 3:00 | [Week 2 Exercise](#004)   |
+| 2022.02.05 | 1:45 | [Week 3 Videos](#005)     |
 
 
 
@@ -32,6 +33,10 @@
 ### <a id="004"></a>2022.01.31 - Week 2 Exercise
 - Finish Exercise
   - No additional outside resources used
+
+### <a id="005"></a>2022.02.05 - Week 3 Videos
+- Watch week 3 videos
+- Work through demos for logging and JUnit
 
 
 
