@@ -7,11 +7,12 @@
 | 2022.01.30 | 4:00 | [Week 2 Activities](#003) |
 | 2022.01.31 | 3:00 | [Week 2 Exercise](#004)   |
 | 2022.02.05 | 1:45 | [Week 3 Videos](#005)     |
+| 2022.02.06 |      | [Week 3 Activities](#006) |
 
 
 
 
-| Total Hours : | 10:00 |
+| Total Hours : | 11:45 |
 |:--------------|------:|
 
 ## Work day details
@@ -37,6 +38,10 @@
 ### <a id="005"></a>2022.02.05 - Week 3 Videos
 - Watch week 3 videos
 - Work through demos for logging and JUnit
+
+### <a id="006"></a>2022.02.06 - Week 3 Activities
+- Read all week 3 readings
+- Work through demo for Logging
 
 
 
