@@ -8,10 +8,10 @@
 | 2022.01.31 | 3:00 | [Week 2 Exercise](#004)   |
 | 2022.02.05 | 1:45 | [Week 3 Videos](#005)     |
 | 2022.02.06 | 1:30 | [Week 3 Activities](#006) |
-| 2022.02.08 |      | [Week 3 Exercise](#007)   | Start@ 9:25
+| 2022.02.08 | 4:30 | [Week 3 Exercise](#007)   |
 
 
-| Total Hours : | 13:15 |
+| Total Hours : | 17:45 |
 |:--------------|------:|
 
 ## Work day details
@@ -45,7 +45,8 @@
 ### <a id="007"></a>2022.02.08 - Week 3 Exercise
 - Work through JUnit Demo
 - Exercise
-  - 
+  - Various digging around in the Java docs and logging/JUnit resources you gave us, but other than that, no outside 
+    sources used
 
 
 
