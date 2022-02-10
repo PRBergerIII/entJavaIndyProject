@@ -10,6 +10,7 @@
 | 2022.02.06 | 1:30 | [Week 3 Activities](#006)  |
 | 2022.02.08 | 4:30 | [Week 3 Exercise](#007)    |
 | 2022.02.09 | 2:45 | [Individual Project](#008) |
+| 2022.02.10 | 2:45 | [Individual Project](#009) | start @ 14:50
 
 
 | Total Hours : | 20:30 |
@@ -56,15 +57,21 @@
   - Begin framework for the task list
   - Work on user stories
 #### Day's Reflection:
-I have decided to start including this in my time log rather than posting my reflections in Github issues for 
-the sake of consolidating into one place. Thus far, I have not had a lot of time to work on my individual 
-project, and even when I have had time I have had a little trouble getting going on it because it is easy to 
+I have decided to start including this in my time log rather than posting my reflections in Github issues for
+the sake of consolidating into one place. Thus far, I have not had a lot of time to work on my individual
+project, and even when I have had time I have had a little trouble getting going on it because it is easy to
 push aside in favor of the weekly work. So this week onward, I am going to actively strive to make sure that
 project tasks get worked into the weekly class work so that I don't get irreparably behind.
 
-I have done some planning thus far on my project, but a lot has been abstract thought and brainstorming while in the 
+I have done some planning thus far on my project, but a lot has been abstract thought and brainstorming while in the
 car or otherwise not at a computer to put together a solid plan, so trying to put everything together for this first
-checkpoint has been a bit of a task. Unfortunately I'm not quite there yet, but hope to be by EOD tomorrow for sure. 
+checkpoint has been a bit of a task. Unfortunately I'm not quite there yet, but hope to be by EOD tomorrow for sure.
+
+### <a id="008"></a>2022.02.08 - Individual Project
+- Project work
+  - Update README
+#### Day's Reflection:
+
 
 
 
