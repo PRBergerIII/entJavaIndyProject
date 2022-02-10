@@ -23,7 +23,7 @@ This application offers an independent, flexible gift registry that allows users
 - IDE
   - IntelliJ IDEA
   
-### Design Files
+### Design Documents
 - [Project Plan](DesignFiles/ProjectPlan.md)
 - [Weekly Task List](DesignFiles/TaskList.md)
 - [User Stories](DesignFiles/UserStories.md)

@@ -70,6 +70,7 @@ checkpoint has been a bit of a task. Unfortunately I'm not quite there yet, but 
 ### <a id="008"></a>2022.02.08 - Individual Project
 - Project work
   - Update README
+  - User Stories
 #### Day's Reflection:
 
 
