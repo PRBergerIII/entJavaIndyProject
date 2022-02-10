@@ -6,7 +6,7 @@
 - [ ] Exercise
 - [ ] Individual Project
   - [x] Create and lay out Task list
-  - [ ] Update readme with problem statement and links to other files
+  - [x] Update readme with problem statement and links to other files
   - [ ] User Stories (with MVP indication)
   - [ ] Screen Design
   - [ ] Project Plan
