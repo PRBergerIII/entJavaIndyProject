@@ -52,10 +52,19 @@
 ### <a id="008"></a>2022.02.08 - Individual Project
 - Project work
   - Refine problem statement
-  - Add files to repo for 
-#### Reflection
+  - Add design files to repo
+  - Begin framework for the task list
+  - Work on user stories
+#### Day's Reflection:
 I have decided to start including this in my time log rather than posting my reflections in Github issues for 
-    the sake of consolidating into one place.
+the sake of consolidating into one place. Thus far, I have not had a lot of time to work on my individual 
+project, and even when I have had time I have had a little trouble getting going on it because it is easy to 
+push aside in favor of the weekly work. So this week onward, I am going to actively strive to make sure that
+project tasks get worked into the weekly class work so that I don't get irreparably behind.
+
+I have done some planning thus far on my project, but a lot has been abstract thought and brainstorming while in the 
+car or otherwise not at a computer to put together a solid plan, so trying to put everything together for this first
+checkpoint has been a bit of a task. 
 
 
 
