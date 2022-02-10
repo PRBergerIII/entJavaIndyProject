@@ -1,14 +1,15 @@
 # Daily Time log
 
-| Date       | Time | Description               |
-|------------|------|---------------------------|
-| 2022.01.18 | 1:30 | [Set-up](#001)            |
-| 2022.01.25 | 1:30 | [Week 1](#002)            |
-| 2022.01.30 | 4:00 | [Week 2 Activities](#003) |
-| 2022.01.31 | 3:00 | [Week 2 Exercise](#004)   |
-| 2022.02.05 | 1:45 | [Week 3 Videos](#005)     |
-| 2022.02.06 | 1:30 | [Week 3 Activities](#006) |
-| 2022.02.08 | 4:30 | [Week 3 Exercise](#007)   |
+| Date       | Time | Description                |
+|------------|------|----------------------------|
+| 2022.01.18 | 1:30 | [Set-up](#001)             |
+| 2022.01.25 | 1:30 | [Week 1](#002)             |
+| 2022.01.30 | 4:00 | [Week 2 Activities](#003)  |
+| 2022.01.31 | 3:00 | [Week 2 Exercise](#004)    |
+| 2022.02.05 | 1:45 | [Week 3 Videos](#005)      |
+| 2022.02.06 | 1:30 | [Week 3 Activities](#006)  |
+| 2022.02.08 | 4:30 | [Week 3 Exercise](#007)    |
+| 2022.02.09 |      | [Individual Project](#008) | 0:45 + Start @ 19:40
 
 
 | Total Hours : | 17:45 |
@@ -45,8 +46,16 @@
 ### <a id="007"></a>2022.02.08 - Week 3 Exercise
 - Work through JUnit Demo
 - Exercise
-  - Various digging around in the Java docs and logging/JUnit resources you gave us, but other than that, no outside 
+  - Various digging around in the Java docs and logging/JUnit resources you gave us, but other than that, no outside
     sources used
+
+### <a id="008"></a>2022.02.08 - Individual Project
+- Project work
+  - Refine problem statement
+  - Add files to repo for 
+#### Reflection
+I have decided to start including this in my time log rather than posting my reflections in Github issues for 
+    the sake of consolidating into one place.
 
 
 
