@@ -11,10 +11,10 @@
 | 2022.02.08 | 4:30 | [Week 3 Exercise](#007)    |
 | 2022.02.09 | 2:45 | [Individual Project](#008) |
 | 2022.02.10 | 0:45 | [Individual Project](#009) |
-| 2022.02.11 |      | [Individual Project](#010) | Start @ 7:15
+| 2022.02.11 | 2:00 | [Individual Project](#010) |
 
 
-| Total Hours : | 21:15 |
+| Total Hours : | 23:15 |
 |:--------------|------:|
 
 ## Work day details
@@ -82,6 +82,8 @@ to get some project planning done.
 - Project work
   - Screens
 #### Day's Reflection:
+I got a great start on my screens today. Just have to finish those up and work on the project plan. No real snags, 
+just need the time to get it done.
 
 
 
