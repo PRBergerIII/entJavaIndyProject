@@ -10,10 +10,11 @@
 | 2022.02.06 | 1:30 | [Week 3 Activities](#006)  |
 | 2022.02.08 | 4:30 | [Week 3 Exercise](#007)    |
 | 2022.02.09 | 2:45 | [Individual Project](#008) |
-| 2022.02.10 | 2:45 | [Individual Project](#009) | start @ 14:50
+| 2022.02.10 | 0:45 | [Individual Project](#009) |
+| 2022.02.11 |      | [Individual Project](#010) | Start @ 7:15
 
 
-| Total Hours : | 20:30 |
+| Total Hours : | 21:15 |
 |:--------------|------:|
 
 ## Work day details
@@ -50,7 +51,7 @@
   - Various digging around in the Java docs and logging/JUnit resources you gave us, but other than that, no outside
     sources used
 
-### <a id="008"></a>2022.02.08 - Individual Project
+### <a id="008"></a>2022.02.09 - Individual Project
 - Project work
   - Refine problem statement
   - Add design files to repo
@@ -67,10 +68,19 @@ I have done some planning thus far on my project, but a lot has been abstract th
 car or otherwise not at a computer to put together a solid plan, so trying to put everything together for this first
 checkpoint has been a bit of a task. Unfortunately I'm not quite there yet, but hope to be by EOD tomorrow for sure.
 
-### <a id="008"></a>2022.02.08 - Individual Project
+### <a id="009"></a>2022.02.10 - Individual Project
 - Project work
   - Update README
   - User Stories
+#### Day's Reflection:
+Some things came up at home and I had to step away for the rest of the day, so I was not able to get nearly as much 
+time in as I had hoped. I have a busy weekend, so I am hoping to be able to carve out as much time today (2/11) as 
+possible 
+to get some project planning done.
+
+### <a id="010"></a>2022.02.11 - Individual Project
+- Project work
+  - Screens
 #### Day's Reflection:
 
 
