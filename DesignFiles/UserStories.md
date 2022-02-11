@@ -31,6 +31,7 @@
 ## User: Any user
 - *As a user, I want to be able to search for registries.
 - As a user, I want to be able to reset my password if I forget it.
+- As a user, I want to be able to edit my account so that I can change things like last name and my mail to address.
 - As a user, I want to be able to delete my account.
 
 #### * Denotes Minimum Viable Product 
