@@ -8,7 +8,7 @@
   - [x] Create and lay out Task list
   - [x] Update readme with problem statement and links to other files
   - [x] User Stories (with MVP indication)
-  - [ ] Screen Design
+  - [x] Screen Design
   - [ ] Project Plan
 ### Week 5
 - [ ] Readings (see [week 5 readings](https://paulawaite.com/education/java113/Module2/Week5/index.html#readings))
