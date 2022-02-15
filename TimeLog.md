@@ -13,10 +13,10 @@
 | 2022.02.10 | 0:45 | [Individual Project](#009) |
 | 2022.02.11 | 2:00 | [Individual Project](#010) |
 | 2022.02.14 | 1:15 | [Individual Project](#011) |
-| 2022.02.14 |      | [Individual Project](#012) | Start @ 13:00
+| 2022.02.15 | 3:25 | [Individual Project](#012) |
 
 
-| Total Hours : | 24:30 |
+| Total Hours : | 27:55 |
 |:--------------|------:|
 
 ## Work day details
@@ -97,11 +97,9 @@ Unexpectedly cut short again.
 - Project work
   - Screens
   - Screen md file
-  - 
+  - Project plan
 #### Day's Reflection:
-
-
-
-
-
-
+I finally was able to sit down and really get rolling and finish up for my 1st checkpoint. The only part I'm not too 
+sure about is the project plan. I have a vague framework set up for now, but without really knowing what some of the 
+future concepts entail, it is hard to make any detailed plans that far out. My goal is to update the plan weekly to 
+a) account for new concepts and technologies, and b) adjust as needed as I build out the project.
