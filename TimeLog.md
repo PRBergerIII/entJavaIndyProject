@@ -12,9 +12,11 @@
 | 2022.02.09 | 2:45 | [Individual Project](#008) |
 | 2022.02.10 | 0:45 | [Individual Project](#009) |
 | 2022.02.11 | 2:00 | [Individual Project](#010) |
+| 2022.02.14 | 1:15 | [Individual Project](#011) |
+| 2022.02.14 |      | [Individual Project](#012) | Start @ 13:00
 
 
-| Total Hours : | 23:15 |
+| Total Hours : | 24:30 |
 |:--------------|------:|
 
 ## Work day details
@@ -82,8 +84,22 @@ to get some project planning done.
 - Project work
   - Screens
 #### Day's Reflection:
-I got a great start on my screens today. Just have to finish those up and work on the project plan. No real snags, 
+I got a great start on my screens today. Just have to finish those up and work on the project plan. No real snags,
 just need the time to get it done.
+
+### <a id="011"></a>2022.02.14 - Individual Project
+- Project work
+  - Screens
+#### Day's Reflection:
+Unexpectedly cut short again.
+
+### <a id="012"></a>2022.02.15 - Individual Project
+- Project work
+  - Screens
+  - Screen md file
+  - 
+#### Day's Reflection:
+
 
 
 
