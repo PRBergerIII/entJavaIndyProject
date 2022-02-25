@@ -14,9 +14,10 @@
 | 2022.02.11 | 2:00 | [Individual Project](#010) |
 | 2022.02.14 | 1:15 | [Individual Project](#011) |
 | 2022.02.15 | 3:25 | [Individual Project](#012) |
+| 2022.02.24 | 1:25 | [Week 4](#013)             | Start @ 7:10
 
 
-| Total Hours : | 27:55 |
+| Total Hours : | 29:20 |
 |:--------------|------:|
 
 ## Work day details
@@ -103,3 +104,10 @@ I finally was able to sit down and really get rolling and finish up for my 1st c
 sure about is the project plan. I have a vague framework set up for now, but without really knowing what some of the 
 future concepts entail, it is hard to make any detailed plans that far out. My goal is to update the plan weekly to 
 a) account for new concepts and technologies, and b) adjust as needed as I build out the project.
+
+### <a id="013"></a>2022.02.24 - Week 4
+- Readings
+
+#### Day's Reflection:
+I was already playing catch-up, and the last 7 days put me even further behind, but I am at least back at it. This 
+weekend is going to be a marathon.
