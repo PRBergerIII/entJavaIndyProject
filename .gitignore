@@ -59,4 +59,4 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 /uiDesigner.xml
-/webContexts.xml
+.idea/webContexts.xml
