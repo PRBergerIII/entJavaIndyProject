@@ -20,8 +20,6 @@ Individual Project: Registry - Home
       <h1>Welcome!</h1>
     </div>
   </div>
-
-
 </div>
 <c:import url="/imports/bootstrap.jsp"/>
 </body>
