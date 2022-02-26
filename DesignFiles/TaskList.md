@@ -1,6 +1,6 @@
 # Weekly Tasks
 ### Week 4
-- [ ] Readings (see [week 4 readings](https://paulawaite.com/education/java113/Module1/Week4/index.html#readings))
+- [x] Readings (see [week 4 readings](https://paulawaite.com/education/java113/Module1/Week4/index.html#readings))
 - [ ] Videos (see [week 4 videos](https://paulawaite.com/education/java113/Module1/Week4/Videos.html))
 - [ ] Demos and Activity
 - [ ] Exercise

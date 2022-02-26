@@ -14,7 +14,8 @@
 | 2022.02.11 | 2:00 | [Individual Project](#010) |
 | 2022.02.14 | 1:15 | [Individual Project](#011) |
 | 2022.02.15 | 3:25 | [Individual Project](#012) |
-| 2022.02.24 | 1:25 | [Week 4](#013)             | Start @ 7:10
+| 2022.02.24 | 1:25 | [Week 4](#013)             |
+| 2022.02.24 |      | [Individual Project](#014) | start @ 10:15
 
 
 | Total Hours : | 29:20 |
@@ -110,4 +111,11 @@ a) account for new concepts and technologies, and b) adjust as needed as I build
 
 #### Day's Reflection:
 I was already playing catch-up, and the last 7 days put me even further behind, but I am at least back at it. This 
+weekend is going to be a marathon.
+
+### <a id="014"></a>2022.02.24 - Individual Project
+- 
+
+#### Day's Reflection:
+I was already playing catch-up, and the last 7 days put me even further behind, but I am at least back at it. This
 weekend is going to be a marathon.
