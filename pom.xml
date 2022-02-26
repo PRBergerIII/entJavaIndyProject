@@ -10,8 +10,8 @@
   <packaging>war</packaging>
 
   <name>entJavaIndyProject Maven Webapp</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <!-- FIXME change it to the project's website instead of github -->
+  <url>https://github.com/PRBergerIII/entJavaIndyProject</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
