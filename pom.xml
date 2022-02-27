@@ -129,6 +129,7 @@
             <dependency>
               <groupId>org.junit.platform</groupId>
               <artifactId>junit-platform-surefire-provider</artifactId>
+<!--              <version>${junit-platform-runner-version}</version>-->
               <version>1.0.0</version>
             </dependency>
           </dependencies>

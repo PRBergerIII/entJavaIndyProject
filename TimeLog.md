@@ -15,10 +15,11 @@
 | 2022.02.14 | 1:15 | [Individual Project](#011) |
 | 2022.02.15 | 3:25 | [Individual Project](#012) |
 | 2022.02.24 | 1:25 | [Week 4](#013)             |
-| 2022.02.24 |      | [Individual Project](#014) | start @ 10:15
+| 2022.02.26 | 5:30 | [Individual Project](#014) |
+| 2022.02.27 |      | [Week 4](#015)             | 15min + Start @
 
 
-| Total Hours : | 29:20 |
+| Total Hours : | 34:50 |
 |:--------------|------:|
 
 ## Work day details
@@ -113,9 +114,18 @@ a) account for new concepts and technologies, and b) adjust as needed as I build
 I was already playing catch-up, and the last 7 days put me even further behind, but I am at least back at it. This 
 weekend is going to be a marathon.
 
-### <a id="014"></a>2022.02.24 - Individual Project
-- 
+### <a id="014"></a>2022.02.26 - Individual Project
+- Project organization
+- Pom file setup
+- Group meeting for peer reviews
 
 #### Day's Reflection:
-I was already playing catch-up, and the last 7 days put me even further behind, but I am at least back at it. This
-weekend is going to be a marathon.
+I got a good amount of infrastructure in place on my project, so this is a good step in the right direction. I still
+have some weekly work catchup to do, which will help integrate the newer concepts into the project work. There are
+still some aspects of the design I need to polish up, and I will get working on database design next. Overall I feel
+like I am making progress.
+
+### <a id="015"></a>2022.02.27 - Week 4
+- Videos
+
+#### Day's Reflection:
