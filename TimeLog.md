@@ -126,6 +126,10 @@ still some aspects of the design I need to polish up, and I will get working on 
 like I am making progress.
 
 ### <a id="015"></a>2022.02.27 - Week 4
+- Peer code reviews
 - Videos
 
 #### Day's Reflection:
+It was good to go through other people's projects and see how others are approaching it. I think trying to find room 
+for improvement in others' work helps to find it in my own. It's also a nice way to find alternate (and better!) 
+ways of doing things. 
