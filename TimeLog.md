@@ -16,10 +16,11 @@
 | 2022.02.15 | 3:25 | [Individual Project](#012) |
 | 2022.02.24 | 1:25 | [Week 4](#013)             |
 | 2022.02.26 | 5:30 | [Individual Project](#014) |
-| 2022.02.27 |      | [Week 4](#015)             | 1:15 + Start @ 15:00
+| 2022.02.27 | 4:15 | [Week 4](#015)             | 
+| 2022.03.01 |      | [Week 4](#016)             | 0:15+ Start @ 13:55
 
 
-| Total Hours : | 34:50 |
+| Total Hours : | 39:05 |
 |:--------------|------:|
 
 ## Work day details
@@ -130,6 +131,12 @@ like I am making progress.
 - Videos
 
 #### Day's Reflection:
-It was good to go through other people's projects and see how others are approaching it. I think trying to find room 
-for improvement in others' work helps to find it in my own. It's also a nice way to find alternate (and better!) 
-ways of doing things. 
+It was good to go through other people's projects and see how others are approaching it. I think trying to find room
+for improvement in others' work helps to find it in my own. It's also a nice way to find alternate (and better!)
+ways of doing things.
+
+### <a id="016"></a>2022.02.28 - Week 4
+- Videos
+
+#### Day's Reflection:
+
