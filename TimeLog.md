@@ -18,7 +18,7 @@
 | 2022.02.26 | 5:30 | [Individual Project](#014)    |
 | 2022.02.27 | 4:15 | [Week 4 / Code Reviews](#015) | 
 | 2022.03.02 | 5:45 | [Week 4](#016)                | 
-| 2022.03.03 |      | [Week 4](#017)                | 0:15 + Start @11:15
+| 2022.03.03 |      | [Week 4](#017)                | 5:40 + Start @
 
 
 | Total Hours : | 44:50 |
@@ -154,3 +154,5 @@ Definitely needed a brain break. I found the mysqldump issue, I just had to loca
 minute or two and smoe googling but I found it. Then I had some trouble getting the tests to use the correct 
 database, but once I watched that last week 4 video about adding a different hibernate config file in the test 
 directory, that was easily sorted. 
+
+I wrestled for a WHILE with two nullpointerexceptions. One was because I was missing the "/" in front of the path name for my database.properties file for the Database test class, and the other was because when I changed Database over to implement PropertiesLoader, I forgot to actually assign the results of LoadProperties to the properties file. I still can't figure out how my tests were actually passing, though. It makes it seem like maybe the Hibernate config was filling in the gaps?
