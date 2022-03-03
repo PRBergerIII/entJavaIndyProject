@@ -17,7 +17,7 @@
 | 2022.02.24 | 1:25 | [Week 4](#013)             |
 | 2022.02.26 | 5:30 | [Individual Project](#014) |
 | 2022.02.27 | 4:15 | [Week 4](#015)             | 
-| 2022.03.01 |      | [Week 4](#016)             | 0:15+ Start @ 13:55
+| 2022.03.02 | 5:45 | [Week 4](#016)             | 
 
 
 | Total Hours : | 39:05 |
@@ -135,8 +135,9 @@ It was good to go through other people's projects and see how others are approac
 for improvement in others' work helps to find it in my own. It's also a nice way to find alternate (and better!)
 ways of doing things.
 
-### <a id="016"></a>2022.02.28 - Week 4
+### <a id="016"></a>2022.03.02 - Week 4
 - Videos
+  - Followed along with hibernate demos
 
-#### Day's Reflection:
+#### Day's Reflection: Had to do a lot of refactoring to make the hibernate stuff work because I had the exercise set up a bit differently, but I think it was good to work through how I could get everything working together. I am having trouble with the database dump, and have run in circles long enough that I think I need a brain break and will try again in the morning. 
 
