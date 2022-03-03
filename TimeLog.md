@@ -146,6 +146,8 @@ Had to do a lot of refactoring to make the hibernate stuff work because I had th
 ### <a id="016"></a>2022.03.02 - Week 4
 - Get mysqldump working
 - Finish Hibernate Demos
+- Work on Exercise
+  - Had an interesing conundrum with PropertiesLoader... I tried to replace the print statements in the default method, but since it is an interface, I couldn't make a private logger. I found [this answer](https://stackoverflow.com/a/68458037) on a similar question on SA, and I thought that was a good way to work around it. Thoughts?
 
 #### Day's Reflection: 
 Definitely needed a brain break. I found the mysqldump issue, I just had to locate the .exe on my system. Took a 
