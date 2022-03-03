@@ -1,24 +1,24 @@
 # Daily Time log
 
-| Date       | Time | Description                |
-|------------|------|----------------------------|
-| 2022.01.18 | 1:30 | [Set-up](#001)             |
-| 2022.01.25 | 1:30 | [Week 1](#002)             |
-| 2022.01.30 | 4:00 | [Week 2 Activities](#003)  |
-| 2022.01.31 | 3:00 | [Week 2 Exercise](#004)    |
-| 2022.02.05 | 1:45 | [Week 3 Videos](#005)      |
-| 2022.02.06 | 1:30 | [Week 3 Activities](#006)  |
-| 2022.02.08 | 4:30 | [Week 3 Exercise](#007)    |
-| 2022.02.09 | 2:45 | [Individual Project](#008) |
-| 2022.02.10 | 0:45 | [Individual Project](#009) |
-| 2022.02.11 | 2:00 | [Individual Project](#010) |
-| 2022.02.14 | 1:15 | [Individual Project](#011) |
-| 2022.02.15 | 3:25 | [Individual Project](#012) |
-| 2022.02.24 | 1:25 | [Week 4](#013)             |
-| 2022.02.26 | 5:30 | [Individual Project](#014) |
-| 2022.02.27 | 4:15 | [Week 4](#015)             | 
-| 2022.03.02 | 5:45 | [Week 4](#016)             | 
-| 2022.03.03 |      | [Week 4](#016)             | 
+| Date       | Time | Description                   |
+|------------|------|-------------------------------|
+| 2022.01.18 | 1:30 | [Set-up](#001)                |
+| 2022.01.25 | 1:30 | [Week 1](#002)                |
+| 2022.01.30 | 4:00 | [Week 2 Activities](#003)     |
+| 2022.01.31 | 3:00 | [Week 2 Exercise](#004)       |
+| 2022.02.05 | 1:45 | [Week 3 Videos](#005)         |
+| 2022.02.06 | 1:30 | [Week 3 Activities](#006)     |
+| 2022.02.08 | 4:30 | [Week 3 Exercise](#007)       |
+| 2022.02.09 | 2:45 | [Individual Project](#008)    |
+| 2022.02.10 | 0:45 | [Individual Project](#009)    |
+| 2022.02.11 | 2:00 | [Individual Project](#010)    |
+| 2022.02.14 | 1:15 | [Individual Project](#011)    |
+| 2022.02.15 | 3:25 | [Individual Project](#012)    |
+| 2022.02.24 | 1:25 | [Week 4](#013)                |
+| 2022.02.26 | 5:30 | [Individual Project](#014)    |
+| 2022.02.27 | 4:15 | [Week 4 / Code Reviews](#015) | 
+| 2022.03.02 | 5:45 | [Week 4](#016)                | 
+| 2022.03.03 |      | [Week 4](#017)                | 0:15 + Start @11:15
 
 
 | Total Hours : | 44:50 |
@@ -127,7 +127,7 @@ have some weekly work catchup to do, which will help integrate the newer concept
 still some aspects of the design I need to polish up, and I will get working on database design next. Overall I feel
 like I am making progress.
 
-### <a id="015"></a>2022.02.27 - Week 4
+### <a id="015"></a>2022.02.27 - Week 4 / Code Reviews
 - Peer code reviews
 - Videos
 
@@ -140,5 +140,15 @@ ways of doing things.
 - Videos
   - Followed along with hibernate demos
 
-#### Day's Reflection: Had to do a lot of refactoring to make the hibernate stuff work because I had the exercise set up a bit differently, but I think it was good to work through how I could get everything working together. I am having trouble with the database dump, and have run in circles long enough that I think I need a brain break and will try again in the morning. 
+#### Day's Reflection: 
+Had to do a lot of refactoring to make the hibernate stuff work because I had the exercise set up a bit differently, but I think it was good to work through how I could get everything working together. I am having trouble with the database dump, and have run in circles long enough that I think I need a brain break and will try again in the morning.
 
+### <a id="016"></a>2022.03.02 - Week 4
+- Get mysqldump working
+- Finish Hibernate Demos
+
+#### Day's Reflection: 
+Definitely needed a brain break. I found the mysqldump issue, I just had to locate the .exe on my system. Took a 
+minute or two and smoe googling but I found it. Then I had some trouble getting the tests to use the correct 
+database, but once I watched that last week 4 video about adding a different hibernate config file in the test 
+directory, that was easily sorted. 
