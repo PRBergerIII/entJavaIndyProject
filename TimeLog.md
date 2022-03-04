@@ -18,10 +18,10 @@
 | 2022.02.26 | 5:30 | [Individual Project](#014)    |
 | 2022.02.27 | 4:15 | [Week 4 / Code Reviews](#015) | 
 | 2022.03.02 | 5:45 | [Week 4](#016)                | 
-| 2022.03.03 |      | [Week 4](#017)                | 5:40 + Start @
+| 2022.03.03 | 7:40 | [Week 4](#017)                |
 
 
-| Total Hours : | 44:50 |
+| Total Hours : | 52:30 |
 |:--------------|------:|
 
 ## Work day details
@@ -147,7 +147,7 @@ Had to do a lot of refactoring to make the hibernate stuff work because I had th
 - Get mysqldump working
 - Finish Hibernate Demos
 - Work on Exercise
-  - Had an interesing conundrum with PropertiesLoader... I tried to replace the print statements in the default method, but since it is an interface, I couldn't make a private logger. I found [this answer](https://stackoverflow.com/a/68458037) on a similar question on SA, and I thought that was a good way to work around it. Thoughts?
+  - Had an interesing conundrum with PropertiesLoader... I tried to replace the print statements in the default method, but since it is an interface, I couldn't make a private logger like in a class. I found [this answer](https://stackoverflow.com/a/68458037) on a similar question on SA, and I thought that was a good way to work around it, but not sure it is the best way to do it. Thoughts?
 
 #### Day's Reflection: 
 Definitely needed a brain break. I found the mysqldump issue, I just had to locate the .exe on my system. Took a 
@@ -156,3 +156,5 @@ database, but once I watched that last week 4 video about adding a different hib
 directory, that was easily sorted. 
 
 I wrestled for a WHILE with two nullpointerexceptions. One was because I was missing the "/" in front of the path name for my database.properties file for the Database test class, and the other was because when I changed Database over to implement PropertiesLoader, I forgot to actually assign the results of LoadProperties to the properties file. I still can't figure out how my tests were actually passing, though. It makes it seem like maybe the Hibernate config was filling in the gaps?
+
+By the time I got to the exercise, I was feeling pretty good about all the hibernate stuff. I think the exercise itsef went pretty smoothly, especially compared to the demos. I think part of it was that my user display demo project has gotten pretty sloppy, but just in general I felt like I hit a lot of road blocks for this week's material. Like I said though, the exercise went much more smoothly, so I'm feeling good about getting more into hibernate ~~next week~~ tomorrow. 
