@@ -143,7 +143,7 @@ ways of doing things.
 #### Day's Reflection: 
 Had to do a lot of refactoring to make the hibernate stuff work because I had the exercise set up a bit differently, but I think it was good to work through how I could get everything working together. I am having trouble with the database dump, and have run in circles long enough that I think I need a brain break and will try again in the morning.
 
-### <a id="016"></a>2022.03.02 - Week 4
+### <a id="017"></a>2022.03.02 - Week 4
 - Get mysqldump working
 - Finish Hibernate Demos
 - Work on Exercise
