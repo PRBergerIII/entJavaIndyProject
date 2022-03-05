@@ -19,9 +19,9 @@
 | 2022.02.27 | 4:15 | [Week 4 / Code Reviews](#015) | 
 | 2022.03.02 | 5:45 | [Week 4](#016)                | 
 | 2022.03.03 | 7:40 | [Week 4](#017)                |
-| 2022.03.05 |      | [Week 5](#018)                | Start@ 11:00
+| 2022.03.05 | 3:30 | [Week 5](#018)                | 
 
-| Total Hours : | 52:30 |
+| Total Hours : | 57:00 |
 |:--------------|------:|
 
 ## Work day details
@@ -165,3 +165,4 @@ By the time I got to the exercise, I was feeling pretty good about all the hiber
   - Follow along with demo
 
 #### Day's Reflection: 
+Everything went pretty smoothly working through the demo and getting the hang of the table relationships. 
