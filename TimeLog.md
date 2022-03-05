@@ -19,7 +19,7 @@
 | 2022.02.27 | 4:15 | [Week 4 / Code Reviews](#015) | 
 | 2022.03.02 | 5:45 | [Week 4](#016)                | 
 | 2022.03.03 | 7:40 | [Week 4](#017)                |
-
+| 2022.03.05 |      | [Week 5](#018)                | Start@ 11:00
 
 | Total Hours : | 52:30 |
 |:--------------|------:|
@@ -158,3 +158,10 @@ directory, that was easily sorted.
 I wrestled for a WHILE with two nullpointerexceptions. One was because I was missing the "/" in front of the path name for my database.properties file for the Database test class, and the other was because when I changed Database over to implement PropertiesLoader, I forgot to actually assign the results of LoadProperties to the properties file. I still can't figure out how my tests were actually passing, though. It makes it seem like maybe the Hibernate config was filling in the gaps?
 
 By the time I got to the exercise, I was feeling pretty good about all the hibernate stuff. I think the exercise itself went pretty smoothly, especially compared to the demos. I think part of it was that my user display demo project has gotten pretty sloppy, but just in general I felt like I hit a lot of road blocks for this week's material. Like I said though, the exercise went much more smoothly, so I'm feeling good about getting more into hibernate ~~next week~~ tomorrow. This material took me longer than I was hoping, and I feel like I had to fight through a lot, but I'm hoping if I can get better consistency in working on this class that will help.
+
+### <a id="018"></a>2022.03.05 - Week 5
+- Readings (I need to learn to watch your overview videos before I do the readings so when you say things like "you don't have to read this cover to cover, this is more a reference", I haven't already read through it cover to cover...)
+- Videos
+  - Follow along with demo
+
+#### Day's Reflection: 
