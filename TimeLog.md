@@ -20,6 +20,7 @@
 | 2022.03.02 | 5:45 | [Week 4](#016)                | 
 | 2022.03.03 | 7:40 | [Week 4](#017)                |
 | 2022.03.05 | 3:30 | [Week 5](#018)                | 
+| 2022.03.06 |      | [Week 5](#019)                | 1:55 + Start @ 13:55
 
 | Total Hours : | 57:00 |
 |:--------------|------:|
@@ -165,4 +166,14 @@ By the time I got to the exercise, I was feeling pretty good about all the hiber
   - Follow along with demo
 
 #### Day's Reflection: 
-Everything went pretty smoothly working through the demo and getting the hang of the table relationships. 
+Everything went pretty smoothly working through the demo and getting the hang of the table relationships.
+
+### <a id="019"></a>2022.03.06 - Week 5
+- Videos
+  - Get orders showing up on JSP table
+  - Work through .equals video and add to exercise 4
+
+#### Day's Reflection: 
+In messing around with adding .equals to my tests in the week 4 exercise, I asumed the insdert test would fail because of the ID comparison, and it didn't. Digging around with the debugger, I realized that the inserst method appears to also update the id in the object itself, not just in the DB table, which is pretty cool. Not sure how obivous this should have been, but I don't remember it being explicitly stated anywhere, so it was a nice aha moment that demonstrates how the entities and their representation in the database are so tightly linked. 
+
+I got the generic DAO working on my week 4 exercise, but I was getting a warning: `Raw use of parameterized class 'GenericDao'`, so I looked that up and what I basically found was that if I declare the variable as `GenericDao<Book> genericDao;` instead of `GenericDao genericDao;`, this warning goes away. This also prevents the need for casting `getById()` as a book. So I guess I'm wondering why I don't just declare it as a DAO for books at the setup, since this particular test class is just for books anyway, and presumably each test class would have a specific entity it is testing. I'm also curious about the difference between `T` and `type` in the generic DAO class, and can't seem to wrap my head around it. Are they not both Class objects?
