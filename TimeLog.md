@@ -172,8 +172,16 @@ Everything went pretty smoothly working through the demo and getting the hang of
 - Videos
   - Get orders showing up on JSP table
   - Work through .equals video and add to exercise 4
+- Exercise 5
+  - 
 
 #### Day's Reflection: 
 In messing around with adding .equals to my tests in the week 4 exercise, I asumed the insdert test would fail because of the ID comparison, and it didn't. Digging around with the debugger, I realized that the insert method appears to also update the id in the object itself, not just in the DB table, which is pretty cool. Not sure how obivous this should have been, but I don't remember it being explicitly stated anywhere, so it was a nice aha moment that demonstrates how the entities and their representation in the database are so tightly linked. 
 
 I got the generic DAO working on my week 4 exercise, but I was getting a warning: `Raw use of parameterized class 'GenericDao'`, so I looked that up and what I basically found was that if I declare the variable as `GenericDao<Book> genericDao;` instead of `GenericDao genericDao;`, this warning goes away. This also prevents the need for casting `getById()` as a book. So I guess I'm wondering why I don't just declare it as a DAO for books at the setup, since this particular test class is just for books anyway, and presumably each test class would have a specific entity it is testing. I'm also curious about the difference between `T` and `type` in the generic DAO class, and can't seem to wrap my head around it. Are they not both Class objects?
+
+Oh and I played around with branching in Ex4, so that was cool. 
+
+Really having some aha moments with hibernate. This week's exercise helped clear up some of what is going on behind the scenes. For instance, I couldn't figure out how the set of books was being populated, but now I understand that is what the @OneToMany tag is doing. Effectively telling hibernate "Store the books that reference this author as a foreign key here". ...Right? Anyway, I do feel pretty good about all this DAO business, and am looking forward to (eventually) getting all this stuff looped into my project. 
+
+
