@@ -20,9 +20,9 @@
 | 2022.03.02 | 5:45 | [Week 4](#016)                | 
 | 2022.03.03 | 7:40 | [Week 4](#017)                |
 | 2022.03.05 | 3:30 | [Week 5](#018)                | 
-| 2022.03.06 |      | [Week 5](#019)                | 1:55 + Start @ 13:55
+| 2022.03.06 | 6:15 | [Week 5](#019)                |
 
-| Total Hours : | 57:00 |
+| Total Hours : | 63:15 |
 |:--------------|------:|
 
 ## Work day details
@@ -173,7 +173,7 @@ Everything went pretty smoothly working through the demo and getting the hang of
   - Get orders showing up on JSP table
   - Work through .equals video and add to exercise 4
 - Exercise 5
-  - 
+
 
 #### Day's Reflection: 
 In messing around with adding .equals to my tests in the week 4 exercise, I asumed the insdert test would fail because of the ID comparison, and it didn't. Digging around with the debugger, I realized that the insert method appears to also update the id in the object itself, not just in the DB table, which is pretty cool. Not sure how obivous this should have been, but I don't remember it being explicitly stated anywhere, so it was a nice aha moment that demonstrates how the entities and their representation in the database are so tightly linked. 
