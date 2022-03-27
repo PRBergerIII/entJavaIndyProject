@@ -21,8 +21,9 @@
 | 2022.03.03 | 7:40 | [Week 4](#017)                |
 | 2022.03.05 | 3:30 | [Week 5](#018)                | 
 | 2022.03.06 | 6:15 | [Week 5](#019)                |
+| 2022.03.27 | 3:15 | [Week 6](#020)                |
 
-| Total Hours : | 63:15 |
+| Total Hours : | 66:30 |
 |:--------------|------:|
 
 ## Work day details
@@ -184,4 +185,13 @@ Oh and I played around with branching in Ex4, so that was cool.
 
 Really having some aha moments with hibernate. This week's exercise helped clear up some of what is going on behind the scenes. For instance, I couldn't figure out how the set of books was being populated, but now I understand that is what the @OneToMany tag is doing. Effectively telling hibernate "Store the books that reference this author as a foreign key here". ...Right? Anyway, I do feel pretty good about all this DAO business, and am looking forward to (eventually) getting all this stuff looped into my project. 
 
+### <a id="020"></a>2022.03.27 - Week 6
+- Readings
+- Videos
+- Set up AWS
+  - Open AWS account
+  - Configure the user display exercise on AWS
 
+
+#### Day's Reflection: 
+So I hate to even put this in writing for fear of everything falling apart, but getting the user display exercise up and running on AWS actually went very smoothly, and I only had one or two minor hiccups that were really just typos basically. After a long hiatus of any meaningful progress in this course, it was nice to get up and running in AWS pretty painlessly. I also connected to the sample database with intellij, which will probably come in handy. 
