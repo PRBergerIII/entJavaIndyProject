@@ -1,7 +1,7 @@
 # Daily Time log
 
 | Date       | Time | Description                   |
-|------------|--|-------------------------------|
+|------------|------|-------------------------------|
 | 2022.01.18 | 1:30 | [Set-up](#001)                |
 | 2022.01.25 | 1:30 | [Week 1](#002)                |
 | 2022.01.30 | 4:00 | [Week 2 Activities](#003)     |
@@ -22,6 +22,7 @@
 | 2022.03.05 | 3:30 | [Week 5](#018)                | 
 | 2022.03.06 | 6:15 | [Week 5](#019)                |
 | 2022.03.27 | 4:00 | [Week 6](#020)                |
+| 2022.04.03 | 5:15 | [Team Project](#021)          |
 
 | Total Hours | 67:15 |
 |:------------|------:|
@@ -196,3 +197,8 @@ Really having some aha moments with hibernate. This week's exercise helped clear
   
 #### Day's Reflection: 
 So I hate to even put this in writing for fear of everything falling apart, but getting the user display exercise up and running on AWS actually went very smoothly, and I only had one or two minor hiccups that were really just typos basically. After a long hiatus of any meaningful progress in this course, it was nice to get up and running in AWS pretty painlessly. I also connected to the sample database on AWS with intellij, which will probably come in handy. 
+
+### <a id="021"></a>2022.04.03 - Team Project
+- Team Project
+
+#### Day's Reflection: 
