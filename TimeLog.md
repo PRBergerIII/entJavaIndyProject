@@ -23,6 +23,7 @@
 | 2022.03.06 | 6:15 | [Week 5](#019)                |
 | 2022.03.27 | 4:00 | [Week 6](#020)                |
 | 2022.04.03 | 5:15 | [Team Project](#021)          |
+| 2022.04.03 |      | [Team Project / Week 7](#022) | start @ 16:30
 
 | Total Hours | 67:15 |
 |:------------|------:|
@@ -200,5 +201,7 @@ So I hate to even put this in writing for fear of everything falling apart, but 
 
 ### <a id="021"></a>2022.04.03 - Team Project
 - Team Project
+  - Create database
 
 #### Day's Reflection: 
+I didn't write my prettiest code today, but it got the job done. Our team found a website with an extensive list of music genres so after copying the html for the list and a little bit of manual cleaning, I used it to form the SQL that will build the database. I threw together some javasript to pull all of the list elements out of the UL, keep track of the parent, and create an insert statement with its name and parent ID (if it had one). It took a bit of beating my head against the wall and I'm sure there is a cleaner way to do what I needed but all I needed it to do was create the script accurately, and it did, so I'll take it. 
