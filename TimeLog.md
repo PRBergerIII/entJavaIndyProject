@@ -1,32 +1,34 @@
 # Daily Time log
 
-| Date       | Time | Description                   |
-|------------|------|-------------------------------|
-| 2022.01.18 | 1:30 | [Set-up](#001)                |
-| 2022.01.25 | 1:30 | [Week 1](#002)                |
-| 2022.01.30 | 4:00 | [Week 2 Activities](#003)     |
-| 2022.01.31 | 3:00 | [Week 2 Exercise](#004)       |
-| 2022.02.05 | 1:45 | [Week 3 Videos](#005)         |
-| 2022.02.06 | 1:30 | [Week 3 Activities](#006)     |
-| 2022.02.08 | 4:30 | [Week 3 Exercise](#007)       |
-| 2022.02.09 | 2:45 | [Individual Project](#008)    |
-| 2022.02.10 | 0:45 | [Individual Project](#009)    |
-| 2022.02.11 | 2:00 | [Individual Project](#010)    |
-| 2022.02.14 | 1:15 | [Individual Project](#011)    |
-| 2022.02.15 | 3:25 | [Individual Project](#012)    |
-| 2022.02.24 | 1:25 | [Week 4](#013)                |
-| 2022.02.26 | 5:30 | [Individual Project](#014)    |
-| 2022.02.27 | 4:15 | [Week 4 / Code Reviews](#015) | 
-| 2022.03.02 | 5:45 | [Week 4](#016)                | 
-| 2022.03.03 | 7:40 | [Week 4](#017)                |
-| 2022.03.05 | 3:30 | [Week 5](#018)                | 
-| 2022.03.06 | 6:15 | [Week 5](#019)                |
-| 2022.03.27 | 4:00 | [Week 6](#020)                |
-| 2022.04.03 | 5:15 | [Team Project](#021)          |
-| 2022.04.03 |      | [Team Project / Week 7](#022) | start @ 16:30
+| Date       | Time | Description                               |
+|------------|------|-------------------------------------------|
+| 2022.01.18 | 1:30 | [Set-up](#001)                            |
+| 2022.01.25 | 1:30 | [Week 1](#002)                            |
+| 2022.01.30 | 4:00 | [Week 2 Activities](#003)                 |
+| 2022.01.31 | 3:00 | [Week 2 Exercise](#004)                   |
+| 2022.02.05 | 1:45 | [Week 3 Videos](#005)                     |
+| 2022.02.06 | 1:30 | [Week 3 Activities](#006)                 |
+| 2022.02.08 | 4:30 | [Week 3 Exercise](#007)                   |
+| 2022.02.09 | 2:45 | [Individual Project](#008)                |
+| 2022.02.10 | 0:45 | [Individual Project](#009)                |
+| 2022.02.11 | 2:00 | [Individual Project](#010)                |
+| 2022.02.14 | 1:15 | [Individual Project](#011)                |
+| 2022.02.15 | 3:25 | [Individual Project](#012)                |
+| 2022.02.24 | 1:25 | [Week 4](#013)                            |
+| 2022.02.26 | 5:30 | [Individual Project](#014)                |
+| 2022.02.27 | 4:15 | [Week 4 / Code Reviews](#015)             | 
+| 2022.03.02 | 5:45 | [Week 4](#016)                            | 
+| 2022.03.03 | 7:40 | [Week 4](#017)                            |
+| 2022.03.05 | 3:30 | [Week 5](#018)                            | 
+| 2022.03.06 | 6:15 | [Week 5](#019)                            |
+| 2022.03.27 | 4:00 | [Week 6](#020)                            |
+| 2022.04.03 | 5:15 | [Team Project](#021)                      |
+| 2022.04.05 | 1:30 | [Team Project](#022)                      |
+| 2022.04.10 | 4:30 | [Branching / Team Project / Week 7](#023) |
+| 2022.04.13 | 4:30 | [Team Project](#024)                      | 
 
-| Total Hours | 67:15 |
-|:------------|------:|
+| Total Hours |     |
+|:------------|----:|
 
 ## Work day details
 
@@ -199,9 +201,25 @@ Really having some aha moments with hibernate. This week's exercise helped clear
 #### Day's Reflection: 
 So I hate to even put this in writing for fear of everything falling apart, but getting the user display exercise up and running on AWS actually went very smoothly, and I only had one or two minor hiccups that were really just typos basically. After a long hiatus of any meaningful progress in this course, it was nice to get up and running in AWS pretty painlessly. I also connected to the sample database on AWS with intellij, which will probably come in handy. 
 
-### <a id="021"></a>2022.04.03 - Team Project
+### <a id="021"></a>2022.04.05 - Team Project
 - Team Project
   - Create database
 
 #### Day's Reflection: 
-I didn't write my prettiest code today, but it got the job done. Our team found a website with an extensive list of music genres so after copying the html for the list and a little bit of manual cleaning, I used it to form the SQL that will build the database. I threw together some javasript to pull all of the list elements out of the UL, keep track of the parent, and create an insert statement with its name and parent ID (if it had one). It took a bit of beating my head against the wall and I'm sure there is a cleaner way to do what I needed but all I needed it to do was create the script accurately, and it did, so I'll take it. 
+I didn't write my prettiest code today, but it got the job done. Our team found a website with an extensive list of music genres so after copying the html for the list and a little bit of manual cleaning, I used it to form the SQL that will build the database. I threw together some javasript to pull all of the list elements out of the UL, keep track of the parent, and create an insert statement with its name and parent ID (if it had one). It took a bit of beating my head against the wall and I'm sure there is a cleaner way to do what I needed but all I needed it to do was create the script accurately, and it did, so I'll take it.
+
+### <a id="023"></a>2022.04.10 - Branching / Team Project / Week 7
+- Branching exercise
+- Readings
+- Cognito overview video
+- Team meeting
+
+#### Day's Reflection: 
+
+
+
+### <a id="024"></a>2022.04.10 - Team Project
+- Team project
+  - ...
+
+#### Day's Reflection: 
