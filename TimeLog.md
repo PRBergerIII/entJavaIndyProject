@@ -26,6 +26,7 @@
 | 2022.04.05 | 1:30 | [Team Project](#022)                      |
 | 2022.04.10 | 4:30 | [Branching / Team Project / Week 7](#023) |
 | 2022.04.13 | 4:30 | [Team Project](#024)                      | 
+| 2022.04.13 | 4:45 | [Team Project](#025)                      | 1:15 start @ 15:45
 
 | Total Hours |     |
 |:------------|----:|
@@ -220,6 +221,10 @@ I didn't write my prettiest code today, but it got the job done. Our team found 
 
 ### <a id="024"></a>2022.04.10 - Team Project
 - Team project
-  - ...
+  - Error handling
+  - Record presentation with group
+  - Post video link
+  - Update student directory to reflect finished project
 
 #### Day's Reflection: 
+Today our team wrapped up the team project. I think it was a valuable exercise in communication and division of tasks for a project. Over the course of the weeks, we got into the swing of developing in out own branches, making pull requests, and keeping from stepping on each other's commits, which was great. 
