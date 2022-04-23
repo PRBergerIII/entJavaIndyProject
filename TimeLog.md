@@ -27,7 +27,7 @@
 | 2022.04.10 | 4:30 | [Branching / Team Project / Week 7](#023) |
 | 2022.04.13 | 4:30 | [Team Project](#024)                      | 
 | 2022.04.14 | 4:45 | [Team Project](#025)                      |
-| 2022.04.23 |      | [Lots of stuff](#026)                     | start @ 9:38
+| 2022.04.23 | 6:20 | [Lots of stuff](#026)                     |
 
 | Total Hours |     |
 |:------------|----:|
@@ -242,6 +242,9 @@ Today our team wrapped up the team project. I think it was a valuable exercise i
 - Week 7
   - Set up cognito
   - Complete the week 7 exercise
+- Week 8
+  - Readings
 
 #### Day's Reflection: 
-So far today I have done a lot with AWS. I cloned my beanstalk instance and created a new one with a better name that lends itself to acommodating multiple apps. Getting them both to run in there was actually pretty painless once the databases were set up and talking and all the configuration files were properly set up with new urls and such. From what I can tell, this won't incur any additional charges, so that's cool too. Working through the cognito user pool exercise went pretty smoothly, and I plan to look at the next steps after pushing this update and putting up an issue for the assignment. Honestly I will probably hold off on implementing any of that stuff on this exercise and will instead look into how to implement them in my indy project. Key learning points were really just how easy it is to set up authentication though cognito. Definitely need to do a bit more digging into the actual code that was provided, but I have a general idea of how things are passed around. Haven't run into any problems today other than I had a weird SQL exception when I first put the team project up on AWS, but when I looked it up I found out that it could be a result of an incorrect password or otherwise incorrect properties file, and it was just a typo in the DB url, so that was an easy fix. 
+So far today I have done a lot with AWS. I cloned my beanstalk instance and created a new one with a better name that lends itself to acommodating multiple apps. Getting them both to run in there was actually pretty painless once the databases were set up and talking and all the configuration files were properly set up with new urls and such. From what I can tell, this won't incur any additional charges, so that's cool too. Working through the cognito user pool exercise went pretty smoothly, and I plan to look at the next steps after pushing this update and putting up an issue for the assignment. Honestly I will probably hold off on implementing any of that stuff on this exercise and will instead look into how to implement them in my indy project. Key learning points were really just how easy it is to set up authentication though cognito. Definitely need to do a bit more digging into the actual code that was provided, but I have a general idea of how things are passed around. Haven't run into any problems today other than I had a weird SQL exception when I first put the team project up on AWS, but when I looked it up I found out that it could be a result of an incorrect password or otherwise incorrect properties file, and it was just a typo in the DB url, so that was an easy fix.
+
