@@ -255,7 +255,7 @@ So far today I have done a lot with AWS. I cloned my beanstalk instance and crea
   - Videos
   - Activities
   - Exercise
-    - Used [this link](https://docs.oracle.com/javaee/7/tutorial/jaxrs-client003.htm) to figure out how to add headers to the API request
+    - Used [this page](https://docs.oracle.com/javaee/7/tutorial/jaxrs-client003.htm) to figure out how to add headers to the API request
 
 #### Day's Reflection: 
 Everything went pretty smoothly with all of this stuff. The only hiccup I had was figuring out how to deal with the fact that my chosen api required both query parameters and a key in the headers, but nothing a bit of googling couldn't solve.
