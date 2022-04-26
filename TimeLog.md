@@ -29,7 +29,7 @@
 | 2022.04.14 | 4:45 | [Team Project](#025)                      |
 | 2022.04.23 | 6:20 | [Lots of stuff](#026)                     |
 | 2022.04.24 | 7:00 | [Week 8, etc.](#027)                      |
-| 2022.04.26 |      | [Week 9](#028)                            | 1:30 + start @ 
+| 2022.04.26 |      | [Week 9](#028)                            | 4:30 + start @ 
 
 | Total Hours |     |
 |:------------|----:|
@@ -265,7 +265,8 @@ Everything went pretty smoothly with all of this stuff. The only hiccup I had wa
 - Week 9
   - Readings
   - Video and Activity
-  - 
+  - Exercise
+    - Deployed to AWS [here](http://entjavaprb3.us-east-2.elasticbeanstalk.com/userdisplayexercise/services/users)
 
 #### Day's Reflection: 
-Question: should I use annotations for servlets and jsps instead of the web.xml? Last semester I used web.xml and found it to be cleaner.
+Question: should I use annotations for servlets and jsps instead of the web.xml? Last semester I used web.xml and found it to be cleaner, but you mentioned that you don't prefer to use the web.xml file for jax-rs, so I'm just curious if you like to avoid the web.xml altogether, or just for JAX-RS. Otherwise, everthing went pretty smoothly here. Obviously it helps that the team project is already over, but I didn't have as much to do with the actual web service part as others in the group, so it was nice to reinforce. Also, it was cool be able to get it up and working on AWS so that local environment isn't a concern for people other than me now that I am not tracking my config files in git. Getting my JSON right was a bit of a struggle, but I'm happy with my solution. Thought about using Jackson, but I thought of it sort of late and decided the scale was small enough that coding it myself wasn't too much trouble. 
