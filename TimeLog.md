@@ -29,6 +29,7 @@
 | 2022.04.14 | 4:45 | [Team Project](#025)                      |
 | 2022.04.23 | 6:20 | [Lots of stuff](#026)                     |
 | 2022.04.24 | 7:00 | [Week 8, etc.](#027)                      |
+| 2022.04.26 |      | [Week 9](#028)                            | 1:30 + start @ 
 
 | Total Hours |     |
 |:------------|----:|
@@ -259,3 +260,12 @@ So far today I have done a lot with AWS. I cloned my beanstalk instance and crea
 
 #### Day's Reflection: 
 Everything went pretty smoothly with all of this stuff. The only hiccup I had was figuring out how to deal with the fact that my chosen api required both query parameters and a key in the headers, but nothing a bit of googling couldn't solve.
+
+### <a id="028"></a>2022.04.26 - Week 9
+- Week 9
+  - Readings
+  - Video and Activity
+  - 
+
+#### Day's Reflection: 
+Question: should I use annotations for servlets and jsps instead of the web.xml? Last semester I used web.xml and found it to be cleaner.
