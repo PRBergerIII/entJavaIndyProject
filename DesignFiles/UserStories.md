@@ -32,7 +32,8 @@
 - *As an admin, I want to be able to edit or delete lists as necessary
 
 ## User: Any user
-- *As a user, I want to be able to search for registries.
+- As a user, I want to be able to search for registries.
+- *As a user, I want to be able to search for users.
 - *As a user, I want to be able to reset my password if I forget it.
 - *As a user, I want to be able to edit my account so that I can change things like last name and my mail to address.
 - As a user, I want to be able to delete my account.
