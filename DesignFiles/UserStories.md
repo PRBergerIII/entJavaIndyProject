@@ -1,7 +1,7 @@
 # User Stories
 
 ## User: List creator
-- As a list creator, I want to be able to set the lists' privacy so that only people I invite can see it.
+- As a list creator, I want to be able to set the lists' privacy so that only people ~~I invite~~ that follow me can see it.
 - *As a list creator, I want to be able to specify the item, price, give a description, and provide 
   links so 
   that 
@@ -16,6 +16,7 @@
 - As a list creator, I want the option to see which gifts have been purchased so I know what to expect.
 - *As a list creator, I want to be able to update my list if I need to add or remove an item. 
 - *As a list creator, I want to be able to delete lists in case they are no longer needed. 
+- As a list creator, I want to be able to confirm my followers
 
 ## User: Gift Buyer
 - As a gift buyer, I want to be able to be able to view registries without an account so that I 
