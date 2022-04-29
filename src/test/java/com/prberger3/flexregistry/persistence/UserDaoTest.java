@@ -1,6 +1,7 @@
 package com.prberger3.flexregistry.persistence;
 
 import com.prberger3.flexregistry.entity.User;
+import com.prberger3.flexregistry.util.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +18,7 @@ class UserDaoTest {
     void setUp() {
 
         Database database = Database.getInstance();
-        database.runSQL("cleanDb.sql");
+        database.runSQL("cleanUserTable.sql");
 
         genericDao = new GenericDao<>(User.class);
 
