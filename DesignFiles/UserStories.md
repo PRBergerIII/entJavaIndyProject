@@ -37,5 +37,6 @@
 - *As a user, I want to be able to reset my password if I forget it.
 - *As a user, I want to be able to edit my account so that I can change things like last name and my mail to address.
 - As a user, I want to be able to delete my account.
+- As a user, I want my account verified so that when people try to ship items to me I know they are going to the right place.
 
 #### * Denotes Minimum Viable Product
