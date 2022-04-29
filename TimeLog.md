@@ -30,7 +30,7 @@
 | 2022.04.23 | 6:20 | [Lots of stuff](#026)                     |
 | 2022.04.24 | 7:00 | [Week 8, etc.](#027)                      |
 | 2022.04.26 | 4:30 | [Week 9](#028)                            |
-| 2022.04.26 |      | [Indy Project](#029)                      | start @ 15:15
+| 2022.04.26 | 7:30 | [Indy Project](#029)                      |
 
 | Total Hours |     |
 |:------------|----:|
@@ -273,7 +273,17 @@ Everything went pretty smoothly with all of this stuff. The only hiccup I had wa
 Question: should I use annotations for servlets and jsps instead of the web.xml? Last semester I used web.xml and found it to be cleaner, but you mentioned that you don't prefer to use the web.xml file for jax-rs, so I'm just curious if you like to avoid the web.xml altogether, or just for JAX-RS. Otherwise, everthing went pretty smoothly here. Obviously it helps that the team project is already over, but I didn't have as much to do with the actual web service part as others in the group, so it was nice to reinforce. Also, it was cool be able to get it up and working on AWS so that local environment isn't a concern for people other than me now that I am not tracking my config files in git. Getting my JSON right was a bit of a struggle, but I'm happy with my solution. Thought about using Jackson, but I thought of it sort of late and decided the scale was small enough that coding it myself wasn't too much trouble.
 
 ### <a id="029"></a>2022.04.28 - Indy Project
-- Set up database
-- 
+- Design database
+- Set up database and all tables in mysql workbench
+- Begin setup of entities in my project
+  - Create User entity
+  - Map it to the database
+  - Create properties files for hibernate and testing
+- Create generic dao to handle all entity access
+- Begin testing setup
+  - Create dao test
+  - Bring in all utility and properties files
+  - Set up and confirm access of test database
 
 #### Day's Reflection: 
+Woooooooooo it feels good to finally get back to this project. As usual I think my plan may be a bit ambitious, so I have a ton to do, but I am feeling pretty good about where I'm headed currently. I may run into some snags with the database, because I made it a good deal more complex than what we have gotten into in class, but I think I should be able to get it all to come together, may just take some tweaks and definitely some research. I basically put everything I need for all of the user stories (and even added some as I thought of features that would be cool) with the idea that if some features don't get implemented, having the infrastructure there isn't hurting anything, but it would be a lot harder to add later. 
