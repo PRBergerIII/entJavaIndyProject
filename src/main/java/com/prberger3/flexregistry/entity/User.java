@@ -3,6 +3,7 @@ package com.prberger3.flexregistry.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 // TODO: 4/28/2022 add javadocs
 
@@ -168,5 +169,50 @@ public class User {
         this.admin = admin;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", street='" + street + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", zip='" + zip + '\'' +
+                ", addressVisibility='" + addressVisibility + '\'' +
+                ", about='" + about + '\'' +
+                ", admin=" + admin +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        User user = (User) o;
+        return  id == user.id && admin == user.admin
+                && username.equals(user.username)
+                && firstName.equals(user.firstName)
+                && lastName.equals(user.lastName)
+                && email.equals(user.email)
+                && Objects.equals(street, user.street)
+                && Objects.equals(city, user.city)
+                && Objects.equals(state, user.state)
+                && Objects.equals(zip, user.zip)
+                && addressVisibility.equals(user.addressVisibility)
+                && Objects.equals(about, user.about);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, username, firstName, lastName, email, street,
+                            city, state, zip, addressVisibility, about, admin);
+    }
 
 }
