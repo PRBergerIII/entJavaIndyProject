@@ -24,7 +24,7 @@
 .idea/sqlDataSources.xml
 .idea/dynamic.xml
 .idea/uiDesigner.xml
-*.properties
+database.properties
 hibernate.cfg.xml
 
 # Gradle:
