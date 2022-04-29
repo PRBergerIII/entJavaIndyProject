@@ -1,4 +1,4 @@
-package com.pberger.registry.entity;
+package com.prberger3.flexregistry.entity;
 
 /**
  * This is the WishListItem class for the registry app.
