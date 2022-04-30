@@ -2,9 +2,10 @@ package com.prberger3.flexregistry.persistence;
 
 import com.prberger3.flexregistry.entity.User;
 import com.prberger3.flexregistry.util.Database;
-import com.sun.xml.bind.v2.TODO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -87,9 +88,30 @@ class UserDaoTest {
 
     @Test
     void deleteSuccess() {
+
+        User testUser = new User("pberger",
+                "Paul",
+                "Berger",
+                "pberger@madisoncollege.edu",
+                "123 main st",
+                "place",
+                "WI",
+                "12324",
+                "private",
+                "I am a size 6",
+                true);
+        testUser.setId(1);
+        dao.delete(testUser);
+        assertNull(dao.getById(1));
+
     }
 
     @Test
     void getAllSuccess() {
+
+        List<User> allUsers = dao.getAll();
+        assertEquals(3, allUsers.size());
+
     }
+
 }
