@@ -10,6 +10,8 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
+// TODO: 4/30/2022 javadocs 
+
 public class GenericDao<T> {
 
     private Class<T> type;

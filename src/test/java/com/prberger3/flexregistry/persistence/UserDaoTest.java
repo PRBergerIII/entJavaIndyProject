@@ -8,9 +8,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+// TODO: 4/30/2022 javadocs
+// FIXME: 4/30/2022 indents
+
 class UserDaoTest {
 
-    GenericDao<User> genericDao;
+    GenericDao<User> dao;
 
     /**
      * Sets up a new DAO and recreates the test database before each test.
@@ -21,30 +24,72 @@ class UserDaoTest {
         Database database = Database.getInstance();
         database.runSQL("cleanUserTable.sql");
 
-        genericDao = new GenericDao<>(User.class);
-
-    }
-
-    // TODO: write some damn tests!
-
-    @Test
-    void getById() {
+        dao = new GenericDao<>(User.class);
 
     }
 
     @Test
-    void saveOrUpdate() {
+    void getByIdSuccess() {
+
+        User testUser = new User("pberger",
+                                 "Paul",
+                                 "Berger",
+                                 "pberger@madisoncollege.edu",
+                                 "123 main st",
+                                 "place",
+                                 "WI",
+                                 "12324",
+                                 "private",
+                                 "I am a size 6",
+                                 true);
+        testUser.setId(1);
+        assertEquals(testUser, dao.getById(1));
+
     }
 
     @Test
-    void insert() {
+    void saveOrUpdateSuccess() {
+
+        User testUser = new User("pbergerx",
+                                 "Paulx",
+                                 "Bergerx",
+                                 "pberger@madisoncollege.edux",
+                                 "123 main stx",
+                                 "placex",
+                                 "Wx",
+                                 "1232x",
+                                 "privatx",
+                                 "I am a size 6x",
+                                 false);
+        testUser.setId(1);
+        dao.saveOrUpdate(testUser);
+        assertEquals(testUser, dao.getById(1));
+
     }
 
     @Test
-    void delete() {
+    void insertSuccess() {
+
+        User testUser = new User("pbergerx",
+                "Paulx",
+                "Bergerx",
+                "pberger@madisoncollege.edux",
+                "123 main stx",
+                "placex",
+                "Wx",
+                "1232x",
+                "privatx",
+                "I am a size 6x",
+                false);
+        int newId = dao.insert(testUser);
+        assertEquals(testUser, dao.getById(newId));
     }
 
     @Test
-    void getAll() {
+    void deleteSuccess() {
+    }
+
+    @Test
+    void getAllSuccess() {
     }
 }

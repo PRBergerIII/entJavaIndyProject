@@ -20,9 +20,8 @@ public class User {
     @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
     @GenericGenerator(name = "native",strategy = "native")
     private int id;
-
-    @Column(name = "first_name")
     private String username;
+    @Column(name = "first_name")
     private String firstName;
     @Column(name = "last_name")
     private String lastName;
