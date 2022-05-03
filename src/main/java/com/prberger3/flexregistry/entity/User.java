@@ -34,9 +34,9 @@ public class User {
     private String addressVisibility;
     private String about;
     private boolean admin;
-    @OneToMany(mappedBy = "primaryKey.follower", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "primaryKey.follower", fetch = FetchType.LAZY)
     private Set<User> followers = new HashSet<>();
-    @OneToMany(mappedBy = "primaryKey.userFollowed", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "primaryKey.userFollowed", fetch = FetchType.LAZY)
     private Set<User> usersFollowed = new HashSet<>();
 
     public User() {
