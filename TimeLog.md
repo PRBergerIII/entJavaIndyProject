@@ -297,3 +297,11 @@ Woooooooooo it feels good to finally get back to this project. As usual I think 
   - ?
 
 #### Day's Reflection:
+
+
+### <a id="029"></a>2022.04.29 - Indy Project
+- Implement many to many mapping in User
+  - Referenced [this page](https://thorben-janssen.com/self-referencing-associations/) for slef-referencing properties
+  - Referenced [this page](https://www.codejava.net/frameworks/hibernate/hibernate-many-to-many-association-with-extra-columns-in-join-table-example) for creating a composite key entity
+
+#### Day's Reflection:
