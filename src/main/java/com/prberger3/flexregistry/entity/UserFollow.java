@@ -11,6 +11,44 @@ import javax.persistence.*;
                 joinColumns = @JoinColumn(name = "user_followed_id")) })
 public class UserFollow {
 
+    // Composite-id key
+    private UserFollowId primaryKey = new UserFollowId();
+    
+    private boolean accepted;
 
+    @EmbeddedId
+    public UserFollowId getPrimaryKey() {
+        return primaryKey;
+    }
+
+    public void setPrimaryKey(UserFollowId primaryKey) {
+        this.primaryKey = primaryKey;
+    }
+
+    @Transient
+    public User getFollower() {
+        return getPrimaryKey().getFollower();
+    }
+
+    public void setFollower(User user) {
+        getPrimaryKey().setFollower(user);
+    }
+
+    @Transient
+    public User getUserFollowed() {
+        return getPrimaryKey().getUserFollowed();
+    }
+
+    public void setUserFollowed(User group) {
+        getPrimaryKey().setUserFollowed(group);
+    }
+
+    public boolean isAccepted() {
+        return accepted;
+    }
+
+    public void setAccepted(boolean accepted) {
+        this.accepted = accepted;
+    }
 
 }
