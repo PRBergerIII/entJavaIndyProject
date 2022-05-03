@@ -34,9 +34,9 @@ public class User {
     private String addressVisibility;
     private String about;
     private boolean admin;
-    @OneToMany(mappedBy = "user_followed_id", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "user_followed_id", fetch = FetchType.EAGER) // FIXME: 5/3/2022 change to pk
     private Set<User> usersFollowed = new HashSet<>();
-
+    @OneToMany(mappedBy = "follower ", fetch = FetchType.EAGER) // FIXME: 5/3/2022 change to pk
     private Set<User> followers = new HashSet<>();
 
     public User() {
