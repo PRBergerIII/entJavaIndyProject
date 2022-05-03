@@ -3,7 +3,7 @@ package com.prberger3.flexregistry.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.util.Objects;
+import java.util.*;
 
 // TODO: 4/28/2022 add javadocs
 
@@ -34,6 +34,10 @@ public class User {
     private String addressVisibility;
     private String about;
     private boolean admin;
+    @OneToMany(mappedBy = "user_followed_id", fetch = FetchType.EAGER)
+    private Set<User> usersFollowed = new HashSet<>();
+
+    private Set<User> followers = new HashSet<>();
 
     public User() {
     }
