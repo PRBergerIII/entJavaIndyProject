@@ -22,7 +22,6 @@ public class UserFollowId implements Serializable {
     @Column(name = "user_followed_id")
     @ManyToOne(cascade = CascadeType.ALL)
     private User userFollowed;
-    private boolean accepted;
 
     public User getFollower() {
         return follower;
@@ -38,14 +37,6 @@ public class UserFollowId implements Serializable {
 
     public void setUserFollowed(User userFollowed) {
         this.userFollowed = userFollowed;
-    }
-
-    public boolean isAccepted() {
-        return accepted;
-    }
-
-    public void setAccepted(boolean accepted) {
-        this.accepted = accepted;
     }
 
 }

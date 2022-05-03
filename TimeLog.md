@@ -302,6 +302,6 @@ Woooooooooo it feels good to finally get back to this project. As usual I think 
 ### <a id="029"></a>2022.04.29 - Indy Project
 - Implement many to many mapping in User
   - Referenced [this page](https://thorben-janssen.com/self-referencing-associations/) for slef-referencing properties
-  - Referenced [this page](https://www.codejava.net/frameworks/hibernate/hibernate-many-to-many-association-with-extra-columns-in-join-table-example) for creating a composite key entity
+  - Referenced [this page](https://www.codejava.net/frameworks/hibernate/hibernate-many-to-many-association-with-extra-columns-in-join-table-example) for creating a composite key entity and mapping it in the join table
 
 #### Day's Reflection:
