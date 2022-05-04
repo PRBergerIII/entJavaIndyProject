@@ -1,46 +1,50 @@
 package com.prberger3.flexregistry.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity(name = "UserFollow")
 @Table(name = "user_follow")
-@AssociationOverrides({
-        @AssociationOverride(name = "primaryKey.follower",
-                joinColumns = @JoinColumn(name = "follower_id")),
-        @AssociationOverride(name = "primaryKey.userFollowed",
-                joinColumns = @JoinColumn(name = "user_followed_id")) })
-public class UserFollow {
+public class UserFollow implements Serializable {
 
-    // Composite-id key
-    @EmbeddedId
-    private UserFollowId primaryKey = new UserFollowId();
-    
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
+    @GenericGenerator(name = "native",strategy = "native")
+    private int id;
+    @Id
+    @ManyToOne//(cascade = CascadeType.ALL)
+    @JoinColumn(name = "follower_id", referencedColumnName = "id")
+    private User follower;
+    @Id
+    @ManyToOne//(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_followed_id", referencedColumnName = "id")
+    private User userFollowed;
     private boolean accepted;
 
-    public UserFollowId getPrimaryKey() {
-        return primaryKey;
+    public int getId() {
+        return id;
     }
 
-    public void setPrimaryKey(UserFollowId primaryKey) {
-        this.primaryKey = primaryKey;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    @Transient
     public User getFollower() {
-        return getPrimaryKey().getFollower();
+        return follower;
     }
 
-    public void setFollower(User user) {
-        getPrimaryKey().setFollower(user);
+    public void setFollower(User follower) {
+        this.follower = follower;
     }
 
-    @Transient
     public User getUserFollowed() {
-        return getPrimaryKey().getUserFollowed();
+        return userFollowed;
     }
 
-    public void setUserFollowed(User group) {
-        getPrimaryKey().setUserFollowed(group);
+    public void setUserFollowed(User userFollowed) {
+        this.userFollowed = userFollowed;
     }
 
     public boolean isAccepted() {

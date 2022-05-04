@@ -16,10 +16,10 @@ import javax.persistence.ManyToOne;
 @Embeddable
 public class UserFollowId implements Serializable {
 
-    @Column(name = "follower_id")
+//    @Column(name = "follower_id")
     @ManyToOne(cascade = CascadeType.ALL)
     private User follower;
-    @Column(name = "user_followed_id")
+//    @Column(name = "user_followed_id")
     @ManyToOne(cascade = CascadeType.ALL)
     private User userFollowed;
 
