@@ -1,50 +1,46 @@
 package com.prberger3.flexregistry.entity;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity(name = "UserFollow")
 @Table(name = "user_follow")
-public class UserFollow implements Serializable {
+@AssociationOverrides({
+        @AssociationOverride(name = "primaryKey.follower",
+                joinColumns = @JoinColumn(name = "follower_id")),
+        @AssociationOverride(name = "primaryKey.userFollowed",
+                joinColumns = @JoinColumn(name = "user_followed_id")) })
+public class UserFollow {
 
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
-    @GenericGenerator(name = "native",strategy = "native")
-    private int id;
-    @Id
-    @ManyToOne//(cascade = CascadeType.ALL)
-    @JoinColumn(name = "follower_id", referencedColumnName = "id")
-    private User follower;
-    @Id
-    @ManyToOne//(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_followed_id", referencedColumnName = "id")
-    private User userFollowed;
+    // Composite-id key
+    @EmbeddedId
+    private UserFollowId primaryKey = new UserFollowId();
+
     private boolean accepted;
 
-    public int getId() {
-        return id;
+    public UserFollowId getPrimaryKey() {
+        return primaryKey;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setPrimaryKey(UserFollowId primaryKey) {
+        this.primaryKey = primaryKey;
     }
 
+    @Transient
     public User getFollower() {
-        return follower;
+        return getPrimaryKey().getFollower();
     }
 
-    public void setFollower(User follower) {
-        this.follower = follower;
+    public void setFollower(User user) {
+        getPrimaryKey().setFollower(user);
     }
 
+    @Transient
     public User getUserFollowed() {
-        return userFollowed;
+        return getPrimaryKey().getUserFollowed();
     }
 
-    public void setUserFollowed(User userFollowed) {
-        this.userFollowed = userFollowed;
+    public void setUserFollowed(User group) {
+        getPrimaryKey().setUserFollowed(group);
     }
 
     public boolean isAccepted() {
