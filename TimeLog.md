@@ -32,7 +32,8 @@
 | 2022.04.26 | 4:30 | [Week 9](#028)                            |
 | 2022.04.28 | 7:30 | [Indy Project](#029)                      |
 | 2022.04.30 | 2:40 | [Indy Project](#030)                      | 
-| 2022.05.03 |      | [Indy Project](#031)                      | start @ 10:00
+| 2022.05.03 | 2:00 | [Indy Project](#031)                      | 
+| 2022.05.04 |      | [Indy Project](#031)                      | Start @ 15:15
 
 | Total Hours |     |
 |:------------|----:|
@@ -291,7 +292,7 @@ Question: should I use annotations for servlets and jsps instead of the web.xml?
 #### Day's Reflection: 
 Woooooooooo it feels good to finally get back to this project. As usual I think my plan may be a bit ambitious, so I have a ton to do, but I am feeling pretty good about where I'm headed currently. I may run into some snags with the database, because I made it a good deal more complex than what we have gotten into in class, but I think I should be able to get it all to come together, may just take some tweaks and definitely some research. I basically put everything I need for all of the user stories (and even added some as I thought of features that would be cool) with the idea that if some features don't get implemented, having the infrastructure there isn't hurting anything, but it would be a lot harder to add later. Oh, and all semester I have had my entire absolute path to my logs directory in my log4j properties because I couldn't get the log files to actually show up where they were supposed to. I'm pretty sure I originally had "/logs" as the filepath instead of "logs". So yeah, that was nice to figure out.
 
-### <a id="029"></a>2022.04.29 - Indy Project
+### <a id="30"></a>2022.04.29 - Indy Project
 - Add tests for all genericDao operations with the user entity
 - Research many to many mapping
   - ?
@@ -299,9 +300,15 @@ Woooooooooo it feels good to finally get back to this project. As usual I think 
 #### Day's Reflection:
 
 
-### <a id="029"></a>2022.04.29 - Indy Project
+### <a id="031"></a>2022.05.03 - Indy Project
 - Implement many to many mapping in User
   - Referenced [this page](https://thorben-janssen.com/self-referencing-associations/) for slef-referencing properties
   - Referenced [this page](https://www.codejava.net/frameworks/hibernate/hibernate-many-to-many-association-with-extra-columns-in-join-table-example) for creating a composite key entity and mapping it in the join table
+
+#### Day's Reflection:
+
+
+### <a id="032"></a>2022.05.04 - Indy Project
+- Debug many to many mapping
 
 #### Day's Reflection:

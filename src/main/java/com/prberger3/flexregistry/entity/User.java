@@ -35,7 +35,7 @@ public class User {
     private String addressVisibility;
     private String about;
     private boolean admin;
-    @OneToMany(mappedBy = "primaryKey.follower", 
+    @OneToMany(mappedBy = "primaryKey.follower",
                   fetch = FetchType.LAZY,
                 cascade = CascadeType.ALL) // FIXME: 5/3/2022 this mapping doesn't work
     private Set<User> followers = new HashSet<>();
@@ -175,6 +175,22 @@ public class User {
 
     public void setAdmin(boolean admin) {
         this.admin = admin;
+    }
+
+    public Set<User> getFollowers() {
+        return followers;
+    }
+
+    public void setFollowers(Set<User> followers) {
+        this.followers = followers;
+    }
+
+    public Set<User> getUsersFollowed() {
+        return usersFollowed;
+    }
+
+    public void setUsersFollowed(Set<User> usersFollowed) {
+        this.usersFollowed = usersFollowed;
     }
 
     @Override

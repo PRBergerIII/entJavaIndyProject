@@ -12,11 +12,11 @@ import javax.persistence.*;
 public class UserFollow {
 
     // Composite-id key
+    @EmbeddedId
     private UserFollowId primaryKey = new UserFollowId();
     
     private boolean accepted;
 
-    @EmbeddedId
     public UserFollowId getPrimaryKey() {
         return primaryKey;
     }
