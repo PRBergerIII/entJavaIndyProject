@@ -193,6 +193,8 @@ public class User {
         this.usersFollowed = usersFollowed;
     }
 
+    // TODO: 5/4/2022 add followed user and add follower 
+
     @Override
     public String toString() {
         return "User{" +
