@@ -38,11 +38,11 @@ public class User {
     @OneToMany(mappedBy = "primaryKey.follower",
                   fetch = FetchType.LAZY,
                 cascade = CascadeType.ALL) // FIXME: 5/3/2022 this mapping doesn't work
-    private Set<User> followers = new HashSet<>();
+    private Set<UserFollow> followers = new HashSet<>();
     @OneToMany(mappedBy = "primaryKey.userFollowed",
                   fetch = FetchType.LAZY,
                 cascade = CascadeType.ALL) // FIXME: 5/3/2022 this mapping doesn't work
-    private Set<User> usersFollowed = new HashSet<>();
+    private Set<UserFollow> usersFollowed = new HashSet<>();
 
     public User() {
     }
@@ -177,19 +177,19 @@ public class User {
         this.admin = admin;
     }
 
-    public Set<User> getFollowers() {
+    public Set<UserFollow> getFollowers() {
         return followers;
     }
 
-    public void setFollowers(Set<User> followers) {
+    public void setFollowers(Set<UserFollow> followers) {
         this.followers = followers;
     }
 
-    public Set<User> getUsersFollowed() {
+    public Set<UserFollow> getUsersFollowed() {
         return usersFollowed;
     }
 
-    public void setUsersFollowed(Set<User> usersFollowed) {
+    public void setUsersFollowed(Set<UserFollow> usersFollowed) {
         this.usersFollowed = usersFollowed;
     }
 

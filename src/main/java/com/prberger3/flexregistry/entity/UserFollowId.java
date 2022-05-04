@@ -2,10 +2,7 @@ package com.prberger3.flexregistry.entity;
 
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 // TODO: 5/3/2022  add jacvadocs
 /**
@@ -16,10 +13,10 @@ import javax.persistence.ManyToOne;
 @Embeddable
 public class UserFollowId implements Serializable {
 
-    @Column(name = "follower_id")
+    @JoinColumn(name = "follower_id")
     @ManyToOne(cascade = CascadeType.ALL)
     private User follower;
-    @Column(name = "user_followed_id")
+    @JoinColumn(name = "user_followed_id")
     @ManyToOne(cascade = CascadeType.ALL)
     private User userFollowed;
 
