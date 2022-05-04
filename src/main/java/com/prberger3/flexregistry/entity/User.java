@@ -35,9 +35,13 @@ public class User {
     private String addressVisibility;
     private String about;
     private boolean admin;
-    @OneToMany(mappedBy = "follower")
+    @OneToMany(mappedBy = "primaryKey.follower",
+                  fetch = FetchType.LAZY,
+                cascade = CascadeType.ALL) // FIXME: 5/3/2022 this mapping doesn't work
     private Set<UserFollow> followers = new HashSet<>();
-    @OneToMany(mappedBy = "userFollowed")
+    @OneToMany(mappedBy = "primaryKey.userFollowed",
+                  fetch = FetchType.LAZY,
+                cascade = CascadeType.ALL) // FIXME: 5/3/2022 this mapping doesn't work
     private Set<UserFollow> usersFollowed = new HashSet<>();
 
     public User() {
@@ -188,6 +192,8 @@ public class User {
     public void setUsersFollowed(Set<UserFollow> usersFollowed) {
         this.usersFollowed = usersFollowed;
     }
+
+    // TODO: 5/4/2022 add followed user and add follower 
 
     @Override
     public String toString() {
