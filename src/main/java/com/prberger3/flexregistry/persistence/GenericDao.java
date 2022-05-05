@@ -127,6 +127,23 @@ public class GenericDao<T> {
     }
 
     /**
+     * Finds entities by one of its properties.
+
+     * @param propertyName the property name.
+     * @param value the value by which to find.
+     * @return
+     */
+    public List<T> findByPropertyEqual(String propertyName, boolean value) {
+        Session session = getSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<T> query = builder.createQuery(type);
+        Root<T> root = query.from(type);
+        query.select(root).where(builder.equal(root.get(propertyName),value));
+
+        return session.createQuery(query).getResultList();
+    }
+
+    /**
      * Finds entities by multiple properties.
      * Inspired by https://stackoverflow.com/questions/11138118/really-dynamic-jpa-criteriabuilder
      *
