@@ -1,5 +1,6 @@
 package com.prberger3.flexregistry.persistence;
 
+import com.prberger3.flexregistry.entity.UserConnectionId;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
@@ -7,8 +8,11 @@ import org.hibernate.Transaction;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // TODO: 4/30/2022 javadocs 
 
@@ -58,6 +62,20 @@ public class GenericDao<T> {
 
     }
 
+    public UserConnectionId insertConnection(T entity) {
+
+        UserConnectionId newId;
+        Session session = getSession();
+        Transaction transaction = session.beginTransaction();
+
+        newId = (UserConnectionId)session.save(entity);
+        transaction.commit();
+        session.close();
+
+        return newId;
+
+    }
+
     public void delete(T entity) {
 
         Session session = getSession();
@@ -79,6 +97,44 @@ public class GenericDao<T> {
         session.close();
         return list;
 
+    }
+
+    /**
+     * Finds entities by one of its properties.
+
+     * @param propertyName the property name.
+     * @param value the value by which to find.
+     * @return
+     */
+    public List<T> findByPropertyEqual(String propertyName, Object value) {
+        Session session = getSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<T> query = builder.createQuery(type);
+        Root<T> root = query.from(type);
+        query.select(root).where(builder.equal(root.get(propertyName),value));
+
+        return session.createQuery(query).getResultList();
+    }
+
+    /**
+     * Finds entities by multiple properties.
+     * Inspired by https://stackoverflow.com/questions/11138118/really-dynamic-jpa-criteriabuilder
+     *
+     * @param propertyMap property and value pairs
+     * @return entities with properties equal to those passed in the map
+     */
+    public List<T> findByPropertyEqual(Map<String, Object> propertyMap) {
+        Session session = getSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<T> query = builder.createQuery(type);
+        Root<T> root = query.from(type);
+        List<Predicate> predicates = new ArrayList<Predicate>();
+        for (Map.Entry entry: propertyMap.entrySet()) {
+            predicates.add(builder.equal(root.get((String) entry.getKey()), entry.getValue()));
+        }
+        query.select(root).where(builder.and(predicates.toArray(new Predicate[predicates.size()])));
+
+        return session.createQuery(query).getResultList();
     }
 
 }
