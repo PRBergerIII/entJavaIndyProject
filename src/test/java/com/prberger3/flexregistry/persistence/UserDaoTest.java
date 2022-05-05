@@ -1,6 +1,8 @@
 package com.prberger3.flexregistry.persistence;
 
 import com.prberger3.flexregistry.entity.User;
+import com.prberger3.flexregistry.entity.UserConnection;
+import com.prberger3.flexregistry.entity.UserConnectionId;
 import com.prberger3.flexregistry.util.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,7 +16,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class UserDaoTest {
 
-    GenericDao<User> dao;
+    GenericDao<User> userDao;
+    GenericDao<UserConnection> userConnectionDao;
 
     /**
      * Sets up a new DAO and recreates the test database before each test.
@@ -25,7 +28,8 @@ class UserDaoTest {
         Database database = Database.getInstance();
         database.runSQL("cleanUserTable.sql");
 
-        dao = new GenericDao<>(User.class);
+        userDao = new GenericDao<>(User.class);
+        userConnectionDao = new GenericDao<>(UserConnection.class);
 
     }
 
@@ -44,7 +48,7 @@ class UserDaoTest {
                                  "I am a size 6",
                                  true);
         testUser.setId(1);
-        assertEquals(testUser, dao.getById(1));
+        assertEquals(testUser, userDao.getById(1));
 
     }
 
@@ -63,8 +67,8 @@ class UserDaoTest {
                                  "I am a size 6x",
                                  false);
         testUser.setId(1);
-        dao.saveOrUpdate(testUser);
-        assertEquals(testUser, dao.getById(1));
+        userDao.saveOrUpdate(testUser);
+        assertEquals(testUser, userDao.getById(1));
 
     }
 
@@ -82,8 +86,8 @@ class UserDaoTest {
                 "privatx",
                 "I am a size 6x",
                 false);
-        int newId = dao.insert(testUser);
-        assertEquals(testUser, dao.getById(newId));
+        int newId = userDao.insert(testUser);
+        assertEquals(testUser, userDao.getById(newId));
     }
 
     @Test
@@ -101,16 +105,40 @@ class UserDaoTest {
                 "I am a size 6",
                 true);
         testUser.setId(1);
-        dao.delete(testUser);
-        assertNull(dao.getById(1));
+        userDao.delete(testUser);
+        assertNull(userDao.getById(1));
 
     }
 
     @Test
     void getAllSuccess() {
 
-        List<User> allUsers = dao.getAll();
+        List<User> allUsers = userDao.getAll();
         assertEquals(3, allUsers.size());
+
+    }
+
+    @Test
+    void addFollowerSuccess() {
+
+        User follower = userDao.getById(1);
+        User userFollowed = userDao.getById(2);
+
+        UserConnection newConnection =
+                new UserConnection(follower, userFollowed);
+        UserConnectionId newConnectionId =
+                userConnectionDao.insertConnection(newConnection);
+        UserConnection connectionInserted =
+                userConnectionDao.getById(newConnectionId);
+
+        User followerInserted = connectionInserted.getFollower();
+        User userFollowedInserted = connectionInserted.getUserFollowed();
+
+        assertEquals(follower, followerInserted);
+        assertEquals(userFollowed, userFollowedInserted);
+
+        follower.followUser(userFollowed);
+
 
     }
 
