@@ -36,12 +36,14 @@ public class User {
     private String about;
     private boolean admin;
     @OneToMany(mappedBy = "primaryKey.follower",
-                  fetch = FetchType.EAGER,
-                cascade = CascadeType.ALL)
+               fetch = FetchType.LAZY,
+               cascade = CascadeType.ALL,
+               orphanRemoval = true)
     private Set<UserConnection> followers = new HashSet<>();
     @OneToMany(mappedBy = "primaryKey.userFollowed",
-                  fetch = FetchType.EAGER,
-                cascade = CascadeType.ALL)
+               fetch = FetchType.LAZY,
+               cascade = CascadeType.ALL,
+               orphanRemoval = true)
     private Set<UserConnection> usersFollowed = new HashSet<>();
 
     public User() {
@@ -202,7 +204,28 @@ public class User {
 
     }
 
+    public void unfollowUser(User userFollowed) {
 
+        for (Iterator<UserConnection> iterator = usersFollowed.iterator();
+             iterator.hasNext(); ) {
+
+            UserConnection userConnection = iterator.next();
+
+            if (userConnection.getUserFollowed().equals(userFollowed)) {
+
+                iterator.remove();
+                userConnection.getUserFollowed()
+                              .getFollowers()
+                              .remove(userConnection);
+                userConnection.setFollower(null);
+                userConnection.setUserFollowed(null);
+                userConnection.setAccepted(false);
+
+            }
+
+        }
+
+    }
 
     @Override
     public String toString() {
