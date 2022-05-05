@@ -14,8 +14,15 @@ public class UserConnection {
     // Composite-id key
     @EmbeddedId
     private UserConnectionId primaryKey = new UserConnectionId();
-
     private boolean accepted;
+
+    public UserConnection() {
+    }
+
+    public UserConnection(User follower, User userFollowed) {
+        this.primaryKey = new UserConnectionId(follower, userFollowed);
+        accepted = false;
+    }
 
     public UserConnectionId getPrimaryKey() {
         return primaryKey;

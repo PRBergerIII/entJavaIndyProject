@@ -20,6 +20,14 @@ public class UserConnectionId implements Serializable {
     @ManyToOne(cascade = CascadeType.ALL)
     private User userFollowed;
 
+    public UserConnectionId() {
+    }
+
+    public UserConnectionId(User follower, User userFollowed) {
+        this.follower = follower;
+        this.userFollowed = userFollowed;
+    }
+
     public User getFollower() {
         return follower;
     }

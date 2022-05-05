@@ -36,11 +36,11 @@ public class User {
     private String about;
     private boolean admin;
     @OneToMany(mappedBy = "primaryKey.follower",
-                  fetch = FetchType.LAZY,
+                  fetch = FetchType.EAGER,
                 cascade = CascadeType.ALL)
     private Set<UserConnection> followers = new HashSet<>();
     @OneToMany(mappedBy = "primaryKey.userFollowed",
-                  fetch = FetchType.LAZY,
+                  fetch = FetchType.EAGER,
                 cascade = CascadeType.ALL)
     private Set<UserConnection> usersFollowed = new HashSet<>();
 
@@ -193,7 +193,16 @@ public class User {
         this.usersFollowed = usersFollowed;
     }
 
-    // TODO: 5/4/2022 add followed user and add follower 
+    public void followUser(User userFollowed) {
+
+        UserConnection userConnection = new UserConnection(this, userFollowed);
+
+        usersFollowed.add(userConnection);
+        userFollowed.getFollowers().add(userConnection);
+
+    }
+
+
 
     @Override
     public String toString() {
@@ -210,6 +219,8 @@ public class User {
                 ", addressVisibility='" + addressVisibility + '\'' +
                 ", about='" + about + '\'' +
                 ", admin=" + admin +
+                ", followers=" + followers +
+                ", usersFollowed=" + usersFollowed +
                 '}';
     }
 
