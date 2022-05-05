@@ -203,29 +203,29 @@ public class User {
         userFollowed.getFollowers().add(userConnection);
 
     }
+// TODO: 5/5/2022 delete this if I don't need it
 
-    public void unfollowUser(User userFollowed) {
-
-        for (Iterator<UserConnection> iterator = usersFollowed.iterator();
-             iterator.hasNext(); ) {
-
-            UserConnection userConnection = iterator.next();
-
-            if (userConnection.getUserFollowed().equals(userFollowed)) {
-
-                iterator.remove();
-                userConnection.getUserFollowed()
-                              .getFollowers()
-                              .remove(userConnection);
-                userConnection.setFollower(null);
-                userConnection.setUserFollowed(null);
-                userConnection.setAccepted(false);
-
-            }
-
-        }
-
-    }
+//    public void unfollowUser(User userFollowed) {
+//
+//        for (Iterator<UserConnection> iterator = usersFollowed.iterator();
+//             iterator.hasNext(); ) {
+//
+//            UserConnection userConnection = iterator.next();
+//
+//            if (userConnection.getUserFollowed().equals(userFollowed)) {
+//
+//                iterator.remove();
+//                userConnection.getUserFollowed()
+//                              .getFollowers()
+//                              .remove(userConnection);
+//                userConnection.setFollower(null);
+//                userConnection.setUserFollowed(null);
+//
+//            }
+//
+//        }
+//
+//    }
 
     @Override
     public String toString() {

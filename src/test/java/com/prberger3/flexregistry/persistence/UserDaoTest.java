@@ -7,7 +7,9 @@ import com.prberger3.flexregistry.util.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -117,55 +119,23 @@ class UserDaoTest {
 
     }
 
-//    @Test
-//    void addFollowerSuccess() {
-//
-//        User follower = userDao.getById(1);
-//        User userFollowed = userDao.getById(2);
-//
-//        UserConnection newConnection = follower.followUser(userFollowed);
-//
-//        UserConnectionId newConnectionId =
-//                userConnectionDao.insertConnection(newConnection);
-//        UserConnection insertedConnection =
-//                userConnectionDao.getById(newConnectionId);
-//
-//        assertEquals(newConnection, insertedConnection);
-//
-//    }
-
     @Test
     void addFollowerSuccess() {
 
         User follower = userDao.getById(1);
         User userFollowed = userDao.getById(2);
 
+        assertEquals(5, userConnectionDao.getAll().size());
+
         follower.followUser(userFollowed);
 
         userDao.saveOrUpdate(follower);
         userDao.saveOrUpdate(userFollowed);
 
-
-
-    }
-
-    @Test
-    void removeFollowerSuccess() {
-
-        User follower = userDao.getById(1);
-        User userFollowed = userDao.getById(3);
-        UserConnectionId testId = new UserConnectionId(follower, userFollowed);
-        UserConnection testConnection = userConnectionDao.getById(testId);
-
-        assertTrue(follower.getUsersFollowed().contains(testConnection));
-
-
-        follower.unfollowUser(userFollowed);
-        userConnectionDao.delete(testConnection);
-
-//        assertFalse(follower.getUsersFollowed().contains(userFollowed));
+        assertEquals(6, userConnectionDao.getAll().size());
 
     }
+
 
     @Test
     void acceptFollowerTest() {
