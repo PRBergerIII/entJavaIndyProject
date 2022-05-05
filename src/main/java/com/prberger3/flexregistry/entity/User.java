@@ -203,6 +203,23 @@ public class User {
         userFollowed.getFollowers().add(userConnection);
 
     }
+
+    public void acceptFollowRequest(User follower) {
+
+        for (UserConnection connection : followers) {
+
+            if (connection.getFollower().equals(follower)
+                    && connection.isAccepted() == false) {
+
+                connection.setAccepted(true);
+                break;
+
+            }
+
+        }
+
+    }
+
 // TODO: 5/5/2022 delete this if I don't need it
 
 //    public void unfollowUser(User userFollowed) {

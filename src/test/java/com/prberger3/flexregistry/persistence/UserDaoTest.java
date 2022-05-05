@@ -2,14 +2,11 @@ package com.prberger3.flexregistry.persistence;
 
 import com.prberger3.flexregistry.entity.User;
 import com.prberger3.flexregistry.entity.UserConnection;
-import com.prberger3.flexregistry.entity.UserConnectionId;
 import com.prberger3.flexregistry.util.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -138,9 +135,21 @@ class UserDaoTest {
 
 
     @Test
-    void acceptFollowerTest() {
+    void acceptFollowRequestTest() {
 
+        User follower = userDao.getById(1);
+        User userFollowed = userDao.getById(3);
 
+        assertEquals(3, userConnectionDao.findByPropertyEqual(
+                "accepted", false).size());
+
+        userFollowed.acceptFollowRequest(follower);
+
+        userDao.saveOrUpdate(follower);
+        userDao.saveOrUpdate(userFollowed);
+
+        assertEquals(2, userConnectionDao.findByPropertyEqual(
+                "accepted", false).size());
 
     }
 
