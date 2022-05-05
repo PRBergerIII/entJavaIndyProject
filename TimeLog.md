@@ -310,7 +310,7 @@ Woooooooooo it feels good to finally get back to this project. As usual I think 
 
 ### <a id="032"></a>2022.05.04 - Indy Project
 - Debug many to many mapping
-- Get testing set up for the following operations
+- Get testing set up for the follow operations
 
 #### Day's Reflection:
 Hoooooooly smokes getting my many to many to work involved a good bit of beating my head against the wall. I did a lot of digging, finally went back and watched the class many to many video for a second time, and realized that followers and usersFollowed were sets of Users, and they should have been UserConnections. I also had a really tough time getting my testing right with the user/follower relationship. I went around in circles a lot because of it being self referencing, but finally got it nailed down. One annoying thing I can't figure out, and don't have the energy to keep digging on: every time I get to my limit of hibernate log files I get this error:
