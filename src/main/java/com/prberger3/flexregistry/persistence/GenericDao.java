@@ -39,14 +39,15 @@ public class GenericDao<T> {
 
     }
 
-    public <T>T getById(Serializable id) {
-
-        Session session = getSession();
-        T entity = (T)session.get(type, id);
-        session.close();
-        return entity;
-
-    }
+    // TODO: 5/5/2022 delete if not needed
+//    public <T>T getById(Serializable id) {
+//
+//        Session session = getSession();
+//        T entity = (T)session.get(type, id);
+//        session.close();
+//        return entity;
+//
+//    }
 
     public void saveOrUpdate(T entity) {
 
@@ -72,7 +73,7 @@ public class GenericDao<T> {
 
     }
 
-    // TODO: 5/5/2022 delete if not needed 
+    // TODO: 5/5/2022 delete if not needed
 //    public UserConnectionId insertConnection(T entity) {
 //
 //        UserConnectionId newId;
