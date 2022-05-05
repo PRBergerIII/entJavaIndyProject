@@ -36,12 +36,12 @@ public class User {
     private String about;
     private boolean admin;
     @OneToMany(mappedBy = "primaryKey.follower",
-               fetch = FetchType.LAZY,
+               fetch = FetchType.EAGER,
                cascade = CascadeType.ALL,
                orphanRemoval = true)
     private Set<UserConnection> followers = new HashSet<>();
     @OneToMany(mappedBy = "primaryKey.userFollowed",
-               fetch = FetchType.LAZY,
+               fetch = FetchType.EAGER,
                cascade = CascadeType.ALL,
                orphanRemoval = true)
     private Set<UserConnection> usersFollowed = new HashSet<>();
