@@ -42,22 +42,13 @@ CREATE TABLE `user` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `user`
+-- Table structure for table `user_connection`
 --
 
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `user_follow`
---
-
-DROP TABLE IF EXISTS `user_follow`;
+DROP TABLE IF EXISTS `user_connection`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `user_follow` (
+CREATE TABLE `user_connection` (
   `follower_id` int NOT NULL,
   `user_followed_id` int NOT NULL,
   `accepted` bit(1) NOT NULL DEFAULT b'0',
@@ -67,15 +58,6 @@ CREATE TABLE `user_follow` (
   CONSTRAINT `user_followed_fk` FOREIGN KEY (`user_followed_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `user_follow`
---
-
-LOCK TABLES `user_follow` WRITE;
-/*!40000 ALTER TABLE `user_follow` DISABLE KEYS */;
-/*!40000 ALTER TABLE `user_follow` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `wish_list`
@@ -97,15 +79,6 @@ CREATE TABLE `wish_list` (
   CONSTRAINT `owner_id_fk` FOREIGN KEY (`owner_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `wish_list`
---
-
-LOCK TABLES `wish_list` WRITE;
-/*!40000 ALTER TABLE `wish_list` DISABLE KEYS */;
-/*!40000 ALTER TABLE `wish_list` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `wish_list_item`
@@ -131,15 +104,6 @@ CREATE TABLE `wish_list_item` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `wish_list_item`
---
-
-LOCK TABLES `wish_list_item` WRITE;
-/*!40000 ALTER TABLE `wish_list_item` DISABLE KEYS */;
-/*!40000 ALTER TABLE `wish_list_item` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `wish_list_visibility`
 --
 
@@ -155,15 +119,6 @@ CREATE TABLE `wish_list_visibility` (
   CONSTRAINT `wish_list_id_visibility_fk` FOREIGN KEY (`wish_list_id`) REFERENCES `wish_list` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `wish_list_visibility`
---
-
-LOCK TABLES `wish_list_visibility` WRITE;
-/*!40000 ALTER TABLE `wish_list_visibility` DISABLE KEYS */;
-/*!40000 ALTER TABLE `wish_list_visibility` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -174,4 +129,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-28 19:42:59
+-- Dump completed on 2022-05-04 19:46:18
