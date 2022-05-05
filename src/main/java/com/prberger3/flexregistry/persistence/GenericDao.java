@@ -10,6 +10,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -30,6 +31,15 @@ public class GenericDao<T> {
     }
 
     public <T>T getById(int id) {
+
+        Session session = getSession();
+        T entity = (T)session.get(type, id);
+        session.close();
+        return entity;
+
+    }
+
+    public <T>T getById(Serializable id) {
 
         Session session = getSession();
         T entity = (T)session.get(type, id);
