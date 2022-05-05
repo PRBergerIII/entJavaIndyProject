@@ -117,20 +117,35 @@ class UserDaoTest {
 
     }
 
+//    @Test
+//    void addFollowerSuccess() {
+//
+//        User follower = userDao.getById(1);
+//        User userFollowed = userDao.getById(2);
+//
+//        UserConnection newConnection = follower.followUser(userFollowed);
+//
+//        UserConnectionId newConnectionId =
+//                userConnectionDao.insertConnection(newConnection);
+//        UserConnection insertedConnection =
+//                userConnectionDao.getById(newConnectionId);
+//
+//        assertEquals(newConnection, insertedConnection);
+//
+//    }
+
     @Test
     void addFollowerSuccess() {
 
         User follower = userDao.getById(1);
         User userFollowed = userDao.getById(2);
 
-        UserConnection newConnection = follower.followUser(userFollowed);
+        follower.followUser(userFollowed);
 
-        UserConnectionId newConnectionId =
-                userConnectionDao.insertConnection(newConnection);
-        UserConnection insertedConnection =
-                userConnectionDao.getById(newConnectionId);
+        userDao.saveOrUpdate(follower);
+        userDao.saveOrUpdate(userFollowed);
 
-        assertEquals(newConnection, insertedConnection);
+
 
     }
 
@@ -139,13 +154,23 @@ class UserDaoTest {
 
         User follower = userDao.getById(1);
         User userFollowed = userDao.getById(3);
-        UserConnection testConnection =
-                new UserConnection(follower, userFollowed);
+        UserConnectionId testId = new UserConnectionId(follower, userFollowed);
+        UserConnection testConnection = userConnectionDao.getById(testId);
+
+        assertTrue(follower.getUsersFollowed().contains(testConnection));
+
 
         follower.unfollowUser(userFollowed);
         userConnectionDao.delete(testConnection);
 
-        assertFalse(follower.getUsersFollowed().contains(userFollowed));
+//        assertFalse(follower.getUsersFollowed().contains(userFollowed));
+
+    }
+
+    @Test
+    void acceptFollowerTest() {
+
+
 
     }
 
