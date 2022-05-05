@@ -72,19 +72,20 @@ public class GenericDao<T> {
 
     }
 
-    public UserConnectionId insertConnection(T entity) {
-
-        UserConnectionId newId;
-        Session session = getSession();
-        Transaction transaction = session.beginTransaction();
-
-        newId = (UserConnectionId)session.save(entity);
-        transaction.commit();
-        session.close();
-
-        return newId;
-
-    }
+    // TODO: 5/5/2022 delete if not needed 
+//    public UserConnectionId insertConnection(T entity) {
+//
+//        UserConnectionId newId;
+//        Session session = getSession();
+//        Transaction transaction = session.beginTransaction();
+//
+//        newId = (UserConnectionId)session.save(entity);
+//        transaction.commit();
+//        session.close();
+//
+//        return newId;
+//
+//    }
 
     public void delete(T entity) {
 
