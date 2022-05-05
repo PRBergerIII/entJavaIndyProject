@@ -11,7 +11,7 @@ import javax.persistence.*;
  *      association-with-extra-columns-in-join-table-example
  */
 @Embeddable
-public class UserFollowId implements Serializable {
+public class UserConnectionId implements Serializable {
 
     @JoinColumn(name = "follower_id")
     @ManyToOne(cascade = CascadeType.ALL)

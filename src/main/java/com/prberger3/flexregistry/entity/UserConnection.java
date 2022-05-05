@@ -2,26 +2,26 @@ package com.prberger3.flexregistry.entity;
 
 import javax.persistence.*;
 
-@Entity(name = "UserFollow")
-@Table(name = "user_follow")
+@Entity(name = "UserConnection")
+@Table(name = "user_connection")
 @AssociationOverrides({
         @AssociationOverride(name = "primaryKey.follower",
                 joinColumns = @JoinColumn(name = "follower_id")),
         @AssociationOverride(name = "primaryKey.userFollowed",
                 joinColumns = @JoinColumn(name = "user_followed_id")) })
-public class UserFollow {
+public class UserConnection {
 
     // Composite-id key
     @EmbeddedId
-    private UserFollowId primaryKey = new UserFollowId();
+    private UserConnectionId primaryKey = new UserConnectionId();
 
     private boolean accepted;
 
-    public UserFollowId getPrimaryKey() {
+    public UserConnectionId getPrimaryKey() {
         return primaryKey;
     }
 
-    public void setPrimaryKey(UserFollowId primaryKey) {
+    public void setPrimaryKey(UserConnectionId primaryKey) {
         this.primaryKey = primaryKey;
     }
 

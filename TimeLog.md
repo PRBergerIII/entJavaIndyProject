@@ -312,4 +312,4 @@ Woooooooooo it feels good to finally get back to this project. As usual I think 
 - Debug many to many mapping
 
 #### Day's Reflection:
-Hoooooooly smokes getting my many to many involved a good bit of beating my head against the wall. I did a lot of digging, finally went back and watched the class many to many video for a second time, and realized that followers and usersFollowed were sets of Users, and they should have been UserFollows
+Hoooooooly smokes getting my many to many involved a good bit of beating my head against the wall. I did a lot of digging, finally went back and watched the class many to many video for a second time, and realized that followers and usersFollowed were sets of Users, and they should have been UserConnections.
