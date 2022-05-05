@@ -128,16 +128,29 @@ class UserDaoTest {
                 new UserConnection(follower, userFollowed);
         UserConnectionId newConnectionId =
                 userConnectionDao.insertConnection(newConnection);
-        UserConnection connectionInserted =
+        UserConnection insertedConnection =
                 userConnectionDao.getById(newConnectionId);
 
-        User followerInserted = connectionInserted.getFollower();
-        User userFollowedInserted = connectionInserted.getUserFollowed();
+        User insertedFollower = insertedConnection.getFollower();
+        User insertedUserFollowed = insertedConnection.getUserFollowed();
 
-        assertEquals(follower, followerInserted);
-        assertEquals(userFollowed, userFollowedInserted);
+
+        assertEquals(follower, insertedFollower);
+        assertEquals(userFollowed, insertedUserFollowed);
 
         follower.followUser(userFollowed);
+        
+        assertEquals(follower.getUsersFollowed(),
+                insertedFollower.getUsersFollowed());
+        assertEquals(userFollowed.getFollowers(),
+                insertedUserFollowed.getFollowers());
+
+
+
+        for (UserConnection userConnection:
+                follower.getUsersFollowed()) {
+            System.out.println("User Followed: " + userConnection.getUserFollowed());
+        }
 
 
     }

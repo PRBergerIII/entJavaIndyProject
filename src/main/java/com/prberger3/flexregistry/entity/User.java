@@ -35,12 +35,12 @@ public class User {
     private String addressVisibility;
     private String about;
     private boolean admin;
-    @OneToMany(mappedBy = "primaryKey.follower",
+    @OneToMany(mappedBy = "primaryKey.userFollowed",
                fetch = FetchType.EAGER,
                cascade = CascadeType.ALL,
                orphanRemoval = true)
     private Set<UserConnection> followers = new HashSet<>();
-    @OneToMany(mappedBy = "primaryKey.userFollowed",
+    @OneToMany(mappedBy = "primaryKey.follower",
                fetch = FetchType.EAGER,
                cascade = CascadeType.ALL,
                orphanRemoval = true)
