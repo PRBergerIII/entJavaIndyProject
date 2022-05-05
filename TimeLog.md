@@ -33,7 +33,7 @@
 | 2022.04.28 | 7:30 | [Indy Project](#029)                      |
 | 2022.04.30 | 2:40 | [Indy Project](#030)                      | 
 | 2022.05.03 | 2:00 | [Indy Project](#031)                      | 
-| 2022.05.04 |      | [Indy Project](#031)                      | Start @ 15:15
+| 2022.05.04 |      | [Indy Project](#031)                      | 2:30 + Start @
 
 | Total Hours |     |
 |:------------|----:|
@@ -312,3 +312,4 @@ Woooooooooo it feels good to finally get back to this project. As usual I think 
 - Debug many to many mapping
 
 #### Day's Reflection:
+Hoooooooly smokes getting my many to many involved a good bit of beating my head against the wall. I did a lot of digging, finally went back and watched the class many to many video for a second time, and realized that followers and usersFollowed were sets of Users, and they should have been UserFollows
