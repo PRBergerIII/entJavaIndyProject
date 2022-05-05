@@ -1,6 +1,9 @@
 package com.prberger3.flexregistry.entity;
 
 import javax.persistence.*;
+import java.util.Objects;
+
+// TODO: 5/5/2022 javadoc
 
 @Entity(name = "UserConnection")
 @Table(name = "user_connection")
@@ -58,4 +61,24 @@ public class UserConnection {
         this.accepted = accepted;
     }
 
+    @Override
+    public String toString() {
+        return "UserConnection{" +
+                "primaryKey=" + primaryKey +
+                ", accepted=" + accepted +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        UserConnection that = (UserConnection) o;
+        return accepted == that.accepted && primaryKey.equals(that.primaryKey);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(primaryKey, accepted);
+    }
 }

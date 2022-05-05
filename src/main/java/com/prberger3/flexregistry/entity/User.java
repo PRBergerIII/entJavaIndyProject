@@ -195,12 +195,14 @@ public class User {
         this.usersFollowed = usersFollowed;
     }
 
-    public void followUser(User userFollowed) {
+    public UserConnection followUser(User userFollowed) {
 
         UserConnection userConnection = new UserConnection(this, userFollowed);
 
         usersFollowed.add(userConnection);
         userFollowed.getFollowers().add(userConnection);
+
+        return userConnection;
 
     }
 
@@ -220,6 +222,8 @@ public class User {
                 userConnection.setFollower(null);
                 userConnection.setUserFollowed(null);
                 userConnection.setAccepted(false);
+
+
 
             }
 

@@ -12,7 +12,6 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 // TODO: 4/30/2022 javadocs
-// FIXME: 4/30/2022 indents
 
 class UserDaoTest {
 
@@ -76,16 +75,16 @@ class UserDaoTest {
     void insertSuccess() {
 
         User testUser = new User("pbergerx",
-                "Paulx",
-                "Bergerx",
-                "pberger@madisoncollege.edux",
-                "123 main stx",
-                "placex",
-                "Wx",
-                "1232x",
-                "privatx",
-                "I am a size 6x",
-                false);
+                                 "Paulx",
+                                 "Bergerx",
+                                 "pberger@madisoncollege.edux",
+                                 "123 main stx",
+                                 "placex",
+                                 "Wx",
+                                 "1232x",
+                                 "privatx",
+                                 "I am a size 6x",
+                                 false);
         int newId = userDao.insert(testUser);
         assertEquals(testUser, userDao.getById(newId));
     }
@@ -94,16 +93,16 @@ class UserDaoTest {
     void deleteSuccess() {
 
         User testUser = new User("pberger",
-                "Paul",
-                "Berger",
-                "pberger@madisoncollege.edu",
-                "123 main st",
-                "place",
-                "WI",
-                "12324",
-                "private",
-                "I am a size 6",
-                true);
+                                 "Paul",
+                                 "Berger",
+                                 "pberger@madisoncollege.edu",
+                                 "123 main st",
+                                 "place",
+                                 "WI",
+                                 "12324",
+                                 "private",
+                                 "I am a size 6",
+                                 true);
         testUser.setId(1);
         userDao.delete(testUser);
         assertNull(userDao.getById(1));
@@ -124,34 +123,29 @@ class UserDaoTest {
         User follower = userDao.getById(1);
         User userFollowed = userDao.getById(2);
 
-        UserConnection newConnection =
-                new UserConnection(follower, userFollowed);
+        UserConnection newConnection = follower.followUser(userFollowed);
+
         UserConnectionId newConnectionId =
                 userConnectionDao.insertConnection(newConnection);
         UserConnection insertedConnection =
                 userConnectionDao.getById(newConnectionId);
 
-        User insertedFollower = insertedConnection.getFollower();
-        User insertedUserFollowed = insertedConnection.getUserFollowed();
+        assertEquals(newConnection, insertedConnection);
 
+    }
 
-        assertEquals(follower, insertedFollower);
-        assertEquals(userFollowed, insertedUserFollowed);
+    @Test
+    void removeFollowerSuccess() {
 
-        follower.followUser(userFollowed);
-        
-        assertEquals(follower.getUsersFollowed(),
-                insertedFollower.getUsersFollowed());
-        assertEquals(userFollowed.getFollowers(),
-                insertedUserFollowed.getFollowers());
+        User follower = userDao.getById(1);
+        User userFollowed = userDao.getById(3);
+        UserConnection testConnection =
+                new UserConnection(follower, userFollowed);
 
+        follower.unfollowUser(userFollowed);
+        userConnectionDao.delete(testConnection);
 
-
-        for (UserConnection userConnection:
-                follower.getUsersFollowed()) {
-            System.out.println("User Followed: " + userConnection.getUserFollowed());
-        }
-
+        assertFalse(follower.getUsersFollowed().contains(userFollowed));
 
     }
 
