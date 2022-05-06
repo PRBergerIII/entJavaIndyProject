@@ -1,6 +1,7 @@
 package com.prberger3.flexregistry.entity;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 import javax.persistence.*;
 
@@ -44,4 +45,19 @@ public class UserConnectionId implements Serializable {
         this.userFollowed = userFollowed;
     }
 
+    @Override
+    public boolean equals(Object o) {
+
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        UserConnectionId that = (UserConnectionId) o;
+        return  follower.equals(that.follower)
+                && userFollowed.equals(that.userFollowed);
+
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(follower, userFollowed);
+    }
 }
