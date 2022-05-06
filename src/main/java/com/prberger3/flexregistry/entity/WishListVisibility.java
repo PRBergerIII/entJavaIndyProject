@@ -3,6 +3,8 @@ package com.prberger3.flexregistry.entity;
 import javax.persistence.*;
 import java.util.Objects;
 
+// TODO: 5/5/2022 refactor to match other join table entity
+
 @Entity
 @Table(name = "wish_list_visibility", schema = "flexregistry", catalog = "")
 @IdClass(WishListVisibilityId.class)

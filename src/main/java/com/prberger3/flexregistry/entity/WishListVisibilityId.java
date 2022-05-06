@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.Objects;
 
+// TODO: 5/5/2022 refactor to match other join table entity
+
 public class WishListVisibilityId implements Serializable {
     @Column(name = "user_id")
     @Id
