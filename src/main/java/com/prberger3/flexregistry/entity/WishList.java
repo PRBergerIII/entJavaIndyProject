@@ -6,6 +6,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Objects;
 
+// TODO: 5/5/2022 add javadocs
 
 @Entity(name = "WishList")
 @Table(name = "wish_list")
@@ -97,14 +98,23 @@ public class WishList {
 
     @Override
     public boolean equals(Object o) {
+
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         WishList wishList = (WishList) o;
-        return id == wishList.id && owner == wishList.owner && purchasedItemsVisibility == wishList.purchasedItemsVisibility && Objects.equals(title, wishList.title) && Objects.equals(visibility, wishList.visibility) && Objects.equals(listType, wishList.listType) && Objects.equals(eventDate, wishList.eventDate);
+        return  id == wishList.id && owner == wishList.owner
+                && purchasedItemsVisibility == wishList.purchasedItemsVisibility
+                && Objects.equals(title, wishList.title)
+                && Objects.equals(visibility, wishList.visibility)
+                && Objects.equals(listType, wishList.listType)
+                && Objects.equals(eventDate, wishList.eventDate);
+
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, owner, title, visibility, purchasedItemsVisibility, listType, eventDate);
+        return Objects.hash(id, owner, title, visibility,
+                            purchasedItemsVisibility, listType, eventDate);
     }
+
 }

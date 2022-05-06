@@ -6,7 +6,6 @@ import javax.persistence.*;
 import java.util.*;
 
 // TODO: 4/28/2022 add javadocs
-// TODO: 5/3/2022 add follower handling 
 
 /**
  * This is the user class for the Flex Registry app.
