@@ -14,10 +14,10 @@ import javax.persistence.*;
 @Embeddable
 public class UserConnectionId implements Serializable {
 
-    @JoinColumn(name = "follower_id", referencedColumnName = "id")
+    @JoinColumn(name = "follower_id")
     @ManyToOne(cascade = CascadeType.ALL)
     private User follower;
-    @JoinColumn(name = "user_followed_id", referencedColumnName = "id")
+    @JoinColumn(name = "user_followed_id")
     @ManyToOne(cascade = CascadeType.ALL)
     private User userFollowed;
 
