@@ -16,7 +16,6 @@ public class UserConnectionId implements Serializable {
     @JoinColumn(name = "follower_id", referencedColumnName = "id")
     @ManyToOne(cascade = CascadeType.ALL)
     private User follower;
-
     @JoinColumn(name = "user_followed_id", referencedColumnName = "id")
     @ManyToOne(cascade = CascadeType.ALL)
     private User userFollowed;
