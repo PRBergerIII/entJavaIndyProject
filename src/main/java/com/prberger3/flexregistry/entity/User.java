@@ -41,10 +41,16 @@ public class User {
                orphanRemoval = true)
     private Set<UserConnection> followers = new HashSet<>();
     @OneToMany(mappedBy = "primaryKey.follower",
-               fetch = FetchType.EAGER,
-               cascade = CascadeType.ALL,
-               orphanRemoval = true)
+            fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL,
+            orphanRemoval = true)
     private Set<UserConnection> usersFollowed = new HashSet<>();
+
+    @OneToMany(mappedBy = "owner",
+            fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL,
+            orphanRemoval = true)
+    private Set<WishList> wishLists = new HashSet<>();
 
     public User() {
     }
@@ -195,6 +201,14 @@ public class User {
         this.usersFollowed = usersFollowed;
     }
 
+    public Set<WishList> getWishLists() {
+        return wishLists;
+    }
+
+    public void setWishLists(Set<WishList> wishLists) {
+        this.wishLists = wishLists;
+    }
+
     public void followUser(User userFollowed) {
 
         UserConnection userConnection = new UserConnection(this, userFollowed);
@@ -244,6 +258,7 @@ public class User {
 //
 //    }
 
+
     @Override
     public String toString() {
         return "User{" +
@@ -261,6 +276,7 @@ public class User {
                 ", admin=" + admin +
                 ", followers=" + followers +
                 ", usersFollowed=" + usersFollowed +
+                ", wishLists=" + wishLists +
                 '}';
     }
 
