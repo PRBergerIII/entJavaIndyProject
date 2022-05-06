@@ -31,10 +31,10 @@
 | 2022.04.24 | 7:00 | [Week 8, etc.](#027)                      |
 | 2022.04.26 | 4:30 | [Week 9](#028)                            |
 | 2022.04.28 | 7:30 | [Indy Project](#029)                      |
-| 2022.04.30 | 2:40 | [Indy Project](#030)                      | 
+| 2022.04.29 | 2:40 | [Indy Project](#030)                      | 
 | 2022.05.03 | 2:00 | [Indy Project](#031)                      | 
-| 2022.05.04 | 8:45 | [Indy Project](#031)                      |
-| 2022.05.05 |      | [Indy Project](#032)                      | Start @ 19:00
+| 2022.05.04 | 8:45 | [Indy Project](#032)                      |
+| 2022.05.05 | 2:45 | [Indy Project](#033)                      |
 
 | Total Hours |     |
 |:------------|----:|
@@ -296,9 +296,9 @@ Woooooooooo it feels good to finally get back to this project. As usual I think 
 ### <a id="30"></a>2022.04.29 - Indy Project
 - Add tests for all genericDao operations with the user entity
 - Research many to many mapping
-  - ?
 
 #### Day's Reflection:
+I did all of my work today in the car while my wife drove. We are heading to Ohio for a family funeral and will be there for a few days.
 
 
 ### <a id="031"></a>2022.05.03 - Indy Project
@@ -307,6 +307,7 @@ Woooooooooo it feels good to finally get back to this project. As usual I think 
   - Referenced [this page](https://www.codejava.net/frameworks/hibernate/hibernate-many-to-many-association-with-extra-columns-in-join-table-example) for creating a composite key entity and mapping it in the join table
 
 #### Day's Reflection:
+Getting the time in when I can.
 
 
 ### <a id="032"></a>2022.05.04 - Indy Project
@@ -319,5 +320,10 @@ Hoooooooly smokes getting my many to many to work involved a good bit of beating
 
 ### <a id="033"></a>2022.05.05 - Indy Project
 - Set up WishList Entity
+- Set up WishListItem Entity
+- Connect WishList Entity to User
+- Connect WishList and WishListItem Entities
+- Set up testing data in the test DB
 
 #### Day's Reflection:
+So today I learned that Intellij has a persistence mapping generator, and it's pretty sweet. I had to tweak the annotations to make them match the user class, but It definitely saved a bunch of time, which is a hot commodity currently. Didn't have a ton of time tonight, but I got a fair amount done. Just have to do testing and update my last join table classes, and I can actually start building the site. I'm really hoping that once I get all this unit testing knocked out, some of that will come a little easier, but we'll see. 

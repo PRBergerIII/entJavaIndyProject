@@ -11,6 +11,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 // TODO: 4/30/2022 javadocs
+// TODO: 5/5/2022 add tests for wishlists
 
 class UserDaoTest {
 
