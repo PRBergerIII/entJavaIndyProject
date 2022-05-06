@@ -1,34 +1,30 @@
 package com.prberger3.flexregistry.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
-import java.sql.Date;
+import java.time.LocalDate;
 import java.util.Objects;
 
-@Entity
-@Table(name = "wish_list", schema = "flexregistry", catalog = "")
+
+@Entity(name = "WishList")
+@Table(name = "wish_list")
 public class WishList {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     @Id
-    @Column(name = "id")
+    @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
+    @GenericGenerator(name = "native",strategy = "native")
     private int id;
-    @Basic
-    @Column(name = "owner_id")
-    private int ownerId;
-    @Basic
-    @Column(name = "title")
+    @ManyToOne
+    private User owner;
     private String title;
-    @Basic
-    @Column(name = "visibility")
     private String visibility;
-    @Basic
     @Column(name = "purchased_items_visibility")
     private boolean purchasedItemsVisibility;
-    @Basic
     @Column(name = "list_type")
     private String listType;
-    @Basic
     @Column(name = "event_date")
-    private Date eventDate;
+    private LocalDate eventDate;
 
     public int getId() {
         return id;
@@ -38,12 +34,12 @@ public class WishList {
         this.id = id;
     }
 
-    public int getOwnerId() {
-        return ownerId;
+    public User getOwner() {
+        return owner;
     }
 
-    public void setOwnerId(int ownerId) {
-        this.ownerId = ownerId;
+    public void setOwner(User owner) {
+        this.owner = owner;
     }
 
     public String getTitle() {
@@ -78,12 +74,25 @@ public class WishList {
         this.listType = listType;
     }
 
-    public Date getEventDate() {
+    public LocalDate getEventDate() {
         return eventDate;
     }
 
-    public void setEventDate(Date eventDate) {
+    public void setEventDate(LocalDate eventDate) {
         this.eventDate = eventDate;
+    }
+
+    @Override
+    public String toString() {
+        return "WishList{" +
+                "id=" + id +
+                ", ownerId=" + owner +
+                ", title='" + title + '\'' +
+                ", visibility='" + visibility + '\'' +
+                ", purchasedItemsVisibility=" + purchasedItemsVisibility +
+                ", listType='" + listType + '\'' +
+                ", eventDate=" + eventDate +
+                '}';
     }
 
     @Override
@@ -91,11 +100,11 @@ public class WishList {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         WishList wishList = (WishList) o;
-        return id == wishList.id && ownerId == wishList.ownerId && purchasedItemsVisibility == wishList.purchasedItemsVisibility && Objects.equals(title, wishList.title) && Objects.equals(visibility, wishList.visibility) && Objects.equals(listType, wishList.listType) && Objects.equals(eventDate, wishList.eventDate);
+        return id == wishList.id && owner == wishList.owner && purchasedItemsVisibility == wishList.purchasedItemsVisibility && Objects.equals(title, wishList.title) && Objects.equals(visibility, wishList.visibility) && Objects.equals(listType, wishList.listType) && Objects.equals(eventDate, wishList.eventDate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, ownerId, title, visibility, purchasedItemsVisibility, listType, eventDate);
+        return Objects.hash(id, owner, title, visibility, purchasedItemsVisibility, listType, eventDate);
     }
 }
