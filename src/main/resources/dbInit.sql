@@ -38,7 +38,7 @@ CREATE TABLE `user` (
   `about` varchar(255) DEFAULT NULL,
   `admin` bit(1) NOT NULL DEFAULT b'0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -90,8 +90,8 @@ DROP TABLE IF EXISTS `wish_list_item`;
 CREATE TABLE `wish_list_item` (
   `id` int NOT NULL AUTO_INCREMENT,
   `wish_list_id` int NOT NULL,
-  `name` varchar(100) DEFAULT NULL,
-  `specific_item` bit(1) DEFAULT NULL,
+  `name` varchar(100) NOT NULL,
+  `specific_item` bit(1) NOT NULL DEFAULT b'0',
   `details` varchar(2048) DEFAULT NULL,
   `priority` int NOT NULL DEFAULT '3',
   `price_range` varchar(10) DEFAULT NULL,
@@ -129,4 +129,4 @@ CREATE TABLE `wish_list_visibility` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-04 19:46:18
+-- Dump completed on 2022-05-05 21:08:04
