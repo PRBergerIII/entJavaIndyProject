@@ -44,7 +44,6 @@ public class User {
             cascade = CascadeType.ALL,
             orphanRemoval = true)
     private Set<UserConnection> usersFollowed = new HashSet<>();
-
     @OneToMany(mappedBy = "owner",
             fetch = FetchType.EAGER,
             cascade = CascadeType.ALL,

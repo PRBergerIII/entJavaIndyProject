@@ -4,7 +4,9 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 // TODO: 5/5/2022 add javadocs
 
@@ -26,6 +28,11 @@ public class WishList {
     private String listType;
     @Column(name = "event_date")
     private LocalDate eventDate;
+    @OneToMany(mappedBy = "wishList",
+            fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL,
+            orphanRemoval = true)
+    private Set<WishListItem> items = new HashSet<>();
 
     public int getId() {
         return id;
@@ -85,14 +92,15 @@ public class WishList {
 
     @Override
     public String toString() {
-        return "WishList{" +
+        return  "WishList{" +
                 "id=" + id +
-                ", ownerId=" + owner +
+                ", owner=" + owner +
                 ", title='" + title + '\'' +
                 ", visibility='" + visibility + '\'' +
                 ", purchasedItemsVisibility=" + purchasedItemsVisibility +
                 ", listType='" + listType + '\'' +
                 ", eventDate=" + eventDate +
+                ", items=" + items +
                 '}';
     }
 
