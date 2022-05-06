@@ -257,6 +257,20 @@ public class User {
 //
 //    }
 
+    public void addWishList(WishList newWishList) {
+
+        wishLists.add(newWishList);
+        newWishList.setOwner(this);
+
+    }
+
+    public void removeWishList(WishList removedWishList) {
+
+        wishLists.remove(removedWishList);
+        removedWishList.setOwner(null);
+
+    }
+
 
     @Override
     public String toString() {
