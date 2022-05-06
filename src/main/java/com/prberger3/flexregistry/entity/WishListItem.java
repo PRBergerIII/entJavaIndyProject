@@ -1,37 +1,30 @@
 package com.prberger3.flexregistry.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.util.Objects;
 
-@Entity
-@Table(name = "wish_list_item", schema = "flexregistry", catalog = "")
+// TODO: 5/5/2022 add javadocs
+
+@Entity(name = "WishListItem")
+@Table(name = "wish_list_item")
 public class WishListItem {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     @Id
-    @Column(name = "id")
+    @GeneratedValue(strategy= GenerationType.AUTO, generator="native")
+    @GenericGenerator(name = "native",strategy = "native")
     private int id;
-    @Basic
-    @Column(name = "wish_list_id")
-    private int wishListId;
-    @Basic
-    @Column(name = "name")
+    @ManyToOne
+    private WishList wishList;
     private String name;
-    @Basic
     @Column(name = "specific_item")
     private Boolean specificItem;
-    @Basic
-    @Column(name = "details")
     private String details;
-    @Basic
-    @Column(name = "priority")
     private int priority;
-    @Basic
     @Column(name = "price_range")
     private String priceRange;
-    @Basic
-    @Column(name = "purchased")
     private boolean purchased;
-    @Basic
     @Column(name = "purchased_message")
     private String purchasedMessage;
 
@@ -43,12 +36,12 @@ public class WishListItem {
         this.id = id;
     }
 
-    public int getWishListId() {
-        return wishListId;
+    public WishList getWishList() {
+        return wishList;
     }
 
-    public void setWishListId(int wishListId) {
-        this.wishListId = wishListId;
+    public void setWishList(WishList wishList) {
+        this.wishList = wishList;
     }
 
     public String getName() {
@@ -112,11 +105,20 @@ public class WishListItem {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         WishListItem that = (WishListItem) o;
-        return id == that.id && wishListId == that.wishListId && priority == that.priority && purchased == that.purchased && Objects.equals(name, that.name) && Objects.equals(specificItem, that.specificItem) && Objects.equals(details, that.details) && Objects.equals(priceRange, that.priceRange) && Objects.equals(purchasedMessage, that.purchasedMessage);
+        return  id == that.id
+                && wishList.equals(that.wishList)
+                && priority == that.priority
+                && purchased == that.purchased
+                && Objects.equals(name, that.name)
+                && Objects.equals(specificItem, that.specificItem)
+                && Objects.equals(details, that.details)
+                && Objects.equals(priceRange, that.priceRange)
+                && Objects.equals(purchasedMessage, that.purchasedMessage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, wishListId, name, specificItem, details, priority, priceRange, purchased, purchasedMessage);
+        return Objects.hash(id, wishList, name, specificItem, details,
+                            priority, priceRange, purchased, purchasedMessage);
     }
 }

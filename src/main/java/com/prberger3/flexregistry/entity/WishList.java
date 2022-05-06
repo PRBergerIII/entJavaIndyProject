@@ -102,7 +102,8 @@ public class WishList {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         WishList wishList = (WishList) o;
-        return  id == wishList.id && owner == wishList.owner
+        return  id == wishList.id
+                && owner.equals(wishList.owner)
                 && purchasedItemsVisibility == wishList.purchasedItemsVisibility
                 && Objects.equals(title, wishList.title)
                 && Objects.equals(visibility, wishList.visibility)
