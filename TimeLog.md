@@ -35,7 +35,8 @@
 | 2022.05.03 | 2:00 | [Indy Project](#031)                      | 
 | 2022.05.04 | 8:45 | [Indy Project](#032)                      |
 | 2022.05.05 | 2:45 | [Indy Project](#033)                      |
-| 2022.05.06 |      | [Indy Project](#034)                      | Start @ 18:30
+| 2022.05.06 | 4:30 | [Indy Project](#034)                      |
+| 2022.05.07 |      | [Indy Project](#035)                      | Start @ 9:00
 
 | Total Hours |     |
 |:------------|----:|
@@ -329,9 +330,16 @@ Hoooooooly smokes getting my many to many to work involved a good bit of beating
 #### Day's Reflection:
 So today I learned that Intellij has a persistence mapping generator, and it's pretty sweet. I had to tweak the annotations to make them match the user class, but It definitely saved a bunch of time, which is a hot commodity currently. Didn't have a ton of time tonight, but I got a fair amount done. Just have to do testing and update my last join table classes, and I can actually start building the site. I'm really hoping that once I get all this unit testing knocked out, some of that will come a little easier, but we'll see.
 
-### <a id="033"></a>2022.05.05 - Indy Project
+### <a id="034"></a>2022.05.05 - Indy Project
 - Code review Palmer's indy project
 - Get unit testing for WishListItem operations finished
 
 #### Day's Reflection:
 Didn't have a ton of time again today, and spent a good bit of it doing the code review. Had an issue with my User class at first where none of the tests were passing, but it's because I had added a hash set for the user's wishlists, and didn't properly map the column on the many side. Didn't take too terribly long to track down though.
+
+### <a id="035"></a>2022.05.06 - Indy Project
+- Troubleshoot logging
+
+
+#### Day's Reflection:
+Turns out the logging error I have been getting forever was pretty easily fixed by just putting the hibernate logs in a different directory. 
