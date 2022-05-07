@@ -35,6 +35,7 @@
 | 2022.05.03 | 2:00 | [Indy Project](#031)                      | 
 | 2022.05.04 | 8:45 | [Indy Project](#032)                      |
 | 2022.05.05 | 2:45 | [Indy Project](#033)                      |
+| 2022.05.06 |      | [Indy Project](#034)                      | Start @ 18:30
 
 | Total Hours |     |
 |:------------|----:|
@@ -326,4 +327,10 @@ Hoooooooly smokes getting my many to many to work involved a good bit of beating
 - Set up testing data in the test DB
 
 #### Day's Reflection:
-So today I learned that Intellij has a persistence mapping generator, and it's pretty sweet. I had to tweak the annotations to make them match the user class, but It definitely saved a bunch of time, which is a hot commodity currently. Didn't have a ton of time tonight, but I got a fair amount done. Just have to do testing and update my last join table classes, and I can actually start building the site. I'm really hoping that once I get all this unit testing knocked out, some of that will come a little easier, but we'll see. 
+So today I learned that Intellij has a persistence mapping generator, and it's pretty sweet. I had to tweak the annotations to make them match the user class, but It definitely saved a bunch of time, which is a hot commodity currently. Didn't have a ton of time tonight, but I got a fair amount done. Just have to do testing and update my last join table classes, and I can actually start building the site. I'm really hoping that once I get all this unit testing knocked out, some of that will come a little easier, but we'll see.
+
+### <a id="033"></a>2022.05.05 - Indy Project
+- Code review Palmer's indy project
+- 
+
+#### Day's Reflection:
