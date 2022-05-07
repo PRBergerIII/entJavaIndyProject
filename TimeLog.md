@@ -36,7 +36,7 @@
 | 2022.05.04 | 8:45 | [Indy Project](#032)                      |
 | 2022.05.05 | 2:45 | [Indy Project](#033)                      |
 | 2022.05.06 | 4:30 | [Indy Project](#034)                      |
-| 2022.05.07 |      | [Indy Project](#035)                      | Start @ 9:00
+| 2022.05.07 |      | [Indy Project](#035)                      | 7:45 + Start @ 
 
 | Total Hours |     |
 |:------------|----:|
@@ -341,7 +341,9 @@ Didn't have a ton of time again today, and spent a good bit of it doing the code
 - Troubleshoot logging
 - Set up testing for WishListItem operations
 - Set up testing for WishList operations
+- Add further testing for User operations
+- 
 
 
 #### Day's Reflection:
-Turns out the logging error I have been getting forever was pretty easily fixed by just putting the hibernate logs in a different directory. Just learned that `HashSet.contains()` doesn't work if you modify an object *after* you put it in the hash set, because the mapping in the hash table is set when you put it in there, but modifying the object changes the hash code (if `hashCode()` for the object uses mutable fields). Discovered this [here](https://stackoverflow.com/questions/43553806/hashset-contains-returns-false-when-it-shouldnt) when trying to figure out why an assertion using `HashSet.contains()` was failing. Neat! So yeah anyway, I have refactored any attributes that may cause issues, some by 
+Turns out the logging error I have been getting forever was pretty easily fixed by just putting the hibernate logs in a different directory. Just learned that `HashSet.contains()` doesn't work if you modify an object *after* you put it in the hash set, because the mapping in the hash table is set when you put it in there, but modifying the object changes the hash code (if `hashCode()` for the object uses mutable fields). Discovered this [here](https://stackoverflow.com/questions/43553806/hashset-contains-returns-false-when-it-shouldnt) when trying to figure out why an assertion using `HashSet.contains()` was failing. Neat! I tried solving this by using Lists instead of Sets, but that caused it's own batch of issues. That was a whole rabbit hole, which if you'd like to read about it, is pretty well described [here](https://hibernate.atlassian.net/browse/HHH-6776). The very long string of comments includes a bunch of things I tried that didn't work, and it eventually just got closed as "well is seems to be fixed now", which I beg to differ with. At any rate, I realized that I could keep my wishlists collection on the User a set because the only thing that will change about a wishlist is its items, and that collection isn't in its hashcode method, and while there are a couple attributes of WishListItems that may be editable if I get to those features, I just removed them from the hashcode method, as I don't expect that to cause any issues.
