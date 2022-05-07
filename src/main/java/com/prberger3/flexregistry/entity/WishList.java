@@ -105,6 +105,14 @@ public class WishList {
         this.eventDate = eventDate;
     }
 
+    public Set<WishListItem> getItems() {
+        return items;
+    }
+
+    public void setItems(Set<WishListItem> items) {
+        this.items = items;
+    }
+
     public void addItem(WishListItem newItem) {
 
         items.add(newItem);
@@ -124,7 +132,7 @@ public class WishList {
 
         return "WishList{" +
                 "id=" + id +
-                ", owner=" + owner +
+                ", owner.id=" + owner.getId() + // To prevent stack overflow
                 ", title='" + title + '\'' +
                 ", visibility='" + visibility + '\'' +
                 ", purchasedItemsVisibility=" + purchasedItemsVisibility +

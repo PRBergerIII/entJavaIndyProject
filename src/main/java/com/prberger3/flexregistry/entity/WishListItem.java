@@ -119,6 +119,21 @@ public class WishListItem {
     }
 
     @Override
+    public String toString() {
+        return "WishListItem{" +
+                "id=" + id +
+                ", wishList.id=" + wishList.getId() +
+                ", name='" + name + '\'' +
+                ", specificItem=" + specificItem +
+                ", details='" + details + '\'' +
+                ", priority=" + priority +
+                ", priceRange='" + priceRange + '\'' +
+                ", purchased=" + purchased +
+                ", purchasedMessage='" + purchasedMessage + '\'' +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
