@@ -1,7 +1,6 @@
 package com.prberger3.flexregistry.persistence;
 
 import com.prberger3.flexregistry.entity.User;
-import com.prberger3.flexregistry.entity.UserConnection;
 import com.prberger3.flexregistry.entity.WishList;
 import com.prberger3.flexregistry.entity.WishListItem;
 import com.prberger3.flexregistry.util.Database;
@@ -11,8 +10,7 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 // TODO: 4/30/2022 javadocs
 
@@ -113,14 +111,15 @@ class WishListDaoTest {
                 1, "50-100", false, null);
         testList.addItem(testItem);
 
-        assertEquals(1, listDao.getAll().size());
+        assertEquals(1, itemDao.getAll().size());
+        assertEquals(1, testList.getItems().size());
 
         int newId = listDao.insert(testList);
         assertEquals(testList, listDao.getById(newId));
 
         testItem.setId(2);
         testItem.setWishList(testList);
-        assertEquals(testItem, listDao.getById(2));
+        assertEquals(testItem, itemDao.getById(2));
 
     }
 
@@ -131,17 +130,15 @@ class WishListDaoTest {
                 testUser, "My Birthday List 2", "public", false, "Birthday",
                 LocalDate.parse("2023-05-31"));
         WishListItem testItem = new WishListItem(
-                null, "Hoosit", true,
-                "go to this link: (pretend this is a link)",
-                1, "50-100", false, null);
-        testList.addItem(testItem);
+                testList, "Whatsit", true, "you know the one", 5, "10-20",
+                true, "Here you go!");
+        testItem.setId(1);
 
         assertEquals(1, itemDao.getAll().size());
 
         int newId = listDao.insert(testList);
         assertEquals(testList, listDao.getById(newId));
 
-        testItem.setId(2);
         testItem.setWishList(testList);
         assertEquals(testItem, itemDao.getById(2));
 
