@@ -105,9 +105,24 @@ public class WishList {
         this.eventDate = eventDate;
     }
 
+    public void addItem(WishListItem newItem) {
+
+        items.add(newItem);
+        newItem.setWishList(this);
+
+    }
+
+    public void removeItem(WishListItem removedItem) {
+
+        items.remove(removedItem);
+        removedItem.setWishList(null);
+
+    }
+
     @Override
     public String toString() {
-        return  "WishList{" +
+
+        return "WishList{" +
                 "id=" + id +
                 ", owner=" + owner +
                 ", title='" + title + '\'' +
@@ -117,6 +132,7 @@ public class WishList {
                 ", eventDate=" + eventDate +
                 ", items=" + items +
                 '}';
+
     }
 
     @Override

@@ -50,8 +50,7 @@ public class User {
             orphanRemoval = true)
     private Set<WishList> wishLists = new HashSet<>();
 
-    public User() {
-    }
+    public User() {}
 
     public User(String username,
                 String firstName,
