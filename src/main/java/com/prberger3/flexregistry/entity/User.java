@@ -238,6 +238,8 @@ public class User {
 
     }
 
+    // TODO: 5/7/2022 add get accepted followers list method
+
     public void addWishList(WishList newWishList) {
 
         newWishList.setOwner(this);
