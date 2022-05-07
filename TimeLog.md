@@ -339,7 +339,9 @@ Didn't have a ton of time again today, and spent a good bit of it doing the code
 
 ### <a id="035"></a>2022.05.06 - Indy Project
 - Troubleshoot logging
+- Set up testing for WishListItem operations
+- Set up testing for WishList operations
 
 
 #### Day's Reflection:
-Turns out the logging error I have been getting forever was pretty easily fixed by just putting the hibernate logs in a different directory. 
+Turns out the logging error I have been getting forever was pretty easily fixed by just putting the hibernate logs in a different directory. Just learned that `HashSet.contains()` doesn't work if you modify an object *after* you put it in the hash set, because the mapping in the hash table is set when you put it in there, but modifying the object changes the hash code (if `hashCode()` for the object uses mutable fields). Discovered this [here](https://stackoverflow.com/questions/43553806/hashset-contains-returns-false-when-it-shouldnt) when trying to figure out why an assertion using `HashSet.contains()` was failing. Neat! 

@@ -109,6 +109,8 @@ class WishListDaoTest {
                 null, "Hoosit", true,
                 "go to this link: (pretend this is a link)",
                 1, "50-100", false, null);
+
+        assertEquals(0, testList.getItems().size());
         testList.addItem(testItem);
 
         assertEquals(1, itemDao.getAll().size());
@@ -116,8 +118,8 @@ class WishListDaoTest {
 
         int newId = listDao.insert(testList);
         assertEquals(testList, listDao.getById(newId));
+        assertEquals(1, testList.getItems().size());
 
-        testItem.setId(2);
         testItem.setWishList(testList);
         assertEquals(testItem, itemDao.getById(2));
 
@@ -132,15 +134,15 @@ class WishListDaoTest {
         WishListItem testItem = new WishListItem(
                 testList, "Whatsit", true, "you know the one", 5, "10-20",
                 true, "Here you go!");
-        testItem.setId(1);
+        testList.addItem(testItem);
 
         assertEquals(1, itemDao.getAll().size());
+        assertEquals(1, testList.getItems().size());
 
-        int newId = listDao.insert(testList);
-        assertEquals(testList, listDao.getById(newId));
+        testList.removeItem(testItem);
 
-        testItem.setWishList(testList);
-        assertEquals(testItem, itemDao.getById(2));
+        assertEquals(0, itemDao.getAll().size());
+        assertEquals(0, testList.getItems().size());
 
     }
 
