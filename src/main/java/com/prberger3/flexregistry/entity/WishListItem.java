@@ -16,6 +16,7 @@ public class WishListItem {
     @GenericGenerator(name = "native",strategy = "native")
     private int id;
     @ManyToOne
+    @JoinColumn(name = "wish_list_id")
     private WishList wishList;
     private String name;
     @Column(name = "specific_item")
