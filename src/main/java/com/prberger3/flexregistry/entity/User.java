@@ -215,6 +215,7 @@ public class User {
 
     }
 
+    // TODO: 5/7/2022 refactor to deal with hash
     public void acceptFollowRequest(User follower) {
 
         for (UserConnection connection : followers) {
