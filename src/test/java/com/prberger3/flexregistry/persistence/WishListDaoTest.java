@@ -53,53 +53,50 @@ class WishListDaoTest {
 
     }
 
-//    @Test
-//    void saveOrUpdateSuccess() {
-//
-//        WishListItem testList = new WishListItem(
-//                testList, "Hoosits", false,
-//                "go kick rocks",
-//                5, "5000-10000", true, "hooray!");
-//        testList.setId(1);
-//
-//        listDao.saveOrUpdate(testList);
-//        assertEquals(testList, listDao.getById(1));
-//
-//    }
-//
-//    @Test
-//    void insertSuccess() {
-//
-//        WishListItem testList = new WishListItem(
-//                testList, "Hoosits", false,
-//                "go kick rocks",
-//                5, "5000-10000", true, "hooray!");
-//
-//        int newId = listDao.insert(testList);
-//        assertEquals(testList, listDao.getById(newId));
-//
-//    }
-//
-//    @Test
-//    void deleteSuccess() {
-//
-//        WishListItem testList = new WishListItem(
-//                testList, "Hoosit", true,
-//                "go to this link: (pretend this is a link)",
-//                1, "50-100", false, null);
-//        testList.setId(1);
-//
-//        listDao.delete(testList);
-//        assertNull(listDao.getById(1));
-//
-//    }
-//
-//    @Test
-//    void getAllSuccess() {
-//
-//        List<WishListItem> allItems = listDao.getAll();
-//        assertEquals(8, allItems.size());
-//
-//    }
+    @Test
+    void saveOrUpdateSuccess() {
+
+        WishList testList = new WishList(
+                testUser, "My Birthday List 2", "public", false, "Birthday",
+                LocalDate.parse("2023-05-31"));
+        testList.setId(1);
+
+        listDao.saveOrUpdate(testList);
+        assertEquals(testList, listDao.getById(1));
+
+    }
+
+    @Test
+    void insertSuccess() {
+
+        WishList testList = new WishList(
+                testUser, "My Birthday List 2", "public", false, "Birthday",
+                LocalDate.parse("2023-05-31"));
+
+        int newId = listDao.insert(testList);
+        assertEquals(testList, listDao.getById(newId));
+
+    }
+
+    @Test
+    void deleteSuccess() {
+
+        WishList testList = new WishList(
+                testUser, "My Birthday List", "public", true, "Birthday",
+                LocalDate.parse("2022-05-31"));
+        testList.setId(1);
+
+        listDao.delete(testList);
+        assertNull(listDao.getById(1));
+
+    }
+
+    @Test
+    void getAllSuccess() {
+
+        List<WishList> allItems = listDao.getAll();
+        assertEquals(4, allItems.size());
+
+    }
 
 }
