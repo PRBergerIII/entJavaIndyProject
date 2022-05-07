@@ -48,7 +48,7 @@ public class User {
             fetch = FetchType.EAGER,
             cascade = CascadeType.ALL,
             orphanRemoval = true)
-    private Set<WishList> wishLists = new HashSet<>();
+    private List<WishList> wishLists = new ArrayList<>();
 
     public User() {}
 
@@ -198,11 +198,11 @@ public class User {
         this.usersFollowed = usersFollowed;
     }
 
-    public Set<WishList> getWishLists() {
+    public List<WishList> getWishLists() {
         return wishLists;
     }
 
-    public void setWishLists(Set<WishList> wishLists) {
+    public void setWishLists(List<WishList> wishLists) {
         this.wishLists = wishLists;
     }
 
