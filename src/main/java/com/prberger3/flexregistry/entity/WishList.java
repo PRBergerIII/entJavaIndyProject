@@ -34,6 +34,21 @@ public class WishList {
             orphanRemoval = true)
     private Set<WishListItem> items = new HashSet<>();
 
+    public WishList() {}
+
+    public WishList(User owner, String title, String visibility,
+                    boolean purchasedItemsVisibility, String listType,
+                    LocalDate eventDate) {
+
+        this.owner = owner;
+        this.title = title;
+        this.visibility = visibility;
+        this.purchasedItemsVisibility = purchasedItemsVisibility;
+        this.listType = listType;
+        this.eventDate = eventDate;
+
+    }
+
     public int getId() {
         return id;
     }
