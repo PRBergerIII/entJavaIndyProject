@@ -8,19 +8,19 @@ import com.prberger3.flexregistry.util.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 // TODO: 4/30/2022 javadocs
-// TODO: 5/5/2022 do some tests
 
 class WishListDaoTest {
 
-    GenericDao<User> userDao;
+    User testUser;
+
     GenericDao<WishList> wishListDao;
-    GenericDao<WishListItem> wishListItemDao;
 
     /**
      * Sets up a new DAO and recreates the test database before each test.
@@ -31,9 +31,13 @@ class WishListDaoTest {
         Database database = Database.getInstance();
         database.runSQL("cleanWishListTests.sql");
 
-        userDao = new GenericDao<>(User.class);
+        testUser = new User(
+                "pberger", "Paul", "Berger", "pberger@madisoncollege.edu",
+                "123 main st", "place", "WI", "12324", "private",
+                "I am a size 6", true);
+        testUser.setId(1);
+
         wishListDao = new GenericDao<>(WishList.class);
-        wishListItemDao = new GenericDao<>(WishListItem.class);
 
     }
 
