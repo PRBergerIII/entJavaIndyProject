@@ -31,7 +31,7 @@ public class WishList {
             fetch = FetchType.EAGER,
             cascade = CascadeType.ALL,
             orphanRemoval = true)
-    private List<WishListItem> items = new ArrayList<>();
+    private Set<WishListItem> items = new HashSet<>();
 
     public WishList() {}
 
@@ -104,11 +104,11 @@ public class WishList {
         this.eventDate = eventDate;
     }
 
-    public List<WishListItem> getItems() {
+    public Set<WishListItem> getItems() {
         return items;
     }
 
-    public void setItems(List<WishListItem> items) {
+    public void setItems(Set<WishListItem> items) {
         this.items = items;
     }
 
