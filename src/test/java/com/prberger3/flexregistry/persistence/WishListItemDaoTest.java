@@ -62,20 +62,24 @@ class WishListItemDaoTest {
     @Test
     void saveOrUpdateSuccess() {
 
-        User testUser = new User("pbergerx",
-                "Paulx",
-                "Bergerx",
-                "pberger@madisoncollege.edux",
-                "123 main stx",
-                "placex",
-                "Wx",
-                "1232x",
-                "privatx",
-                "I am a size 6x",
-                false);
+        User testUser = new User(
+                "pberger", "Paul", "Berger", "pberger@madisoncollege.edu",
+                "123 main st", "place", "WI", "12324", "private",
+                "I am a size 6", true);
+        WishList testList = new WishList(
+                testUser, "My Birthday List", "public", true, "Birthday",
+                LocalDate.parse("2022-05-31"));
+        WishListItem testItem = new WishListItem(
+                testList, "Hoosits", false,
+                "go kick rocks",
+                5, "5000-10000", true, "hooray!");
+
         testUser.setId(1);
-        userDao.saveOrUpdate(testUser);
-        assertEquals(testUser, userDao.getById(1));
+        testList.setId(1);
+        testItem.setId(1);
+
+        itemDao.saveOrUpdate(testItem);
+        assertEquals(testItem, itemDao.getById(1));
 
     }
 
