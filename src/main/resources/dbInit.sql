@@ -102,23 +102,6 @@ CREATE TABLE `wish_list_item` (
   CONSTRAINT `wish_list_id_fk` FOREIGN KEY (`wish_list_id`) REFERENCES `wish_list` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `wish_list_visibility`
---
-
-DROP TABLE IF EXISTS `wish_list_visibility`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `wish_list_visibility` (
-  `user_id` int NOT NULL,
-  `wish_list_id` int NOT NULL,
-  PRIMARY KEY (`user_id`,`wish_list_id`),
-  KEY `wish_list_id_fk_idx` (`wish_list_id`),
-  CONSTRAINT `user_id_visibility_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `wish_list_id_visibility_fk` FOREIGN KEY (`wish_list_id`) REFERENCES `wish_list` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
