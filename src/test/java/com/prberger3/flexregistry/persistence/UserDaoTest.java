@@ -35,17 +35,11 @@ class UserDaoTest {
     @Test
     void getByIdSuccess() {
 
-        User testUser = new User("pberger",
-                                 "Paul",
-                                 "Berger",
-                                 "pberger@madisoncollege.edu",
-                                 "123 main st",
-                                 "place",
-                                 "WI",
-                                 "12324",
-                                 "private",
-                                 "I am a size 6",
-                                 true);
+        User testUser = new User(
+                "pberger", "Paul", "Berger", "pberger@madisoncollege.edu",
+                "123 main st", "place", "WI", "12324", "private",
+                "I am a size 6", true);
+
         testUser.setId(1);
         assertEquals(testUser, userDao.getById(1));
 
@@ -54,17 +48,11 @@ class UserDaoTest {
     @Test
     void saveOrUpdateSuccess() {
 
-        User testUser = new User("pbergerx",
-                                 "Paulx",
-                                 "Bergerx",
-                                 "pberger@madisoncollege.edux",
-                                 "123 main stx",
-                                 "placex",
-                                 "Wx",
-                                 "1232x",
-                                 "privatx",
-                                 "I am a size 6x",
-                                 false);
+        User testUser = new User(
+                "pbergerx", "Paulx", "Bergerx", "pberger@madisoncollege.edux",
+                "123 main stx", "placex", "Wx", "1232x", "privatx",
+                "I am a size 6x", false);
+
         testUser.setId(1);
         userDao.saveOrUpdate(testUser);
         assertEquals(testUser, userDao.getById(1));
@@ -74,17 +62,11 @@ class UserDaoTest {
     @Test
     void insertSuccess() {
 
-        User testUser = new User("pbergerx",
-                                 "Paulx",
-                                 "Bergerx",
-                                 "pberger@madisoncollege.edux",
-                                 "123 main stx",
-                                 "placex",
-                                 "Wx",
-                                 "1232x",
-                                 "privatx",
-                                 "I am a size 6x",
-                                 false);
+        User testUser = new User(
+                "pbergerx", "Paulx", "Bergerx", "pberger@madisoncollege.edux",
+                "123 main stx", "placex", "Wx", "1232x", "privatx",
+                "I am a size 6x", false);
+
         int newId = userDao.insert(testUser);
         assertEquals(testUser, userDao.getById(newId));
     }
@@ -92,17 +74,11 @@ class UserDaoTest {
     @Test
     void deleteSuccess() {
 
-        User testUser = new User("pberger",
-                                 "Paul",
-                                 "Berger",
-                                 "pberger@madisoncollege.edu",
-                                 "123 main st",
-                                 "place",
-                                 "WI",
-                                 "12324",
-                                 "private",
-                                 "I am a size 6",
-                                 true);
+        User testUser = new User(
+                "pberger", "Paul", "Berger", "pberger@madisoncollege.edu",
+                "123 main st", "place", "WI", "12324", "private",
+                "I am a size 6", true);
+
         testUser.setId(1);
         userDao.delete(testUser);
         assertNull(userDao.getById(1));
