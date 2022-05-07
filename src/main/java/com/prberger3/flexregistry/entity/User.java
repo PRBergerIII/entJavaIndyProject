@@ -221,7 +221,7 @@ public class User {
         for (UserConnection connection : followers) {
 
             if (connection.getFollower().equals(follower)
-                    && connection.isAccepted() == false) {
+                    && !connection.isAccepted()) {
 
                 connection.setAccepted(true);
                 break;
