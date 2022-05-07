@@ -164,22 +164,22 @@ class UserDaoTest {
 
     }
 
-//    @Test
-//    void removeListSuccess() {
-//
-//        WishList testList = listDao.getById(1);
-//        WishListItem testItem = itemDao.getById(1);
-//
-//        assertEquals(1, testList.getItems().size());
-//        assertEquals(1, itemDao.getAll().size());
-//
-//        testList.removeItem(testItem);
-//
-//        listDao.saveOrUpdate(testList);
-//
-//        assertEquals(0, testList.getItems().size());
-//        assertEquals(0, itemDao.getAll().size());
-//
-//    }
+    @Test
+    void removeListSuccess() {
+
+        User testUser = userDao.getById(1);
+        WishList testList = listDao.getById(1);
+
+        assertEquals(1, testUser.getWishLists().size());
+        assertEquals(1, listDao.getAll().size());
+
+        testUser.removeWishList(testList);
+
+        userDao.saveOrUpdate(testUser);
+
+        assertEquals(0, testUser.getWishLists().size());
+        assertEquals(0, listDao.getAll().size());
+
+    }
 
 }
