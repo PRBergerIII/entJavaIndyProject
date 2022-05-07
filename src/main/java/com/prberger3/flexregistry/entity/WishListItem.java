@@ -152,6 +152,6 @@ public class WishListItem {
     @Override
     public int hashCode() {
         return Objects.hash(id, wishList, name, specificItem, details,
-                            priority, priceRange, purchased, purchasedMessage);
+                            priority, priceRange);
     }
 }
