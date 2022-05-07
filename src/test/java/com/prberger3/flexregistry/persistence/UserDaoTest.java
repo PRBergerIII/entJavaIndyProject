@@ -1,12 +1,11 @@
 package com.prberger3.flexregistry.persistence;
 
-import com.prberger3.flexregistry.entity.User;
-import com.prberger3.flexregistry.entity.UserConnection;
-import com.prberger3.flexregistry.entity.UserConnectionId;
+import com.prberger3.flexregistry.entity.*;
 import com.prberger3.flexregistry.util.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -18,6 +17,7 @@ class UserDaoTest {
 
     GenericDao<User> userDao;
     GenericDao<UserConnection> userConnectionDao;
+    GenericDao<WishList> listDao;
 
     /**
      * Sets up a new DAO and recreates the test database before each test.
@@ -30,6 +30,8 @@ class UserDaoTest {
 
         userDao = new GenericDao<>(User.class);
         userConnectionDao = new GenericDao<>(UserConnection.class);
+        listDao = new GenericDao<>(WishList.class);
+
 
     }
 
@@ -138,5 +140,46 @@ class UserDaoTest {
         assertTrue(updatedUserFollowed.getFollowers().contains(updatedConnection));
 
     }
+
+    @Test
+    void addListSuccess() {
+
+        User testUser = userDao.getById(1);
+        WishList testList = new WishList(
+                null, "Christmas", "public", false, "Holiday",
+                LocalDate.parse("2022-12-25"));
+
+        assertEquals(1, testUser.getWishLists().size());
+        assertEquals(1, listDao.getAll().size());
+
+        testUser.addWishList(testList);
+
+        userDao.saveOrUpdate(testUser);
+        User updatedUser = userDao.getById(1);
+        assertEquals(testUser, updatedUser);
+        assertTrue(updatedUser.getWishLists().contains(testList));
+
+        testList.setOwner(testUser);
+        assertEquals(testList, listDao.getById(2));
+
+    }
+
+//    @Test
+//    void removeListSuccess() {
+//
+//        WishList testList = listDao.getById(1);
+//        WishListItem testItem = itemDao.getById(1);
+//
+//        assertEquals(1, testList.getItems().size());
+//        assertEquals(1, itemDao.getAll().size());
+//
+//        testList.removeItem(testItem);
+//
+//        listDao.saveOrUpdate(testList);
+//
+//        assertEquals(0, testList.getItems().size());
+//        assertEquals(0, itemDao.getAll().size());
+//
+//    }
 
 }

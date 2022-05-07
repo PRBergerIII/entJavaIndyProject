@@ -17,6 +17,7 @@ public class WishList {
     @GenericGenerator(name = "native",strategy = "native")
     private int id;
     @ManyToOne
+    @JoinColumn(name = "owner_id")
     private User owner;
     private String title;
     private String visibility;
