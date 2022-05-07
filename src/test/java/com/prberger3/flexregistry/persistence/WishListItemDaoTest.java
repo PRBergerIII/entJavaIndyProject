@@ -29,7 +29,7 @@ class WishListItemDaoTest {
     void setUp() {
 
         Database database = Database.getInstance();
-        database.runSQL("cleanWishListTests.sql");
+        database.runSQL("cleanWishListItemTests.sql");
 
         testUser = new User(
                 "pberger", "Paul", "Berger", "pberger@madisoncollege.edu",
