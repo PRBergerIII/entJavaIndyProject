@@ -88,6 +88,7 @@ class WishListDaoTest {
 
         listDao.delete(testList);
         assertNull(listDao.getById(1));
+        assertNull(itemDao.getById(1));
 
     }
 
@@ -111,14 +112,38 @@ class WishListDaoTest {
                 1, "50-100", false, null);
 
         assertEquals(0, testList.getItems().size());
+        assertEquals(1, itemDao.getAll().size());
+
         testList.addItem(testItem);
 
-        assertEquals(1, itemDao.getAll().size());
-        assertEquals(1, testList.getItems().size());
-
         int newId = listDao.insert(testList);
-        assertEquals(testList, listDao.getById(newId));
+        WishList updatedList = listDao.getById(newId);
+        assertEquals(testList, updatedList);
+        assertTrue(updatedList.getItems().contains(testItem));
+
+        testItem.setWishList(testList);
+        assertEquals(testItem, itemDao.getById(2));
+
+    }
+
+    @Test
+    void addListItemSuccess() {
+
+        WishList testList = listDao.getById(1);
+        WishListItem testItem = new WishListItem(
+                null, "Hoosit", true,
+                "go to this link: (pretend this is a link)",
+                1, "50-100", false, null);
+
         assertEquals(1, testList.getItems().size());
+        assertEquals(1, itemDao.getAll().size());
+
+        testList.addItem(testItem);
+
+        listDao.saveOrUpdate(testList);
+        WishList updatedList = listDao.getById(1);
+        assertEquals(testList, updatedList);
+        assertTrue(updatedList.getItems().contains(testItem));
 
         testItem.setWishList(testList);
         assertEquals(testItem, itemDao.getById(2));
@@ -131,8 +156,8 @@ class WishListDaoTest {
         WishList testList = listDao.getById(1);
         WishListItem testItem = itemDao.getById(1);
 
-        assertEquals(1, itemDao.getAll().size());
         assertEquals(1, testList.getItems().size());
+        assertEquals(1, itemDao.getAll().size());
 
         testList.removeItem(testItem);
 

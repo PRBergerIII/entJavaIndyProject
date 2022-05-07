@@ -12,12 +12,4 @@ values  (1, 'My Birthday List', 'public', true, 'Birthday', '2022-05-31'),
         (1, 'New Baby Boyyyeeeeee', 'followers', false, 'Shower', '2023-03-12'),
         (1, 'Treat Yo'' Self', 'private', true, null, null);
 insert into flexregistry_test.wish_list_item (wish_list_id, name, specific_item, details, priority, price_range, purchased, purchased_message)
-values  #(1, 'Hoosit', true, 'go to this link: (pretend this is a link)', 1, '50-100', false, null),
-        (1, 'Whatsit', true, 'you know the one', 5, '10-20', true, 'Here you go!')#,
-#         (2, 'Thing', false, 'the thing', 3, null, false, null),
-#         (2, 'Shirt', false, 'I like blue, so any blue', 4, null, false, null),
-#         (3, 'diapers', true, 'Only want huggies, but any amount will do', 2, null, false, null),
-#         (3, 'car seat', true, 'Only the best for my little champ', 5, '100000', false, null),
-#         (3, 'teething rings', false, 'Any will do', 2, '5-10', true, 'chomp chomp!'),
-#         (4, 'PS5', true, 'Link to stock monitoring site', 5, '499', false, null)
-          ;
+values  (1, 'Whatsit', true, 'you know the one', 5, '10-20', true, 'Here you go!');
