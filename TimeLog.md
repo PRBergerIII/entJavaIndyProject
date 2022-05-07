@@ -331,6 +331,7 @@ So today I learned that Intellij has a persistence mapping generator, and it's p
 
 ### <a id="033"></a>2022.05.05 - Indy Project
 - Code review Palmer's indy project
-- 
+- Get unit testing for WishListItem operations finished
 
 #### Day's Reflection:
+Didn't have a ton of time again today, and spent a good bit of it doing the code review. Had an issue with my User class at first where none of the tests were passing, but it's because I had added a hash set for the user's wishlists, and didn't properly map the column on the many side. Didn't take too terribly long to track down though.
