@@ -4,9 +4,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 // TODO: 5/5/2022 add javadocs
 
@@ -32,7 +30,7 @@ public class WishList {
             fetch = FetchType.EAGER,
             cascade = CascadeType.ALL,
             orphanRemoval = true)
-    private Set<WishListItem> items = new HashSet<>();
+    private List<WishListItem> items = new ArrayList<>();
 
     public WishList() {}
 
@@ -105,11 +103,11 @@ public class WishList {
         this.eventDate = eventDate;
     }
 
-    public Set<WishListItem> getItems() {
+    public List<WishListItem> getItems() {
         return items;
     }
 
-    public void setItems(Set<WishListItem> items) {
+    public void setItems(List<WishListItem> items) {
         this.items = items;
     }
 

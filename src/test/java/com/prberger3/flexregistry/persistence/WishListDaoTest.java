@@ -128,21 +128,18 @@ class WishListDaoTest {
     @Test
     void removeListItemSuccess() {
 
-        WishList testList = new WishList(
-                testUser, "My Birthday List 2", "public", false, "Birthday",
-                LocalDate.parse("2023-05-31"));
-        WishListItem testItem = new WishListItem(
-                testList, "Whatsit", true, "you know the one", 5, "10-20",
-                true, "Here you go!");
-        testList.addItem(testItem);
+        WishList testList = listDao.getById(1);
+        WishListItem testItem = itemDao.getById(1);
 
         assertEquals(1, itemDao.getAll().size());
         assertEquals(1, testList.getItems().size());
 
         testList.removeItem(testItem);
 
-        assertEquals(0, itemDao.getAll().size());
+        listDao.saveOrUpdate(testList);
+
         assertEquals(0, testList.getItems().size());
+        assertEquals(0, itemDao.getAll().size());
 
     }
 
