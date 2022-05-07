@@ -29,6 +29,23 @@ public class WishListItem {
     @Column(name = "purchased_message")
     private String purchasedMessage;
 
+    public WishListItem() {}
+
+    public WishListItem(WishList wishList, String name, Boolean specificItem,
+                        String details, int priority, String priceRange,
+                        boolean purchased, String purchasedMessage) {
+
+        this.wishList = wishList;
+        this.name = name;
+        this.specificItem = specificItem;
+        this.details = details;
+        this.priority = priority;
+        this.priceRange = priceRange;
+        this.purchased = purchased;
+        this.purchasedMessage = purchasedMessage;
+
+    }
+
     public int getId() {
         return id;
     }
