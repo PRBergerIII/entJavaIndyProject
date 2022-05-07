@@ -20,7 +20,7 @@ class WishListDaoTest {
 
     User testUser;
 
-    GenericDao<WishList> wishListDao;
+    GenericDao<WishList> listDao;
 
     /**
      * Sets up a new DAO and recreates the test database before each test.
@@ -37,49 +37,69 @@ class WishListDaoTest {
                 "I am a size 6", true);
         testUser.setId(1);
 
-        wishListDao = new GenericDao<>(WishList.class);
+        listDao = new GenericDao<>(WishList.class);
 
     }
 
     @Test
     void getByIdSuccess() {
 
-        
+        WishList testList = new WishList(
+                testUser, "My Birthday List", "public", true, "Birthday",
+                LocalDate.parse("2022-05-31"));
+        testList.setId(1);
+
+        assertEquals(testList, listDao.getById(1));
 
     }
 
-    @Test
-    void saveOrUpdateSuccess() {
-
-        
-
-    }
-
-    @Test
-    void insertSuccess() {
-
-       
-    }
-
-    @Test
-    void deleteSuccess() {
-
-        
-
-    }
-
-    @Test
-    void getAllSuccess() {
-
-        
-
-    }
-
-    @Test
-    void addFollowerSuccess() {
-
-        
-
-    }
+//    @Test
+//    void saveOrUpdateSuccess() {
+//
+//        WishListItem testList = new WishListItem(
+//                testList, "Hoosits", false,
+//                "go kick rocks",
+//                5, "5000-10000", true, "hooray!");
+//        testList.setId(1);
+//
+//        listDao.saveOrUpdate(testList);
+//        assertEquals(testList, listDao.getById(1));
+//
+//    }
+//
+//    @Test
+//    void insertSuccess() {
+//
+//        WishListItem testList = new WishListItem(
+//                testList, "Hoosits", false,
+//                "go kick rocks",
+//                5, "5000-10000", true, "hooray!");
+//
+//        int newId = listDao.insert(testList);
+//        assertEquals(testList, listDao.getById(newId));
+//
+//    }
+//
+//    @Test
+//    void deleteSuccess() {
+//
+//        WishListItem testList = new WishListItem(
+//                testList, "Hoosit", true,
+//                "go to this link: (pretend this is a link)",
+//                1, "50-100", false, null);
+//        testList.setId(1);
+//
+//        listDao.delete(testList);
+//        assertNull(listDao.getById(1));
+//
+//    }
+//
+//    @Test
+//    void getAllSuccess() {
+//
+//        List<WishListItem> allItems = listDao.getAll();
+//        assertEquals(8, allItems.size());
+//
+//    }
 
 }
