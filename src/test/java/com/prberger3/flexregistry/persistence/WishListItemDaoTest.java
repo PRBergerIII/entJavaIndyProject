@@ -17,8 +17,6 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 class WishListItemDaoTest {
 
-    GenericDao<User> userDao;
-    GenericDao<WishList> listDao;
     GenericDao<WishListItem> itemDao;
 
     User testUser;
