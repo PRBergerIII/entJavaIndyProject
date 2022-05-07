@@ -39,15 +39,14 @@ public class GenericDao<T> {
 
     }
 
-    // TODO: 5/5/2022 delete if not needed
-//    public <T>T getById(Serializable id) {
-//
-//        Session session = getSession();
-//        T entity = (T)session.get(type, id);
-//        session.close();
-//        return entity;
-//
-//    }
+    public <T>T getById(Serializable id) {
+
+        Session session = getSession();
+        T entity = (T)session.get(type, id);
+        session.close();
+        return entity;
+
+    }
 
     public void saveOrUpdate(T entity) {
 
@@ -111,24 +110,22 @@ public class GenericDao<T> {
 
     }
 
+    /**
+     * Finds entities by one of its properties.
 
-    // TODO: 5/5/2022 delete if not needed
-//    /**
-//     * Finds entities by one of its properties.
-//
-//     * @param propertyName the property name.
-//     * @param value the value by which to find.
-//     * @return
-//     */
-//    public List<T> findByPropertyEqual(String propertyName, Object value) {
-//        Session session = getSession();
-//        CriteriaBuilder builder = session.getCriteriaBuilder();
-//        CriteriaQuery<T> query = builder.createQuery(type);
-//        Root<T> root = query.from(type);
-//        query.select(root).where(builder.equal(root.get(propertyName),value));
-//
-//        return session.createQuery(query).getResultList();
-//    }
+     * @param propertyName the property name.
+     * @param value the value by which to find.
+     * @return
+     */
+    public List<T> findByPropertyEqual(String propertyName, Object value) {
+        Session session = getSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<T> query = builder.createQuery(type);
+        Root<T> root = query.from(type);
+        query.select(root).where(builder.equal(root.get(propertyName),value));
+
+        return session.createQuery(query).getResultList();
+    }
 
     /**
      * Finds entities by one of its properties.

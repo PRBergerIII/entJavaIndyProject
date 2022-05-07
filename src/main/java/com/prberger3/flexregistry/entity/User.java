@@ -215,7 +215,6 @@ public class User {
 
     }
 
-    // TODO: 5/7/2022 refactor to deal with hash
     public void acceptFollowRequest(User follower) {
 
         for (UserConnection connection : followers) {
@@ -223,7 +222,14 @@ public class User {
             if (connection.getFollower().equals(follower)
                     && !connection.isAccepted()) {
 
+                followers.remove(connection);
+                follower.getUsersFollowed().remove(connection);
+
                 connection.setAccepted(true);
+
+                followers.add(connection);
+                follower.getUsersFollowed().add(connection);
+
                 break;
 
             }

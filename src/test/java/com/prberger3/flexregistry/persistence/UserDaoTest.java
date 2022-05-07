@@ -2,6 +2,7 @@ package com.prberger3.flexregistry.persistence;
 
 import com.prberger3.flexregistry.entity.User;
 import com.prberger3.flexregistry.entity.UserConnection;
+import com.prberger3.flexregistry.entity.UserConnectionId;
 import com.prberger3.flexregistry.util.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -110,9 +111,8 @@ class UserDaoTest {
 
     }
 
-    // TODO: 5/7/2022  retest acter refactor
     @Test
-    void acceptFollowRequestTest() {
+    void acceptFollowRequestSuccess() {
 
         User follower = userDao.getById(1);
         User userFollowed = userDao.getById(3);
@@ -125,8 +125,17 @@ class UserDaoTest {
         userDao.saveOrUpdate(follower);
         userDao.saveOrUpdate(userFollowed);
 
+        User updatedFollower = userDao.getById(1);
+        User updatedUserFollowed = userDao.getById(3);
+
+        UserConnectionId connectionId = new UserConnectionId(updatedFollower,
+                updatedUserFollowed);
+        UserConnection updatedConnection = userConnectionDao.getById(connectionId);
+
         assertEquals(2, userConnectionDao.findByPropertyEqual(
                 "accepted", false).size());
+        assertTrue(updatedFollower.getUsersFollowed().contains(updatedConnection));
+        assertTrue(updatedUserFollowed.getFollowers().contains(updatedConnection));
 
     }
 
