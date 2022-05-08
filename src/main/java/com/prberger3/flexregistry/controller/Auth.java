@@ -96,7 +96,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
                 //TODO forward to an error page
             }
         }
-        RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/");
         dispatcher.forward(req, resp);
 
     }

@@ -28,6 +28,11 @@
     <servlet-class>com.prberger3.flexregistry.controller.ApplicationStartup</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>Home</servlet-name>
+    <jsp-file>/jsp/index.jsp</jsp-file>
+  </servlet>
+
   <!-- ********************************************************************* -->
   <!-- Servlet Mappings **************************************************** -->
   <!-- ********************************************************************* -->
@@ -47,6 +52,11 @@
   <servlet-mapping>
     <servlet-name>applicationStartup</servlet-name>
     <url-pattern>/flexRegistry-startup</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Home</servlet-name>
+    <url-pattern>/</url-pattern>
   </servlet-mapping>
 
 </web-app>

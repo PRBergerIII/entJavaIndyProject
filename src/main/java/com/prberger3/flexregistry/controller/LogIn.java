@@ -20,6 +20,7 @@ import java.util.Properties;
  *
  */
 public class LogIn extends HttpServlet implements PropertiesLoader {
+
     Properties properties;
     private final Logger logger = LogManager.getLogger(this.getClass());
     public static String CLIENT_ID;
@@ -33,8 +34,7 @@ public class LogIn extends HttpServlet implements PropertiesLoader {
     }
 
     /**
-     * Read in the cognito props file and get the client id and required urls
-     * for authenticating a user.
+     * todo
      */
     // TODO This code appears in a couple classes, consider using a startup servlet similar to adv java project
     // 4 to do this work a single time and put the properties in the application scope
