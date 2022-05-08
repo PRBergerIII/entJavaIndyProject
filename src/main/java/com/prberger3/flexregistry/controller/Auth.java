@@ -78,7 +78,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
             throws ServletException, IOException {
         String authCode = req.getParameter("code");
         String userName = null;
-        String url =  "/";
+        String url =  "/user-handler";
 
         if (authCode == null) {
             //TODO forward to an error page or back to the login
@@ -86,7 +86,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
             HttpRequest authRequest = buildAuthRequest(authCode);
             try {
                 TokenResponse tokenResponse = getToken(authRequest);
-                userName = validate(tokenResponse);
+                userName = validate(tokenResponse); // TODO: 5/8/2022 make this a user instead of just username ("authorizedUser")
                 req.setAttribute("userName", userName);
             } catch (IOException e) {
                 logger.error("Error getting or validating the token: " + e.getMessage(), e);

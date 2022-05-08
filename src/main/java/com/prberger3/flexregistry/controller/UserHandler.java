@@ -10,7 +10,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.List;
 
 public class UserHandler extends HttpServlet {
 
@@ -41,7 +43,32 @@ public class UserHandler extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        HttpSession session = request.getSession();
+        String userName = (String) request.getAttribute("userName");
+        User foundUser = findUser(userName);
+        String url = "/";
 
+        if (foundUser != null) {
+            session.setAttribute("loggedIn", true);
+            session.setAttribute("user", foundUser);
+        } else {
+//            handle adding to the db here
+        }
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+        dispatcher.forward(request, response);
+
+    }
+
+    private User findUser(String userName) {
+
+        List<User> result = userDao.findByPropertyEqual("userName", userName);
+
+        if (result.size() == 1) {
+            return result.get(0);
+        } else {
+            return null;
+        }
 
     }
 
