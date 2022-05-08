@@ -26,6 +26,7 @@
 .idea/uiDesigner.xml
 database.properties
 hibernate.cfg.xml
+cognito.properties
 
 # Gradle:
 .idea/gradle.xml
