@@ -20,7 +20,7 @@ public class WishListItem {
     private WishList wishList;
     private String name;
     @Column(name = "specific_item")
-    private Boolean specificItem;
+    private boolean specificItem;
     private String details;
     private int priority;
     @Column(name = "price_range")
@@ -70,11 +70,11 @@ public class WishListItem {
         this.name = name;
     }
 
-    public Boolean getSpecificItem() {
+    public boolean getSpecificItem() {
         return specificItem;
     }
 
-    public void setSpecificItem(Boolean specificItem) {
+    public void setSpecificItem(boolean specificItem) {
         this.specificItem = specificItem;
     }
 

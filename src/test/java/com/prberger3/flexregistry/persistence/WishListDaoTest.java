@@ -42,6 +42,14 @@ class WishListDaoTest {
     }
 
     @Test
+    void getAllSuccess() {
+
+        List<WishList> allItems = listDao.getAll();
+        assertEquals(4, allItems.size());
+
+    }
+
+    @Test
     void getByIdSuccess() {
 
         WishList testList = new WishList(
@@ -89,14 +97,6 @@ class WishListDaoTest {
         listDao.delete(testList);
         assertNull(listDao.getById(1));
         assertNull(itemDao.getById(1));
-
-    }
-
-    @Test
-    void getAllSuccess() {
-
-        List<WishList> allItems = listDao.getAll();
-        assertEquals(4, allItems.size());
 
     }
 

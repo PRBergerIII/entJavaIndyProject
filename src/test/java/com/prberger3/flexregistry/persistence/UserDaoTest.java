@@ -36,15 +36,40 @@ class UserDaoTest {
     }
 
     @Test
+    void getAllSuccess() {
+
+        List<User> allUsers = userDao.getAll();
+        assertEquals(3, allUsers.size());
+
+    }
+
+    @Test
     void getByIdSuccess() {
 
         User testUser = new User(
                 "pberger", "Paul", "Berger", "pberger@madisoncollege.edu",
                 "123 main st", "place", "WI", "12324", "private",
                 "I am a size 6", true);
-
         testUser.setId(1);
+
         assertEquals(testUser, userDao.getById(1));
+
+    }
+
+    @Test
+    void findByPropertyEqual() {
+
+        User testUser = new User(
+                "pberger", "Paul", "Berger", "pberger@madisoncollege.edu",
+                "123 main st", "place", "WI", "12324", "private",
+                "I am a size 6", true);
+        testUser.setId(1);
+
+        List<User> foundUsers = userDao.findByPropertyEqual("lastName",
+                                                            "Berger");
+
+        assertTrue(foundUsers.contains(testUser));
+        assertEquals(1, foundUsers.size());
 
     }
 
@@ -85,14 +110,6 @@ class UserDaoTest {
         testUser.setId(1);
         userDao.delete(testUser);
         assertNull(userDao.getById(1));
-
-    }
-
-    @Test
-    void getAllSuccess() {
-
-        List<User> allUsers = userDao.getAll();
-        assertEquals(3, allUsers.size());
 
     }
 
