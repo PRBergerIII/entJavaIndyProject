@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
+// TODO: 5/8/2022 javadoc 
 public class UserHandler extends HttpServlet {
 
     GenericDao<User> userDao;
@@ -44,8 +45,8 @@ public class UserHandler extends HttpServlet {
             throws ServletException, IOException {
 
         HttpSession session = request.getSession();
-        String userName = (String) request.getAttribute("userName");
-        User foundUser = findUser(userName);
+        String username = (String) request.getAttribute("username");
+        User foundUser = findUser(username);
         String url = "/";
 
         if (foundUser != null) {
@@ -64,6 +65,8 @@ public class UserHandler extends HttpServlet {
 
         List<User> result = userDao.findByPropertyEqual("username", userName);
 
+        // This will never be more than 1; the database requires that username
+        // be a unique value to match cognito constraints
         if (result.size() == 1) {
             return result.get(0);
         } else {

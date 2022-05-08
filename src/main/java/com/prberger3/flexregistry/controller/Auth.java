@@ -77,7 +77,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String authCode = req.getParameter("code");
-        String userName = null;
+        String username = null;
         String url =  "/user-handler";
 
         if (authCode == null) {
@@ -86,8 +86,8 @@ public class Auth extends HttpServlet implements PropertiesLoader {
             HttpRequest authRequest = buildAuthRequest(authCode);
             try {
                 TokenResponse tokenResponse = getToken(authRequest);
-                userName = validate(tokenResponse); // TODO: 5/8/2022 make this a user instead of just username ("authorizedUser")
-                req.setAttribute("userName", userName);
+                username = validate(tokenResponse); // TODO: 5/8/2022 make this a user instead of just username ("authorizedUser")
+                req.setAttribute("username", username);
             } catch (IOException e) {
                 logger.error("Error getting or validating the token: " + e.getMessage(), e);
                 //TODO forward to an error page
