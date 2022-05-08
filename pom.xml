@@ -9,7 +9,7 @@
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>Flex Registry Maven Webapp</name>
+  <name>FlexRegistryMavenWebapp</name>
   <url>http://entjavaprb3.us-east-2.elasticbeanstalk.com/</url>
 
   <properties>
