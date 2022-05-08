@@ -62,7 +62,7 @@ public class UserHandler extends HttpServlet {
 
     private User findUser(String userName) {
 
-        List<User> result = userDao.findByPropertyEqual("userName", userName);
+        List<User> result = userDao.findByPropertyEqual("username", userName);
 
         if (result.size() == 1) {
             return result.get(0);
