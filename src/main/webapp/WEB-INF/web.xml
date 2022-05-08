@@ -40,13 +40,18 @@
   </servlet>
 
   <servlet>
+    <servlet-name>LogIn</servlet-name>
+    <servlet-class>com.prberger3.flexregistry.controller.LogIn</servlet-class>
+  </servlet>
+
+  <servlet>
     <servlet-name>Auth</servlet-name>
     <servlet-class>com.prberger3.flexregistry.controller.Auth</servlet-class>
   </servlet>
 
   <servlet>
-    <servlet-name>LogIn</servlet-name>
-    <servlet-class>com.prberger3.flexregistry.controller.LogIn</servlet-class>
+    <servlet-name>UserHandler</servlet-name>
+    <servlet-class>com.prberger3.flexregistry.controller.UserHandler</servlet-class>
   </servlet>
 
   <servlet>
@@ -95,13 +100,18 @@
   </servlet-mapping>
 
   <servlet-mapping>
+    <servlet-name>UserHandler</servlet-name>
+    <url-pattern>/user-handler</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
     <servlet-name>SearchResultsDisplay</servlet-name>
-    <url-pattern>/searchResults</url-pattern>
+    <url-pattern>/search-results</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
     <servlet-name>SearchResults</servlet-name>
-    <url-pattern>/searchResultsJSP</url-pattern>
+    <url-pattern>/search-results-jsp</url-pattern>
   </servlet-mapping>
 
 </web-app>

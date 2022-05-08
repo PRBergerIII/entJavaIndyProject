@@ -6,7 +6,6 @@ import org.apache.logging.log4j.Logger;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import java.io.IOException;
 import java.util.Properties;
@@ -18,11 +17,6 @@ import java.util.Properties;
  *
  * @author  Paul Berger
  */
-@WebServlet(
-        name = "applicationStartup",
-        urlPatterns = { "/flexRegistry-startup" },
-        loadOnStartup = 1
-)
 public class ApplicationStartup extends HttpServlet implements PropertiesLoader {
 
     Properties properties;
@@ -34,6 +28,7 @@ public class ApplicationStartup extends HttpServlet implements PropertiesLoader 
      *
      * @throws ServletException  if there is a Servlet failure
      */
+    @Override
     public void init() throws ServletException {
 
         try {

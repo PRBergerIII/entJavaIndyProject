@@ -78,6 +78,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
             throws ServletException, IOException {
         String authCode = req.getParameter("code");
         String userName = null;
+        String url =  "/";
 
         if (authCode == null) {
             //TODO forward to an error page or back to the login
@@ -95,7 +96,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
                 //TODO forward to an error page
             }
         }
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/");
+        RequestDispatcher dispatcher = req.getRequestDispatcher(url);
         dispatcher.forward(req, resp);
 
     }
