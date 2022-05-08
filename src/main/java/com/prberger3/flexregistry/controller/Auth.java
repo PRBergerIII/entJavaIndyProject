@@ -6,7 +6,7 @@ import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import edu.matc.auth.*;
+import com.prberger3.flexregistry.auth.*;
 import com.prberger3.flexregistry.util.PropertiesLoader;
 import org.apache.commons.io.*;
 import org.apache.logging.log4j.LogManager;
