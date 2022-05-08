@@ -74,7 +74,8 @@ public class Auth extends HttpServlet implements PropertiesLoader {
      * @throws IOException
      */
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         String authCode = req.getParameter("code");
         String userName = null;
 

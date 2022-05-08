@@ -30,7 +30,12 @@
   </servlet>
 
   <servlet>
-    <servlet-name>Home</servlet-name>
+    <servlet-name>IndexDisplay</servlet-name>
+    <servlet-class>com.prberger3.flexregistry.controller.display.IndexDisplay</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Index</servlet-name>
     <jsp-file>/jsp/index.jsp</jsp-file>
   </servlet>
 
@@ -54,20 +59,19 @@
 <!--    <url-pattern>/lab32</url-pattern>-->
 <!--  </servlet-mapping>-->
 
-<!--  JSP-->
-<!--  <servlet-mapping>-->
-<!--    <servlet-name>FirstJSP</servlet-name>-->
-<!--    <url-pattern>/firstjsp</url-pattern>-->
-<!--  </servlet-mapping>-->
-
   <servlet-mapping>
     <servlet-name>applicationStartup</servlet-name>
     <url-pattern>/flexRegistry-startup</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
-    <servlet-name>Home</servlet-name>
+    <servlet-name>IndexDisplay</servlet-name>
     <url-pattern>/</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Index</servlet-name>
+    <url-pattern>/index</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
