@@ -362,7 +362,9 @@ Turns out the logging error I have been getting forever was pretty easily fixed 
   - move properties loading to startup servlet
 - Checkpoint 3 stuff
   - Restructrue jsp imports
+  - save logged in user to session
+  - 
 
 
 #### Day's Reflection:
-Getting cognito running in the local environment wasn't too bad. 
+Getting cognito running in the local environment wasn't too bad. In working on saving the user to the session, I came across [this answer](https://stackoverflow.com/a/33482404) on stack overflow that made a good point about storing only the id to the session, and since I am planning to use a servlet to load every jsp anyway, this works, as I can just retrieve the full user and pass it per request to keep it as up to date as possible. Only thing I am wondering here is if instatiating a DAO on every servlet is best practice, but at this point it's what I'm going with. 

@@ -1,5 +1,8 @@
 package com.prberger3.flexregistry.controller.display;
 
+import com.prberger3.flexregistry.entity.User;
+import com.prberger3.flexregistry.persistence.GenericDao;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.IOException;
@@ -26,6 +29,16 @@ public class IndexDisplay extends HttpServlet {
         String url = "/index";
         String title = "Home - Flex Registry";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+        HttpSession session = request.getSession();
+
+        if (session.getAttribute("userId") != null) {
+
+            int userId = (int) session.getAttribute("userId");
+            GenericDao<User> userDao = new GenericDao<>(User.class);
+
+            request.setAttribute("user", userDao.getById(userId));
+
+        }
 
         request.setAttribute("title", title);
         dispatcher.forward(request, response);

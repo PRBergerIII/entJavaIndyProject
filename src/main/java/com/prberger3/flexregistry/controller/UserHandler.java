@@ -45,13 +45,12 @@ public class UserHandler extends HttpServlet {
             throws ServletException, IOException {
 
         HttpSession session = request.getSession();
-        String username = (String) request.getAttribute("authenticatedUser");
-        User foundUser = findUser(username);
+        User authenticatedUser = (User) request.getAttribute("authenticatedUser");
+        User foundUser = findUser(authenticatedUser.getUsername());
         String url = "/";
 
         if (foundUser != null) {
-            session.setAttribute("loggedIn", true);
-            session.setAttribute("user", foundUser);
+            session.setAttribute("userId", foundUser.getId());
         } else {
 //            handle adding to the db here
         }
@@ -74,5 +73,7 @@ public class UserHandler extends HttpServlet {
         }
 
     }
+
+//    private void
 
 }
