@@ -13,8 +13,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -41,6 +41,7 @@ import java.util.stream.Collectors;
 
 
 // TODO if something goes wrong it this process, route to an error page. Currently, errors are only caught and logged.
+// TODO: 5/8/2022 javadocs
 /**
  * Inspired by: https://stackoverflow.com/questions/52144721/how-to-get-access-token-using-client-credentials-using-java-code
  */
@@ -61,7 +62,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
     @Override
     public void init() throws ServletException {
         super.init();
-        loadProperties();
+        getProperties();
         loadKey();
     }
 
@@ -232,25 +233,22 @@ public class Auth extends HttpServlet implements PropertiesLoader {
     }
 
     /**
-     * Read in the cognito props file and get/set the client id, secret, and required urls
-     * for authenticating a user.
+     * todo
      */
-    // TODO This code appears in a couple classes, consider using a startup servlet similar to adv java project
-    private void loadProperties() {
-        try {
-            properties = loadProperties("/cognito.properties");
-            CLIENT_ID = properties.getProperty("client.id");
-            CLIENT_SECRET = properties.getProperty("client.secret");
-            OAUTH_URL = properties.getProperty("oauthURL");
-            LOGIN_URL = properties.getProperty("loginURL");
-            REDIRECT_URL = properties.getProperty("redirectURL");
-            REGION = properties.getProperty("region");
-            POOL_ID = properties.getProperty("poolId");
-        } catch (IOException ioException) {
-            logger.error("Cannot load properties..." + ioException.getMessage(), ioException);
-        } catch (Exception e) {
-            logger.error("Error loading properties" + e.getMessage(), e);
-        }
+    private void getProperties() {
+
+        ServletContext context = getServletContext();
+        properties = (Properties) context.getAttribute("cognitoProperties");
+
+        CLIENT_ID = properties.getProperty("client.id");
+        CLIENT_SECRET = properties.getProperty("client.secret");
+        OAUTH_URL = properties.getProperty("oauthURL");
+        LOGIN_URL = properties.getProperty("loginURL");
+        REDIRECT_URL = properties.getProperty("redirectURL");
+        REGION = properties.getProperty("region");
+        POOL_ID = properties.getProperty("poolId");
+
     }
+
 }
 

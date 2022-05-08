@@ -19,6 +19,8 @@ import java.util.Properties;
  * @author  Paul Berger
  */
 @WebServlet(
+        name = "applicationStartup",
+        urlPatterns = { "/flexRegistry-startup" },
         loadOnStartup = 1
 )
 public class ApplicationStartup extends HttpServlet implements PropertiesLoader {
@@ -44,7 +46,7 @@ public class ApplicationStartup extends HttpServlet implements PropertiesLoader 
 
         ServletContext context = getServletContext();
         context.setAttribute("cognitoProperties", properties);
-
+ 
     }
 
 }

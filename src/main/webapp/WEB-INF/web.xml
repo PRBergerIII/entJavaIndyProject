@@ -26,6 +26,7 @@
   <servlet>
     <servlet-name>applicationStartup</servlet-name>
     <servlet-class>com.prberger3.flexregistry.controller.ApplicationStartup</servlet-class>
+    <load-on-startup>1</load-on-startup>
   </servlet>
 
   <servlet>
