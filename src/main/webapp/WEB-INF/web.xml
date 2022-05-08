@@ -33,6 +33,16 @@
     <jsp-file>/jsp/index.jsp</jsp-file>
   </servlet>
 
+  <servlet>
+    <servlet-name>Auth</servlet-name>
+    <servlet-class>com.prberger3.flexregistry.controller.Auth</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>LogIn</servlet-name>
+    <servlet-class>com.prberger3.flexregistry.controller.LogIn</servlet-class>
+  </servlet>
+
   <!-- ********************************************************************* -->
   <!-- Servlet Mappings **************************************************** -->
   <!-- ********************************************************************* -->
@@ -57,6 +67,16 @@
   <servlet-mapping>
     <servlet-name>Home</servlet-name>
     <url-pattern>/</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>LogIn</servlet-name>
+    <url-pattern>/logIn</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Auth</servlet-name>
+    <url-pattern>/auth</url-pattern>
   </servlet-mapping>
 
 </web-app>
