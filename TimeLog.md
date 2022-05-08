@@ -360,6 +360,8 @@ Turns out the logging error I have been getting forever was pretty easily fixed 
   - create new user pool
   - get login operation working and talking to cognito
   - move properties loading to startup servlet
+- Checkpoint 3 stuff
+  - Restructrue jsp imports
 
 
 #### Day's Reflection:

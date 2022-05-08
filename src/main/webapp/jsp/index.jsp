@@ -7,10 +7,7 @@ Individual Project: Registry - Home
 -->
 
 <html lang="en" dir="ltr">
-<head>
-  <c:import url="/imports/headTags.jsp"/>
-  <title>Home - Registry</title>
-</head>
+<c:import url="/imports/head.jsp"/>
 <body>
 
 <div class="container">
