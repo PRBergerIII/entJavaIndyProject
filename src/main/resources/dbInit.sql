@@ -37,7 +37,8 @@ CREATE TABLE `user` (
   `address_visibility` varchar(9) NOT NULL DEFAULT 'private',
   `about` varchar(255) DEFAULT NULL,
   `admin` bit(1) NOT NULL DEFAULT b'0',
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username_UNIQUE` (`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -112,4 +113,4 @@ CREATE TABLE `wish_list_item` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-05 21:08:04
+-- Dump completed on 2022-05-08 16:21:57
