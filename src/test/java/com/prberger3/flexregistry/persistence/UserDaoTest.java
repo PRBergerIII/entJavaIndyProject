@@ -66,7 +66,7 @@ class UserDaoTest {
         testUser.setId(1);
 
         List<User> foundUsers = userDao.findByPropertyEqual("lastName",
-                                                            "Berger");
+                "Berger");
 
         assertTrue(foundUsers.contains(testUser));
         assertEquals(1, foundUsers.size());
