@@ -22,7 +22,6 @@ import java.util.Properties;
  * @author Alex M - Fall 2019
  * @author Paul Berger - March 2022
  */
-
 public class Database implements PropertiesLoader {
 
     private final Logger logger = LogManager.getLogger(this.getClass());

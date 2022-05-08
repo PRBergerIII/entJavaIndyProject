@@ -37,7 +37,7 @@
 | 2022.05.05 | 2:45  | [Indy Project](#033)                      |
 | 2022.05.06 | 4:30  | [Indy Project](#034)                      |
 | 2022.05.07 | 11:05 | [Indy Project](#035)                      |
-| 2022.05.08 |       | [Indy Project](#036)                      | start @ 9:30
+| 2022.05.08 |       | [Indy Project](#036)                      | start @ 10:00
 
 | Total Hours |     |
 |:------------|----:|
@@ -356,9 +356,11 @@ Didn't have a ton of time again today, and spent a good bit of it doing the code
 Turns out the logging error I have been getting forever was pretty easily fixed by just putting the hibernate logs in a different directory. Just learned that `HashSet.contains()` doesn't work if you modify an object *after* you put it in the hash set, because the mapping in the hash table is set when you put it in there, but modifying the object changes the hash code (if `hashCode()` for the object uses mutable fields). Discovered this [here](https://stackoverflow.com/questions/43553806/hashset-contains-returns-false-when-it-shouldnt) when trying to figure out why an assertion using `HashSet.contains()` was failing. Neat! I tried solving this by using Lists instead of Sets, but that caused it's own batch of issues. That was a whole rabbit hole, which if you'd like to read about it, is pretty well described [here](https://hibernate.atlassian.net/browse/HHH-6776). The very long string of comments includes a bunch of things I tried that didn't work, and it eventually just got closed as "well is seems to be fixed now", which I beg to differ with. At any rate, I realized that I could keep my wishlists collection on the User a set because the only thing that will change about a wishlist is its items, and that collection isn't in its hashcode method, and while there are a couple attributes of WishListItems that may be editable if I get to those features, I just removed them from the hashcode method, as I don't expect that to cause any issues. I decided to get rid of my "list_visibility" table, as I don't think it will be necessary because I should be able to determine visibility for specific users based on if they are accepted followers and if the list is set to followers only. I got cognito up and running, and I realized that I messed up some of the required fields, so I'm going to make a new one, but it was pretty straight-forward, so that shouldn't be too big of a deal.
 
 ### <a id="036"></a>2022.05.08 - Indy Project
-- Cognito
+- Login / sign up
   - create new user pool
-  - 
+  - get login operation working and talking to cognito
+  - move properties loading to startup servlet
 
 
 #### Day's Reflection:
+Getting cognito running in the local environment wasn't too bad. 
