@@ -142,7 +142,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         String alg = tokenHeader.getAlg();
 
         // todo pick proper key from the two - it just so happens that the first one works for my case
-        // Use Key's N and E
+        // Use Keys N and E
         BigInteger modulus = new BigInteger(1, org.apache.commons.codec.binary.Base64.decodeBase64(jwks.getKeys().get(0).getN()));
         BigInteger exponent = new BigInteger(1, org.apache.commons.codec.binary.Base64.decodeBase64(jwks.getKeys().get(0).getE()));
 
@@ -170,15 +170,18 @@ public class Auth extends HttpServlet implements PropertiesLoader {
 
         // Verify the token
         DecodedJWT jwt = verifier.verify(tokenResponse.getIdToken());
-        String userName = jwt.getClaim("cognito:username").asString();
-        logger.debug("here's the username: " + userName);
+        String username = jwt.getClaim("cognito:username").asString();
+        String firstName = jwt.getClaim("given_name").asString();
+        String lastName = jwt.getClaim("family_name").asString();
+        String email = jwt.getClaim("email").asString();
+        logger.debug("here's the username: " + username);
 
         logger.debug("here are all the available claims: " + jwt.getClaims());
 
         // TODO decide what you want to do with the info!
         // for now, I'm just returning username for display back to the browser
 
-        return userName;
+        return username;
     }
 
     /** Create the auth url and use it to build the request.
