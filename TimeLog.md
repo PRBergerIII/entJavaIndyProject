@@ -1,42 +1,43 @@
 # Daily Time log
 
-| Date       | Time | Description                               |
-|------------|------|-------------------------------------------|
-| 2022.01.18 | 1:30 | [Set-up](#001)                            |
-| 2022.01.25 | 1:30 | [Week 1](#002)                            |
-| 2022.01.30 | 4:00 | [Week 2 Activities](#003)                 |
-| 2022.01.31 | 3:00 | [Week 2 Exercise](#004)                   |
-| 2022.02.05 | 1:45 | [Week 3 Videos](#005)                     |
-| 2022.02.06 | 1:30 | [Week 3 Activities](#006)                 |
-| 2022.02.08 | 4:30 | [Week 3 Exercise](#007)                   |
-| 2022.02.09 | 2:45 | [Individual Project](#008)                |
-| 2022.02.10 | 0:45 | [Individual Project](#009)                |
-| 2022.02.11 | 2:00 | [Individual Project](#010)                |
-| 2022.02.14 | 1:15 | [Individual Project](#011)                |
-| 2022.02.15 | 3:25 | [Individual Project](#012)                |
-| 2022.02.24 | 1:25 | [Week 4](#013)                            |
-| 2022.02.26 | 5:30 | [Individual Project](#014)                |
-| 2022.02.27 | 4:15 | [Week 4 / Code Reviews](#015)             | 
-| 2022.03.02 | 5:45 | [Week 4](#016)                            | 
-| 2022.03.03 | 7:40 | [Week 4](#017)                            |
-| 2022.03.05 | 3:30 | [Week 5](#018)                            | 
-| 2022.03.06 | 6:15 | [Week 5](#019)                            |
-| 2022.03.27 | 4:00 | [Week 6](#020)                            |
-| 2022.04.03 | 5:15 | [Team Project](#021)                      |
-| 2022.04.05 | 1:30 | [Team Project](#022)                      |
-| 2022.04.10 | 4:30 | [Branching / Team Project / Week 7](#023) |
-| 2022.04.13 | 4:30 | [Team Project](#024)                      | 
-| 2022.04.14 | 4:45 | [Team Project](#025)                      |
-| 2022.04.23 | 6:20 | [Lots of stuff](#026)                     |
-| 2022.04.24 | 7:00 | [Week 8, etc.](#027)                      |
-| 2022.04.26 | 4:30 | [Week 9](#028)                            |
-| 2022.04.28 | 7:30 | [Indy Project](#029)                      |
-| 2022.04.29 | 2:40 | [Indy Project](#030)                      | 
-| 2022.05.03 | 2:00 | [Indy Project](#031)                      | 
-| 2022.05.04 | 8:45 | [Indy Project](#032)                      |
-| 2022.05.05 | 2:45 | [Indy Project](#033)                      |
-| 2022.05.06 | 4:30 | [Indy Project](#034)                      |
-| 2022.05.07 |      | [Indy Project](#035)                      | 7:45 + Start @ 19:00
+| Date       | Time  | Description                               |
+|------------|-------|-------------------------------------------|
+| 2022.01.18 | 1:30  | [Set-up](#001)                            |
+| 2022.01.25 | 1:30  | [Week 1](#002)                            |
+| 2022.01.30 | 4:00  | [Week 2 Activities](#003)                 |
+| 2022.01.31 | 3:00  | [Week 2 Exercise](#004)                   |
+| 2022.02.05 | 1:45  | [Week 3 Videos](#005)                     |
+| 2022.02.06 | 1:30  | [Week 3 Activities](#006)                 |
+| 2022.02.08 | 4:30  | [Week 3 Exercise](#007)                   |
+| 2022.02.09 | 2:45  | [Individual Project](#008)                |
+| 2022.02.10 | 0:45  | [Individual Project](#009)                |
+| 2022.02.11 | 2:00  | [Individual Project](#010)                |
+| 2022.02.14 | 1:15  | [Individual Project](#011)                |
+| 2022.02.15 | 3:25  | [Individual Project](#012)                |
+| 2022.02.24 | 1:25  | [Week 4](#013)                            |
+| 2022.02.26 | 5:30  | [Individual Project](#014)                |
+| 2022.02.27 | 4:15  | [Week 4 / Code Reviews](#015)             | 
+| 2022.03.02 | 5:45  | [Week 4](#016)                            | 
+| 2022.03.03 | 7:40  | [Week 4](#017)                            |
+| 2022.03.05 | 3:30  | [Week 5](#018)                            | 
+| 2022.03.06 | 6:15  | [Week 5](#019)                            |
+| 2022.03.27 | 4:00  | [Week 6](#020)                            |
+| 2022.04.03 | 5:15  | [Team Project](#021)                      |
+| 2022.04.05 | 1:30  | [Team Project](#022)                      |
+| 2022.04.10 | 4:30  | [Branching / Team Project / Week 7](#023) |
+| 2022.04.13 | 4:30  | [Team Project](#024)                      | 
+| 2022.04.14 | 4:45  | [Team Project](#025)                      |
+| 2022.04.23 | 6:20  | [Lots of stuff](#026)                     |
+| 2022.04.24 | 7:00  | [Week 8, etc.](#027)                      |
+| 2022.04.26 | 4:30  | [Week 9](#028)                            |
+| 2022.04.28 | 7:30  | [Indy Project](#029)                      |
+| 2022.04.29 | 2:40  | [Indy Project](#030)                      | 
+| 2022.05.03 | 2:00  | [Indy Project](#031)                      | 
+| 2022.05.04 | 8:45  | [Indy Project](#032)                      |
+| 2022.05.05 | 2:45  | [Indy Project](#033)                      |
+| 2022.05.06 | 4:30  | [Indy Project](#034)                      |
+| 2022.05.07 | 11:05 | [Indy Project](#035)                      |
+| 2022.05.08 |       | [Indy Project](#036)                      | start @ 9:30
 
 | Total Hours |     |
 |:------------|----:|
@@ -337,7 +338,7 @@ So today I learned that Intellij has a persistence mapping generator, and it's p
 #### Day's Reflection:
 Didn't have a ton of time again today, and spent a good bit of it doing the code review. Had an issue with my User class at first where none of the tests were passing, but it's because I had added a hash set for the user's wishlists, and didn't properly map the column on the many side. Didn't take too terribly long to track down though.
 
-### <a id="035"></a>2022.05.06 - Indy Project
+### <a id="035"></a>2022.05.07 - Indy Project
 - Troubleshoot logging
 - Testing
   - Set up testing for WishListItem operations
@@ -346,7 +347,18 @@ Didn't have a ton of time again today, and spent a good bit of it doing the code
   - Get full persistence coverage
 - Scrap list_visibility table
 - Cognito
+  - Set up new user pool
+  - Transfer auth and controller packages
+  - Get login and signup working
 
 
 #### Day's Reflection:
-Turns out the logging error I have been getting forever was pretty easily fixed by just putting the hibernate logs in a different directory. Just learned that `HashSet.contains()` doesn't work if you modify an object *after* you put it in the hash set, because the mapping in the hash table is set when you put it in there, but modifying the object changes the hash code (if `hashCode()` for the object uses mutable fields). Discovered this [here](https://stackoverflow.com/questions/43553806/hashset-contains-returns-false-when-it-shouldnt) when trying to figure out why an assertion using `HashSet.contains()` was failing. Neat! I tried solving this by using Lists instead of Sets, but that caused it's own batch of issues. That was a whole rabbit hole, which if you'd like to read about it, is pretty well described [here](https://hibernate.atlassian.net/browse/HHH-6776). The very long string of comments includes a bunch of things I tried that didn't work, and it eventually just got closed as "well is seems to be fixed now", which I beg to differ with. At any rate, I realized that I could keep my wishlists collection on the User a set because the only thing that will change about a wishlist is its items, and that collection isn't in its hashcode method, and while there are a couple attributes of WishListItems that may be editable if I get to those features, I just removed them from the hashcode method, as I don't expect that to cause any issues. I decided to get rid of my "list_visibility" table, as I don't think it will be necessary because I should be able to determine visibility for specific users based on if they are accepted followers and if the list is set to followers only.
+Turns out the logging error I have been getting forever was pretty easily fixed by just putting the hibernate logs in a different directory. Just learned that `HashSet.contains()` doesn't work if you modify an object *after* you put it in the hash set, because the mapping in the hash table is set when you put it in there, but modifying the object changes the hash code (if `hashCode()` for the object uses mutable fields). Discovered this [here](https://stackoverflow.com/questions/43553806/hashset-contains-returns-false-when-it-shouldnt) when trying to figure out why an assertion using `HashSet.contains()` was failing. Neat! I tried solving this by using Lists instead of Sets, but that caused it's own batch of issues. That was a whole rabbit hole, which if you'd like to read about it, is pretty well described [here](https://hibernate.atlassian.net/browse/HHH-6776). The very long string of comments includes a bunch of things I tried that didn't work, and it eventually just got closed as "well is seems to be fixed now", which I beg to differ with. At any rate, I realized that I could keep my wishlists collection on the User a set because the only thing that will change about a wishlist is its items, and that collection isn't in its hashcode method, and while there are a couple attributes of WishListItems that may be editable if I get to those features, I just removed them from the hashcode method, as I don't expect that to cause any issues. I decided to get rid of my "list_visibility" table, as I don't think it will be necessary because I should be able to determine visibility for specific users based on if they are accepted followers and if the list is set to followers only. I got cognito up and running, and I realized that I messed up some of the required fields, so I'm going to make a new one, but it was pretty straight-forward, so that shouldn't be too big of a deal.
+
+### <a id="036"></a>2022.05.08 - Indy Project
+- Cognito
+  - create new user pool
+  - 
+
+
+#### Day's Reflection:
