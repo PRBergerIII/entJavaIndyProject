@@ -49,6 +49,16 @@
     <servlet-class>com.prberger3.flexregistry.controller.LogIn</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>SearchResultsDisplay</servlet-name>
+    <servlet-class>com.prberger3.flexregistry.controller.display.SearchResultsDisplay</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>SearchResults</servlet-name>
+    <jsp-file>/jsp/searchResults.jsp</jsp-file>
+  </servlet>
+
   <!-- ********************************************************************* -->
   <!-- Servlet Mappings **************************************************** -->
   <!-- ********************************************************************* -->
@@ -82,6 +92,16 @@
   <servlet-mapping>
     <servlet-name>Auth</servlet-name>
     <url-pattern>/auth</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>SearchResultsDisplay</servlet-name>
+    <url-pattern>/searchResults</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>SearchResults</servlet-name>
+    <url-pattern>/searchResultsJSP</url-pattern>
   </servlet-mapping>
 
 </web-app>
