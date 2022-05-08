@@ -45,7 +45,7 @@ public class UserHandler extends HttpServlet {
             throws ServletException, IOException {
 
         HttpSession session = request.getSession();
-        String username = (String) request.getAttribute("username");
+        String username = (String) request.getAttribute("authenticatedUser");
         User foundUser = findUser(username);
         String url = "/";
 

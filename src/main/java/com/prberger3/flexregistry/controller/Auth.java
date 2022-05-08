@@ -7,6 +7,7 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.prberger3.flexregistry.auth.*;
+import com.prberger3.flexregistry.entity.User;
 import com.prberger3.flexregistry.util.PropertiesLoader;
 import org.apache.commons.io.*;
 import org.apache.logging.log4j.LogManager;
@@ -77,7 +78,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String authCode = req.getParameter("code");
-        String username = null;
+        User validatedUser = null;
         String url =  "/user-handler";
 
         if (authCode == null) {
@@ -86,8 +87,8 @@ public class Auth extends HttpServlet implements PropertiesLoader {
             HttpRequest authRequest = buildAuthRequest(authCode);
             try {
                 TokenResponse tokenResponse = getToken(authRequest);
-                username = validate(tokenResponse); // TODO: 5/8/2022 make this a user instead of just username ("authorizedUser")
-                req.setAttribute("username", username);
+                validatedUser = validate(tokenResponse);
+                req.setAttribute("authenticatedUser", validatedUser);
             } catch (IOException e) {
                 logger.error("Error getting or validating the token: " + e.getMessage(), e);
                 //TODO forward to an error page
@@ -133,7 +134,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
      * @return
      * @throws IOException
      */
-    private String validate(TokenResponse tokenResponse) throws IOException {
+    private User validate(TokenResponse tokenResponse) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         CognitoTokenHeader tokenHeader = mapper.readValue(CognitoJWTParser.getHeader(tokenResponse.getIdToken()).toString(), CognitoTokenHeader.class);
 
@@ -174,14 +175,12 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         String firstName = jwt.getClaim("given_name").asString();
         String lastName = jwt.getClaim("family_name").asString();
         String email = jwt.getClaim("email").asString();
-        logger.debug("here's the username: " + username);
 
         logger.debug("here are all the available claims: " + jwt.getClaims());
 
-        // TODO decide what you want to do with the info!
-        // for now, I'm just returning username for display back to the browser
+        User validatedUser = new User(username, firstName, lastName, email);
 
-        return username;
+        return validatedUser;
     }
 
     /** Create the auth url and use it to build the request.
