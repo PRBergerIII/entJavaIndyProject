@@ -62,6 +62,22 @@ class WishListDaoTest {
     }
 
     @Test
+    void findByPropertyEqual() {
+
+        WishList testList = new WishList(
+                testUser, "My Birthday List", "public", true, "Birthday",
+                LocalDate.parse("2022-05-31"));
+        testList.setId(1);
+
+        List<WishList> foundLists = listDao.findByPropertyEqual("title",
+                "My Birthday List");
+
+        assertTrue(foundLists.contains(testList));
+        assertEquals(1, foundLists.size());
+
+    }
+
+    @Test
     void saveOrUpdateSuccess() {
 
         WishList testList = new WishList(
