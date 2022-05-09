@@ -37,7 +37,7 @@
 | 2022.05.05 | 2:45  | [Indy Project](#033)                      |
 | 2022.05.06 | 4:30  | [Indy Project](#034)                      |
 | 2022.05.07 | 11:05 | [Indy Project](#035)                      |
-| 2022.05.08 |       | [Indy Project](#036)                      | 8:30 + start @ 19:45
+| 2022.05.08 | 11:00 | [Indy Project](#036)                      |
 
 | Total Hours |     |
 |:------------|----:|
@@ -363,8 +363,9 @@ Turns out the logging error I have been getting forever was pretty easily fixed 
 - Checkpoint 3 stuff
   - Restructrue jsp imports
   - save logged in user to session
-  - 
+  - deployed to aws
+  - got ssl and authentication working
 
 
 #### Day's Reflection:
-Getting cognito running in the local environment wasn't too bad. In working on saving the user to the session, I came across [this answer](https://stackoverflow.com/a/33482404) on stack overflow that made a good point about storing only the id to the session, and since I am planning to use a servlet to load every jsp anyway, this works, as I can just retrieve the full user and pass it per request to keep it as up to date as possible. Only thing I am wondering here is if instatiating a DAO on every servlet is best practice, but at this point it's what I'm going with. 
+Getting cognito running in the local environment wasn't too bad. In working on saving the user to the session, I came across [this answer](https://stackoverflow.com/a/33482404) on stack overflow that made a good point about storing only the id to the session, and since I am planning to use a servlet to load every jsp anyway, this works, as I can just retrieve the full user and pass it per request to keep it as up to date as possible. Only thing I am wondering here is if instatiating a DAO on every servlet is best practice, but at this point it's what I'm going with. Getting up and running on aws was actually not too bad. Following along with the video made it pretty simple, and after a wierd false start that I think was caused by my authentication in aws timing out (had to re-log after a refresh), I got my war file deployed and everything acted as expected. I thing most of the hard part is behind me, as I have all this foundational stuff in place. I still have a whole app to build, but I feel decent about what's ahead of me, although it is a lot. 
