@@ -50,9 +50,14 @@ public class UserHandler extends HttpServlet {
         String url = "/";
 
         if (foundUser != null) {
+
             session.setAttribute("userId", foundUser.getId());
+
         } else {
-//            handle adding to the db here
+
+            int newUserId = userDao.insert(authenticatedUser);
+            session.setAttribute("userId", newUserId);
+
         }
 
         RequestDispatcher dispatcher = request.getRequestDispatcher(url);
@@ -73,7 +78,5 @@ public class UserHandler extends HttpServlet {
         }
 
     }
-
-//    private void
 
 }
