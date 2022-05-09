@@ -27,6 +27,8 @@
 database.properties
 hibernate.cfg.xml
 cognito.properties
+.ebextensions
+.platform
 
 # Gradle:
 .idea/gradle.xml
