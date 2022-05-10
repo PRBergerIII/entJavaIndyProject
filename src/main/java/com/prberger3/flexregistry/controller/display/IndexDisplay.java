@@ -33,13 +33,10 @@ public class IndexDisplay extends HttpServlet {
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         HttpSession session = request.getSession();
         Integer loggedUserId = (Integer) session.getAttribute("userId");
+        GenericDao<User> userDao = new GenericDao<>(User.class);
 
         if (loggedUserId != null) {
-
-            GenericDao<User> userDao = new GenericDao<>(User.class);
-
             request.setAttribute("user", userDao.getById(loggedUserId));
-
         }
 
         request.setAttribute("title", title);

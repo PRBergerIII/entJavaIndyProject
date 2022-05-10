@@ -36,16 +36,16 @@ public class ProfileDisplay extends HttpServlet {
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         HttpSession session = request.getSession();
         Integer loggedUserId = (Integer) session.getAttribute("userId");
+        Integer profileUserId = (Integer) request.getAttribute("profileUserId");
+        GenericDao<User> userDao = new GenericDao<>(User.class);
 
         if (loggedUserId != null) {
-
-            GenericDao<User> userDao = new GenericDao<>(User.class);
-
             request.setAttribute("user", userDao.getById(loggedUserId));
-
         }
 
-
+        if (profileUserId != null) {
+            request.setAttribute("profileUser", userDao.getById(profileUserId));
+        }
 
         request.setAttribute("title", title);
         dispatcher.forward(request, response);
