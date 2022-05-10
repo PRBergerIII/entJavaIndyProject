@@ -20,7 +20,7 @@ Individual Project: Flex Registry - Log Out Page
       </c:when>
       <c:otherwise>
         See you soon!
-        <button><a href="${webApp}">Thanks!</a></button>
+        <button><a href="${webApp}/">Thanks!</a></button>
       </c:otherwise>
     </c:choose>
     </div>
