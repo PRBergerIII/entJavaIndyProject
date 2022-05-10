@@ -31,11 +31,11 @@ public class ProfileDisplay extends HttpServlet {
             throws ServletException, IOException {
 
         String url = "/profile-jsp";
-        String title = "Profile - Flex Registry";
+        String title = "Profile | Flex Registry";
 
         HttpSession session = request.getSession();
         Integer loggedUserId = (Integer) session.getAttribute("userId");
-        Integer profileUserId = Integer.parseInt(request.getParameter("profileUserId"));
+        Integer profileUserId = Integer.parseInt(request.getParameter("profileUserId")); // TODO: handle a blank id? (should never happen but...)
         GenericDao<User> userDao = new GenericDao<>(User.class);
         User profileUser = null;
         String owner = "";
