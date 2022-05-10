@@ -91,10 +91,10 @@ public class Auth extends HttpServlet implements PropertiesLoader {
                 req.setAttribute("authenticatedUser", validatedUser);
             } catch (IOException e) {
                 logger.error("Error getting or validating the token: " + e.getMessage(), e);
-                resp.sendRedirect(req.getContextPath() + "logIn");//TODO forward to an error page
+                resp.sendRedirect(req.getContextPath() + "/logIn");//TODO forward to an error page
             } catch (InterruptedException e) {
                 logger.error("Error getting token from Cognito oauth url " + e.getMessage(), e);
-                resp.sendRedirect(req.getContextPath() + "logIn");//TODO forward to an error page
+                resp.sendRedirect(req.getContextPath() + "/logIn");//TODO forward to an error page
             }
         }
         RequestDispatcher dispatcher = req.getRequestDispatcher(url);

@@ -31,7 +31,7 @@ public class LogOutDisplay extends HttpServlet {
 
         HttpSession session = request.getSession();
         if (session.getAttribute("userId") == null) {
-            response.sendRedirect(request.getContextPath());
+            response.sendRedirect(request.getContextPath() + "/");
             return;
         }
 
