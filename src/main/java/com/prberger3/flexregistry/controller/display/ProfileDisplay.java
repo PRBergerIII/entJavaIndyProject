@@ -35,7 +35,8 @@ public class ProfileDisplay extends HttpServlet {
         HttpSession session = request.getSession(); // TODO: look at consolodating code with other servlets
         Integer loggedUserId = (Integer) session.getAttribute("userId");
         String idParam = request.getParameter("ownerId");
-        Integer ownerId = idParam == "" ? null : Integer.valueOf(idParam);
+        Integer ownerId = idParam == "" || idParam == null
+                ? null : Integer.valueOf(idParam);
         GenericDao<User> userDao = new GenericDao<>(User.class);
         User owner = null;
         String ownerLabel = "";

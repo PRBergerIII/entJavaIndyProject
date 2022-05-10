@@ -28,6 +28,8 @@ public class LogOutDisplay extends HttpServlet {
         String url = "/log-out-jsp";
         String title = "Log Out | Flex Registry";
 
+        // TODO: 5/10/2022 add handilng for not logged in 
+
         request.setAttribute("title", title);
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);
