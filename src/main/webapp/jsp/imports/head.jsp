@@ -5,10 +5,10 @@
 
   <title>${title}</title>
 
-  <link rel="apple-touch-icon" sizes="180x180" href="${webapp}/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="${webapp}/img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="${webapp}/img/favicon-16x16.png">
-  <link rel="shortcut icon" href="${webapp}/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="${webApp}/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="${webApp}/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="${webApp}/img/favicon-16x16.png">
+  <link rel="icon" type="image/ico" href="${webApp}/favicon.ico">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
