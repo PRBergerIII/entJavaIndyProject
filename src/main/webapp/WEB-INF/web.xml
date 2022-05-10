@@ -11,13 +11,13 @@
   <!-- Servlet and JSP Configurations ************************************** -->
   <!-- ********************************************************************* -->
 
-<!--  Servlet-->
+<!--  Servlet // TEMP: 5/10/2022  -->
 <!--  <servlet>-->
 <!--    <servlet-name>Lab32Servlet</servlet-name>-->
 <!--    <servlet-class>java112.project3.Lab32Servlet</servlet-class>-->
 <!--  </servlet>-->
 
-<!--  JSP-->
+<!--  JSP // TEMP: 5/10/2022  -->
 <!--  <servlet>-->
 <!--    <servlet-name>FirstJSP</servlet-name>-->
 <!--    <jsp-file>/jsp/myFirstJSP.jsp</jsp-file>-->
@@ -119,11 +119,21 @@
     <jsp-file>/jsp/searchResults.jsp</jsp-file>
   </servlet>
 
+  <servlet>
+    <servlet-name>LogOutDisplay</servlet-name>
+    <servlet-class>com.prberger3.flexregistry.controller.display.LogOutDisplay</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>LogOut</servlet-name>
+    <jsp-file>/jsp/logOut.jsp</jsp-file>
+  </servlet>
+
   <!-- ********************************************************************* -->
   <!-- Servlet Mappings **************************************************** -->
   <!-- ********************************************************************* -->
 
-<!--  Servlet-->
+<!--  Servlet // TEMP: 5/10/2022 -->
 <!--  <servlet-mapping>-->
 <!--    <servlet-name>Lab32Servlet</servlet-name>-->
 <!--    <url-pattern>/lab32</url-pattern>-->
@@ -222,6 +232,16 @@
   <servlet-mapping>
     <servlet-name>SearchResults</servlet-name>
     <url-pattern>/search-results-jsp</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>LogOutDisplay</servlet-name>
+    <url-pattern>/log-out</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>LogOut</servlet-name>
+    <url-pattern>/log-out-jsp</url-pattern>
   </servlet-mapping>
 
   <!-- ********************************************************************* -->

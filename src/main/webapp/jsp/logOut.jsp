@@ -15,7 +15,9 @@ Individual Project: Flex Registry - Log Out Page
 
   <div class="card">
     <div class="card-body">
-      Log Out
+      Are you sure you want to log out?
+      <button><a href="${webApp}/log-out-servlet">Yes</a></button>
+      <button><a href="${webApp}/user-lists">No</a></button>
     </div>
   </div>
 </div>
