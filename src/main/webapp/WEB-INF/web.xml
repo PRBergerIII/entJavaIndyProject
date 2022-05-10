@@ -40,6 +40,31 @@
   </servlet>
 
   <servlet>
+    <servlet-name>Head</servlet-name>
+    <jsp-file>/imports/head.jsp</jsp-file>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Header</servlet-name>
+    <jsp-file>/imports/header.jsp</jsp-file>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Navigation</servlet-name>
+    <jsp-file>/imports/nav.jsp</jsp-file>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Bootstrap</servlet-name>
+    <jsp-file>/imports/bootstrap.jsp</jsp-file>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Footer</servlet-name>
+    <jsp-file>/imports/footer.jsp</jsp-file>
+  </servlet>
+
+  <servlet>
     <servlet-name>LogIn</servlet-name>
     <servlet-class>com.prberger3.flexregistry.controller.LogIn</servlet-class>
   </servlet>
@@ -87,6 +112,31 @@
   <servlet-mapping>
     <servlet-name>Index</servlet-name>
     <url-pattern>/index</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Head</servlet-name>
+    <url-pattern>/head</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Header</servlet-name>
+    <url-pattern>/header</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Navigation</servlet-name>
+    <url-pattern>/nav</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Bootstrap</servlet-name>
+    <url-pattern>/bootstrap</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Footer</servlet-name>
+    <url-pattern>/footer</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>

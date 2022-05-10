@@ -7,9 +7,10 @@ Individual Project: Registry - Home
 -->
 
 <html lang="en" dir="ltr">
-<c:import url="/imports/head.jsp"/>
+<c:import url="head"/>
 <body>
-
+<c:import url="header"/>
+<c:import url="/nav"/>
 <div class="container">
 
   <div class="card">
@@ -17,7 +18,7 @@ Individual Project: Registry - Home
       <c:choose>
         <c:when test="${empty user}">
           <h1>Welcome!</h1>
-          <a href = "logIn">Log in</a>
+          <a href = "logIn">Log innnnn</a>
         </c:when>
         <c:otherwise>
           <h3>Welcome ${user.firstName} ${user.lastName}!</h3>
@@ -26,6 +27,7 @@ Individual Project: Registry - Home
     </div>
   </div>
 </div>
-<c:import url="/imports/bootstrap.jsp"/>
+<c:import url="bootstrap"/>
+<c:import url="footer"/>
 </body>
 </html>
