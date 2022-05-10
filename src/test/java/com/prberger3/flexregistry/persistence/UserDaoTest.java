@@ -114,6 +114,21 @@ class UserDaoTest {
     }
 
     @Test
+    void deleteUserWithListSuccess() {
+
+        User testUser = userDao.getById(1);
+
+        assertEquals(3, userDao.getAll().size());
+        assertEquals(1, listDao.getAll().size());
+
+        userDao.delete(testUser);
+
+        assertEquals(2, userDao.getAll().size());
+        assertEquals(0, listDao.getAll().size());
+
+    }
+
+    @Test
     void addFollowerSuccess() {
 
         User follower = userDao.getById(1);
