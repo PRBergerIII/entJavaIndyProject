@@ -11,6 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+/**
+ * A servlet for  todo
+ *
+ * @author  Paul Berger
+ */
 public class UserListsDisplay extends HttpServlet {
 
     /**

@@ -7,6 +7,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * A servlet for  todo
+ *
+ * @author  Paul Berger
+ */
 public class LogOutDisplay extends HttpServlet {
 
     /**
@@ -22,8 +27,6 @@ public class LogOutDisplay extends HttpServlet {
 
         String url = "/log-out-jsp";
         String title = "Log Out | Flex Registry";
-
-
 
         request.setAttribute("title", title);
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
