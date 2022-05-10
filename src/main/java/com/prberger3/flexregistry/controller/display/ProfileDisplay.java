@@ -30,7 +30,7 @@ public class ProfileDisplay extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String url = "/profile";
+        String url = "/profile-jsp";
         String title = " - Flex Registry";
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
