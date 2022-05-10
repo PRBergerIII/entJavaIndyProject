@@ -79,10 +79,10 @@
     <servlet-class>com.prberger3.flexregistry.controller.UserPersistenceHandler</servlet-class>
   </servlet>
 
-<!--  <servlet>-->
-<!--    <servlet-name>IndexDisplay</servlet-name>-->
-<!--    <servlet-class>com.prberger3.flexregistry.controller.display.IndexDisplay</servlet-class>-->
-<!--  </servlet>-->
+  <servlet>
+    <servlet-name>ProfileDisplay</servlet-name>
+    <servlet-class>com.prberger3.flexregistry.controller.display.ProfileDisplay</servlet-class>
+  </servlet>
 
   <servlet>
     <servlet-name>Profile</servlet-name>
@@ -184,10 +184,10 @@
     <url-pattern>/user-handler</url-pattern>
   </servlet-mapping>
 
-<!--  <servlet-mapping>-->
-<!--    <servlet-name>SearchResultsDisplay</servlet-name>-->
-<!--    <url-pattern>/search-results</url-pattern>-->
-<!--  </servlet-mapping>-->
+  <servlet-mapping>
+    <servlet-name>ProfileDisplay</servlet-name>
+    <url-pattern>/profile</url-pattern>
+  </servlet-mapping>
 
   <servlet-mapping>
     <servlet-name>Profile</servlet-name>
