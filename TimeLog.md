@@ -39,7 +39,7 @@
 | 2022.05.07 | 11:05 | [Indy Project](#035)                      |
 | 2022.05.08 | 11:00 | [Indy Project](#036)                      |
 | 2022.05.09 | 2:30  | [Indy Project](#037)                      |
-| 2022.05.10 |       | [Indy Project](#038)                      | start@ 7:30
+| 2022.05.10 | 9:00  | [Indy Project](#038)                      | 
 
 | Total Hours |     |
 |:------------|----:|
@@ -385,8 +385,9 @@ Not much to report today, just getting some things set up in preparation for the
 ### <a id="037"></a>2022.05.08 - Indy Project
 - Get all core JSPs set up and mapped
 - Get all display servlets initially set up and mapped
-- 
+- Get Navigation functional
+- Get Log out functional
 
 
 #### Day's Reflection:
-Played around for probably longer than necessary setting a context variable for the context path so I could dynamically use it for any internal links in my JSPs. I wasn't sure that the path would be the same on AWS, and didn't want to just deploy it to find out. This way I should be covered no matter what.
+Played around for probably longer than necessary setting a context variable for the context path so I could dynamically use it for any internal links in my JSPs. I wasn't sure that the path would be the same on AWS, and didn't want to just deploy it to find out. This way I should be covered no matter what. I sent a link to some family and friends, and now I have a bunch of test users! So that's pretty cool. 
