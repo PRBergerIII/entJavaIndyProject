@@ -5,6 +5,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
@@ -28,7 +29,11 @@ public class LogOutDisplay extends HttpServlet {
         String url = "/log-out-jsp";
         String title = "Log Out | Flex Registry";
 
-        // TODO: 5/10/2022 add handilng for not logged in 
+        HttpSession session = request.getSession();
+        if (session.getAttribute("userId") == null) {
+            response.sendRedirect(request.getContextPath());
+            return;
+        }
 
         request.setAttribute("title", title);
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
