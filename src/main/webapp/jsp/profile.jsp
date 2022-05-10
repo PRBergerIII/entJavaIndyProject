@@ -15,7 +15,7 @@ Individual Project: Flex Registry - Profile Page
 
   <div class="card">
     <div class="card-body">
-      ${profileOwner} Profile Page
+      ${ownerLabel} Profile Page
     </div>
   </div>
 </div>

@@ -24,7 +24,39 @@ public class UserListsDisplay  extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        String url = "/user-lists-jsp";
+        String title = "Lists | Flex Registry";
 
+        HttpSession session = request.getSession(); // TODO: look at consolodating code with other servlets
+        Integer loggedUserId = (Integer) session.getAttribute("userId");
+        String idParam = request.getParameter("ownerId");
+        Integer ownerId = idParam == "" ? null : Integer.valueOf(idParam);
+        GenericDao<User> userDao = new GenericDao<>(User.class);
+        User owner = null;
+        String ownerLabel = "";
+
+        if (loggedUserId != null) {
+            request.setAttribute("user", userDao.getById(loggedUserId));
+        }
+
+        if (ownerId != null) {
+            owner = userDao.getById(ownerId);
+            request.setAttribute("owner", owner);
+        }
+
+        if ((loggedUserId == null && ownerId == null) || owner == null) {
+            response.sendRedirect(request.getContextPath() + "/"); // TODO: send to 404 error page instead
+            return;
+        } else if (loggedUserId == ownerId) {
+            ownerLabel = "My";
+        } else {
+            ownerLabel = String.format("%s's", owner.getUsername());
+        }
+
+        request.setAttribute("ownerLabel", ownerLabel);
+        request.setAttribute("title", ownerLabel + " " + title);
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+        dispatcher.forward(request, response);
 
     }
 

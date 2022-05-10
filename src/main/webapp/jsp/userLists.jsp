@@ -15,7 +15,7 @@ Individual Project: Flex Registry - User's Lists Page
 
   <div class="card">
     <div class="card-body">
-      User's Lists
+      ${ownerLabel} Lists
     </div>
   </div>
 </div>

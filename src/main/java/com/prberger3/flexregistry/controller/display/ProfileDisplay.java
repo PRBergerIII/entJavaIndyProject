@@ -32,33 +32,34 @@ public class ProfileDisplay extends HttpServlet {
         String url = "/profile-jsp";
         String title = "Profile | Flex Registry";
 
-        HttpSession session = request.getSession();
+        HttpSession session = request.getSession(); // TODO: look at consolodating code with other servlets
         Integer loggedUserId = (Integer) session.getAttribute("userId");
-        Integer profileUserId = Integer.parseInt(request.getParameter("profileUserId")); // TODO: handle a blank id? (should never happen but...)
+        String idParam = request.getParameter("ownerId");
+        Integer ownerId = idParam == "" ? null : Integer.valueOf(idParam);
         GenericDao<User> userDao = new GenericDao<>(User.class);
-        User profileUser = null;
-        String owner = "";
+        User owner = null;
+        String ownerLabel = "";
 
         if (loggedUserId != null) {
             request.setAttribute("user", userDao.getById(loggedUserId));
         }
 
-        if (profileUserId != null) {
-            profileUser = userDao.getById(profileUserId);
-            request.setAttribute("profileUser", profileUser);
+        if (ownerId != null) {
+            owner = userDao.getById(ownerId);
+            request.setAttribute("owner", owner);
         }
 
-        if ((loggedUserId == null && profileUserId == null) || profileUser == null) {
+        if ((loggedUserId == null && ownerId == null) || owner == null) {
             response.sendRedirect(request.getContextPath() + "/"); // TODO: send to 404 error page instead
             return;
-        } else if (loggedUserId == profileUserId) {
-            owner = "My ";
+        } else if (loggedUserId == ownerId) {
+            ownerLabel = "My";
         } else {
-            owner = String.format("%s's ", profileUser.getUsername());
+            ownerLabel = String.format("%s's", owner.getUsername());
         }
 
-        request.setAttribute("profileOwner", owner);
-        request.setAttribute("title", owner + title);
+        request.setAttribute("ownerLabel", ownerLabel);
+        request.setAttribute("title", ownerLabel + " " + title);
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);
 
