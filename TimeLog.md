@@ -38,7 +38,8 @@
 | 2022.05.06 | 4:30  | [Indy Project](#034)                      |
 | 2022.05.07 | 11:05 | [Indy Project](#035)                      |
 | 2022.05.08 | 11:00 | [Indy Project](#036)                      |
-| 2022.05.09 |       | [Indy Project](#037)                      | 1:15 Start@ 20:00
+| 2022.05.09 | 2:30  | [Indy Project](#037)                      |
+| 2022.05.10 |       | [Indy Project](#038)                      | start@ 7:30
 
 | Total Hours |     |
 |:------------|----:|
@@ -374,7 +375,17 @@ Getting cognito running in the local environment wasn't too bad. In working on s
 ### <a id="037"></a>2022.05.08 - Indy Project
 - Set up trello board to keep my head on straight for the next 3 days
 - Go over feedback from checkpoints
-  - 
+  - Add some tests
+- Get some JSPs built
 
 
 #### Day's Reflection:
+Not much to report today, just getting some things set up in preparation for the final push the next two days. I think the trello board will really help me track progress and prioritize user stories.
+
+### <a id="037"></a>2022.05.08 - Indy Project
+- Get all core JSPs set up and mapped
+- Get all display servlets initially set up and mapped
+
+
+#### Day's Reflection:
+Played around for probably longer than necessary setting a context variable for the context path so I could dynamically use it for any internal links. I wasn't sure that the path would be the same on AWS, and didn't want to just deploy it to find out. This way I should be covered no matter what.
