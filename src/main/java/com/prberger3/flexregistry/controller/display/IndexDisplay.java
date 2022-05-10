@@ -28,6 +28,8 @@ public class IndexDisplay extends HttpServlet {
 
         String url = "/index";
         String title = "Home - Flex Registry";
+//        String contextPath = request.getContextPath();
+
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         HttpSession session = request.getSession();
 
@@ -39,6 +41,8 @@ public class IndexDisplay extends HttpServlet {
             request.setAttribute("user", userDao.getById(userId));
 
         }
+
+//        request.setAttribute("webApp", contextPath);
 
         request.setAttribute("title", title);
         dispatcher.forward(request, response);
