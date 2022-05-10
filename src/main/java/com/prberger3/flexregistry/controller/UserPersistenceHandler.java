@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.List;
 
 // TODO: 5/8/2022 javadoc
-public class UserHandler extends HttpServlet {
+public class UserPersistenceHandler extends HttpServlet {
 
     GenericDao<User> userDao;
 
