@@ -41,6 +41,7 @@ public class ApplicationStartup extends HttpServlet implements PropertiesLoader 
 
         ServletContext context = getServletContext();
         context.setAttribute("cognitoProperties", properties);
+        context.setAttribute("webApp", "/entJavaIndyProject_war"); // FIXME: 5/10/2022 Not sure if this will work on AWS
  
     }
 

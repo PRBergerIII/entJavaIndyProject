@@ -41,27 +41,27 @@
 
   <servlet>
     <servlet-name>Head</servlet-name>
-    <jsp-file>/imports/head.jsp</jsp-file>
+    <jsp-file>/jsp/imports/head.jsp</jsp-file>
   </servlet>
 
   <servlet>
     <servlet-name>Header</servlet-name>
-    <jsp-file>/imports/header.jsp</jsp-file>
+    <jsp-file>/jsp/imports/header.jsp</jsp-file>
   </servlet>
 
   <servlet>
     <servlet-name>Navigation</servlet-name>
-    <jsp-file>/imports/nav.jsp</jsp-file>
+    <jsp-file>/jsp/imports/nav.jsp</jsp-file>
   </servlet>
 
   <servlet>
     <servlet-name>Bootstrap</servlet-name>
-    <jsp-file>/imports/bootstrap.jsp</jsp-file>
+    <jsp-file>/jsp/imports/bootstrap.jsp</jsp-file>
   </servlet>
 
   <servlet>
     <servlet-name>Footer</servlet-name>
-    <jsp-file>/imports/footer.jsp</jsp-file>
+    <jsp-file>/jsp/imports/footer.jsp</jsp-file>
   </servlet>
 
   <servlet>
@@ -76,7 +76,22 @@
 
   <servlet>
     <servlet-name>UserHandler</servlet-name>
-    <servlet-class>com.prberger3.flexregistry.controller.UserHandler</servlet-class>
+    <servlet-class>com.prberger3.flexregistry.controller.UserPersistenceHandler</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Profile</servlet-name>
+    <jsp-file>/jsp/profile.jsp</jsp-file>
+  </servlet>
+
+  <servlet>
+    <servlet-name>UserLists</servlet-name>
+    <jsp-file>/jsp/userLists.jsp</jsp-file>
+  </servlet>
+
+  <servlet>
+    <servlet-name>ListDetails</servlet-name>
+    <jsp-file>/jsp/ListDetails.jsp</jsp-file>
   </servlet>
 
   <servlet>
@@ -154,6 +169,36 @@
     <url-pattern>/user-handler</url-pattern>
   </servlet-mapping>
 
+<!--  <servlet-mapping>-->
+<!--    <servlet-name>SearchResultsDisplay</servlet-name>-->
+<!--    <url-pattern>/search-results</url-pattern>-->
+<!--  </servlet-mapping>-->
+
+  <servlet-mapping>
+    <servlet-name>Profile</servlet-name>
+    <url-pattern>/profile-jsp</url-pattern>
+  </servlet-mapping>
+
+<!--  <servlet-mapping>-->
+<!--    <servlet-name>SearchResultsDisplay</servlet-name>-->
+<!--    <url-pattern>/search-results</url-pattern>-->
+<!--  </servlet-mapping>-->
+
+  <servlet-mapping>
+    <servlet-name>UserLists</servlet-name>
+    <url-pattern>/user-lists-jsp</url-pattern>
+  </servlet-mapping>
+
+<!--  <servlet-mapping>-->
+<!--    <servlet-name>SearchResultsDisplay</servlet-name>-->
+<!--    <url-pattern>/search-results</url-pattern>-->
+<!--  </servlet-mapping>-->
+
+  <servlet-mapping>
+    <servlet-name>ListDetails</servlet-name>
+    <url-pattern>/list-details-jsp</url-pattern>
+  </servlet-mapping>
+
   <servlet-mapping>
     <servlet-name>SearchResultsDisplay</servlet-name>
     <url-pattern>/search-results</url-pattern>
@@ -163,5 +208,13 @@
     <servlet-name>SearchResults</servlet-name>
     <url-pattern>/search-results-jsp</url-pattern>
   </servlet-mapping>
+
+  <!-- ********************************************************************* -->
+  <!-- Home Page *********************************************************** -->
+  <!-- ********************************************************************* -->
+
+  <welcome-file-list>
+    <welcome-file>/</welcome-file>
+  </welcome-file-list>
 
 </web-app>
