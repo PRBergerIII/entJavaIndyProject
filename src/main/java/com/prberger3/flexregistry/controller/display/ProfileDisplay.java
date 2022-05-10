@@ -35,7 +35,7 @@ public class ProfileDisplay extends HttpServlet {
 
         HttpSession session = request.getSession();
         Integer loggedUserId = (Integer) session.getAttribute("userId");
-        Integer profileUserId = (Integer) request.getAttribute("profileUserId");
+        Integer profileUserId = Integer.parseInt(request.getParameter("profileUserId"));
         GenericDao<User> userDao = new GenericDao<>(User.class);
         User profileUser = null;
         String owner = "";
@@ -49,8 +49,8 @@ public class ProfileDisplay extends HttpServlet {
             request.setAttribute("profileUser", profileUser);
         }
 
-        if (loggedUserId == null && (profileUserId == null || profileUser == null)) {
-            response.sendRedirect(request.getContextPath() + "/"); // TODO: send to 404 error page instead?
+        if ((loggedUserId == null && profileUserId == null) || profileUser == null) {
+            response.sendRedirect(request.getContextPath() + "/"); // TODO: send to 404 error page instead
             return;
         } else if (loggedUserId == profileUserId) {
             owner = "My ";
