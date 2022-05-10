@@ -31,26 +31,37 @@ public class ProfileDisplay extends HttpServlet {
             throws ServletException, IOException {
 
         String url = "/profile-jsp";
-        String title = " - Flex Registry";
+        String title = "Profile - Flex Registry";
 
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         HttpSession session = request.getSession();
         Integer loggedUserId = (Integer) session.getAttribute("userId");
         Integer profileUserId = (Integer) request.getAttribute("profileUserId");
         GenericDao<User> userDao = new GenericDao<>(User.class);
+        User profileUser = null;
+        String owner = "";
 
         if (loggedUserId != null) {
             request.setAttribute("user", userDao.getById(loggedUserId));
         }
 
         if (profileUserId != null) {
+            profileUser = userDao.getById(profileUserId);
+            request.setAttribute("profileUser", profileUser);
+        }
 
-            request.setAttribute("profileUser", userDao.getById(profileUserId));
-//            title =
+        if (loggedUserId == null && (profileUserId == null || profileUser == null)) {
+            response.sendRedirect(request.getContextPath() + "/"); // TODO: send to 404 error page instead?
+            return;
+        } else if (loggedUserId == profileUserId) {
+            owner = "My ";
+        } else {
+            owner = String.format("%s's ", profileUser.getUsername());
 
         }
 
-        request.setAttribute("title", title);
+        request.setAttribute("profileOwner", owner);
+        request.setAttribute("title", owner + title);
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);
 
     }

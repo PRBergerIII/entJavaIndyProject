@@ -30,7 +30,6 @@ public class IndexDisplay extends HttpServlet {
         String url = "/index";
         String title = "Home - Flex Registry";
 
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         HttpSession session = request.getSession();
         Integer loggedUserId = (Integer) session.getAttribute("userId");
         GenericDao<User> userDao = new GenericDao<>(User.class);
@@ -40,6 +39,7 @@ public class IndexDisplay extends HttpServlet {
         }
 
         request.setAttribute("title", title);
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);
 
     }
