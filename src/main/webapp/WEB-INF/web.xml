@@ -106,7 +106,7 @@
 
   <servlet>
     <servlet-name>ListDetails</servlet-name>
-    <jsp-file>/jsp/ListDetails.jsp</jsp-file>
+    <jsp-file>/jsp/listDetails.jsp</jsp-file>
   </servlet>
 
   <servlet>
