@@ -44,7 +44,10 @@ public class ProfileDisplay extends HttpServlet {
         }
 
         if (profileUserId != null) {
+
             request.setAttribute("profileUser", userDao.getById(profileUserId));
+//            title =
+
         }
 
         request.setAttribute("title", title);
