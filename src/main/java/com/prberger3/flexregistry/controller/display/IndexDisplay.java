@@ -7,6 +7,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.IOException;
 
+
 /**
  * A servlet for Flex Registry whose sole purpose is to forward the request and
  * response to the index JSP.
@@ -14,7 +15,7 @@ import java.io.IOException;
  * @author  Paul Berger
  */
 public class IndexDisplay extends HttpServlet {
-
+// TODO: make a display servlet that all these extend? Or an interface for repeated code in doGet?
     /**
      *  Handles HTTP GET requests.
      *
@@ -31,13 +32,13 @@ public class IndexDisplay extends HttpServlet {
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         HttpSession session = request.getSession();
+        Integer loggedUserId = (Integer) session.getAttribute("userId");
 
-        if (session.getAttribute("userId") != null) {
+        if (loggedUserId != null) {
 
-            int userId = (int) session.getAttribute("userId");
             GenericDao<User> userDao = new GenericDao<>(User.class);
 
-            request.setAttribute("user", userDao.getById(userId));
+            request.setAttribute("user", userDao.getById(loggedUserId));
 
         }
 
