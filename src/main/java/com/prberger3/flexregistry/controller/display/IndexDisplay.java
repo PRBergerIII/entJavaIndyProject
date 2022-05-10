@@ -28,7 +28,7 @@ public class IndexDisplay extends HttpServlet {
             throws ServletException, IOException {
 
         String url = "/index";
-        String title = "Home - Flex Registry";
+        String title = "Home | Flex Registry";
 
         HttpSession session = request.getSession();
         Integer loggedUserId = (Integer) session.getAttribute("userId");

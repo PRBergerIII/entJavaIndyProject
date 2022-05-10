@@ -47,8 +47,9 @@ public class UserPersistenceHandler extends HttpServlet {
         HttpSession session = request.getSession();
         User authenticatedUser = (User) request.getAttribute("authenticatedUser");
         User foundUser = null;
-        String url = "/";
-        String errorUrl = request.getContextPath() + "/"; // TEMP: 5/10/2022 change this to error page url
+        String contextPath = request.getContextPath();
+        String url = contextPath + "/";
+        String errorUrl = contextPath + "/"; // TEMP: 5/10/2022 change this to error page url
 
         // In case everything authenticates but for some reason the user
         // is unavailable (this is a fringe case that a test user experienced)
@@ -73,8 +74,8 @@ public class UserPersistenceHandler extends HttpServlet {
 
         }
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher(url);
-        dispatcher.forward(request, response);
+
+        response.sendRedirect(url);
 
     }
 
