@@ -117,6 +117,21 @@ class WishListDaoTest {
     }
 
     @Test
+    void deleteListWithItemsSuccess() {
+
+        WishList testList = listDao.getById(1);
+
+        assertEquals(4, listDao.getAll().size());
+        assertEquals(1, itemDao.getAll().size());
+
+        listDao.delete(testList);
+
+        assertEquals(3, listDao.getAll().size());
+        assertEquals(0, itemDao.getAll().size());
+
+    }
+
+    @Test
     void insertListWithItemSuccess() {
 
         WishList testList = new WishList(
