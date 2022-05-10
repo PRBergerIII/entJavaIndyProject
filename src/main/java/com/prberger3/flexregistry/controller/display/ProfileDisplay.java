@@ -56,7 +56,6 @@ public class ProfileDisplay extends HttpServlet {
             owner = "My ";
         } else {
             owner = String.format("%s's ", profileUser.getUsername());
-
         }
 
         request.setAttribute("profileOwner", owner);

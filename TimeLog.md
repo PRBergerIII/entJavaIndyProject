@@ -385,7 +385,8 @@ Not much to report today, just getting some things set up in preparation for the
 ### <a id="037"></a>2022.05.08 - Indy Project
 - Get all core JSPs set up and mapped
 - Get all display servlets initially set up and mapped
+- 
 
 
 #### Day's Reflection:
-Played around for probably longer than necessary setting a context variable for the context path so I could dynamically use it for any internal links. I wasn't sure that the path would be the same on AWS, and didn't want to just deploy it to find out. This way I should be covered no matter what.
+Played around for probably longer than necessary setting a context variable for the context path so I could dynamically use it for any internal links in my JSPs. I wasn't sure that the path would be the same on AWS, and didn't want to just deploy it to find out. This way I should be covered no matter what.

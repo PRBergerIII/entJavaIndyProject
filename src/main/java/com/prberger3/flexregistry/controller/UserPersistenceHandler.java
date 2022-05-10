@@ -58,6 +58,7 @@ public class UserPersistenceHandler extends HttpServlet {
             logger.error("Error getting or validating the token: "
                         + npex.getMessage(), npex);
             response.sendRedirect(errorUrl);
+            return;
         }
 
         if (foundUser != null) {
