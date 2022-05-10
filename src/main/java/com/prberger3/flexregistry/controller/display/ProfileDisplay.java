@@ -12,8 +12,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
- * A servlet for Flex Registry whose sole purpose is to forward the request and
- * response to the index JSP.
+ * A servlet for  todo
  *
  * @author  Paul Berger
  */
