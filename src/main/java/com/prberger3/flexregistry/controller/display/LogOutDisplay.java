@@ -35,6 +35,7 @@ public class LogOutDisplay extends HttpServlet {
             return;
         }
 
+        request.setAttribute("logOutConfirm", false);
         request.setAttribute("title", title);
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);
