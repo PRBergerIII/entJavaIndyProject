@@ -64,11 +64,12 @@ public class UserPersistenceHandler extends HttpServlet {
         if (foundUser != null) {
 
             session.setAttribute("userId", foundUser.getId());
+            session.setAttribute("isAdmin", false);
 
         } else {
 
             int newUserId = userDao.insert(authenticatedUser);
-            session.setAttribute("userId", newUserId);
+            session.setAttribute("isAdmin", false);
 
         }
 
