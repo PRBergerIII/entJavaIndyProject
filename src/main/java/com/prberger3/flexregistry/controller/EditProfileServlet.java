@@ -45,4 +45,19 @@ public class EditProfileServlet  extends HttpServlet {
 
     }
 
+    /**
+     *  Handles HTTP POST requests.
+     *
+     *@param  request  the HttpServletRequest object
+     *@param  response  the HttpServletResponse object
+     *@throws ServletException  if there is a Servlet failure
+     *@throws IOException  if there is an IO failure
+     */
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+
+
+    }
+
 }
