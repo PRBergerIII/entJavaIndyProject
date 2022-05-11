@@ -57,6 +57,9 @@ public class EditProfileServlet  extends HttpServlet {
             throws ServletException, IOException {
 
 
+        userDao.saveOrUpdate(updatedUser);
+
+        response.sendRedirect(url + queryParam);
 
     }
 

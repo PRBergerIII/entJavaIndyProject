@@ -95,7 +95,7 @@ Individual Project: Flex Registry - Edit Profile Page
              class="col-md-2 col-form-label">State</label>
       <div class="col-lg-4 col-md-6">
         <select class="custom-select" id="state" name="state">
-          <option value="" disabled selected>Your state</option>
+          <option value="" ${user.state == null ? 'selected' : ''} selected>None Selected</option>
           <option value="AL" ${user.state == 'AL' ? 'selected' : ''}>Alabama</option>
           <option value="AK" ${user.state == 'AK' ? 'selected' : ''}>Alaska</option>
           <option value="AZ" ${user.state == 'AZ' ? 'selected' : ''}>Arizona</option>
@@ -119,7 +119,7 @@ Individual Project: Flex Registry - Edit Profile Page
           <option value="MD" ${user.state == 'MD' ? 'selected' : ''}>Maryland</option>
           <option value="MA" ${user.state == 'MA' ? 'selected' : ''}>Massachusetts</option>
           <option value="MI" ${user.state == 'MI' ? 'selected' : ''}>Michigan</option>
-          <option value="MN" ${user.state == 'MIMN' ? 'selected' : ''}>Minnesota</option>
+          <option value="MN" ${user.state == 'MN' ? 'selected' : ''}>Minnesota</option>
           <option value="MS" ${user.state == 'MS' ? 'selected' : ''}>Mississippi</option>
           <option value="MO" ${user.state == 'MO' ? 'selected' : ''}>Missouri</option>
           <option value="MT" ${user.state == 'MT' ? 'selected' : ''}>Montana</option>
@@ -156,8 +156,8 @@ Individual Project: Flex Registry - Edit Profile Page
              class="col-md-2 col-form-label">Zip Code</label>
       <div class="col-lg-4 col-md-6">
         <input type="zip" class="form-control" id="zip"
-               name="zip"
-               value="${user.zip}"
+               name="zip" maxlength="5"
+               value="${user.zip}" pattern="\d{5}"
                placeholder="Your zip">
         <div class="invalid-feedback">
           Please provide your zip code: exactly 5 digits.
