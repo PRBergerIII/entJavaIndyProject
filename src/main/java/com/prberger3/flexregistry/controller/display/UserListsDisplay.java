@@ -51,7 +51,7 @@ public class UserListsDisplay extends HttpServlet {
         }
 
         if ((loggedUserId == null && ownerId == null) || owner == null) {
-            response.sendRedirect(request.getContextPath() + "/"); // TODO: send to 404 error page instead
+            response.sendError(404);
             return;
         } else if (loggedUserId == ownerId) {
             ownerLabel = "My";

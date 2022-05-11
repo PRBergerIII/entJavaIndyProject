@@ -20,14 +20,14 @@
       </c:choose>
     </ul>
     <div class="navbar-nav ml-auto">
-      <form action=//todo class="needs-validation w-100 m-0 p-0 align-middle" novalidate>
+      <form action=//todo class="needs-validation w-100 m-0 p-0 align-middle" novalidate> <!-- // TODO: 5/11/2022 change validation and requirements  -->
         <div class="form-group form-row m-0">
           <div class="p-0 m-0 d-inline-flex">
             <input type="text" class="form-control"
-                   name="searchTerm" id="searchTerm" pattern="\w{1,40}"
-                   title="Maximum 40 letters"
+                   name="searchTerm" id="searchTerm"
+                   title="Maximum 40 letters" maxlength="40"
                    required/>
-            <div class="invalid-feedback">Please enter only letters, and no more than 40</div>
+            <div class="invalid-feedback"></div>
             <button type="submit" name="searchBtn" class="d-flex justify-content-center align-items-center col-2 btn btn-secondary"><i class="bi bi-search"></i></button>
           </div>
         </div>
