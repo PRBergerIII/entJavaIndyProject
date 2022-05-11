@@ -20,7 +20,7 @@
       </c:choose>
     </ul>
     <div class="navbar-nav ml-auto">
-      <form action=//todo class="needs-validation w-100 m-0 p-0 align-middle" novalidate> <!-- // TODO: 5/11/2022 change validation and requirements  -->
+      <form action="#" class="needs-validation w-100 m-0 p-0 align-middle" novalidate> <!-- // TODO: 5/11/2022 change validation and requirements and add  -->
         <div class="form-group form-row m-0">
           <div class="p-0 m-0 d-inline-flex">
             <input type="text" class="form-control"
