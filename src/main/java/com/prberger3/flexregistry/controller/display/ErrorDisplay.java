@@ -1,5 +1,6 @@
 package com.prberger3.flexregistry.controller.display;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,10 +21,15 @@ public class ErrorDisplay extends HttpServlet {
             throws ServletException, IOException {
 
         Integer statusCode = response.getStatus();
-        if (statusCode == null) statusCode = 418;
-        String url = String.format("https://http.cat/%d/", statusCode);
+        String url = "/error-jsp";
+        String title = String.format("%d | Flex Registry", statusCode);
 
-        response.sendRedirect(url);
+        request.setAttribute("statusCode", statusCode);
+//        response.setStatus(200);
+
+        request.setAttribute("title", title);
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+        dispatcher.forward(request, response);
 
     }
 

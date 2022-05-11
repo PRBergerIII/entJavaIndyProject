@@ -13,10 +13,9 @@ Individual Project: Flex Registry - Home Page
   <c:import url="header"/>
   <c:import url="/nav"/>
 
-  <div class="card">
-    <div class="card-body">
-    </div>
-  </div>
+  <h2 class="text-center">Whoops!</h2>
+  <img class="img-fluid mx-auto d-block mw-75" src="https://http.cat/${statusCode}.jpg">
+
 </div>
 <c:import url="bootstrap"/>
 <c:import url="footer"/>

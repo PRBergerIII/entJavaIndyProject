@@ -24,6 +24,8 @@ some links for inspiration, but other users are free to check off this item with
   - JUnit, aiming for 80% code coverage
 - IDE
   - IntelliJ IDEA
+- APIs
+  - [http.cat](https://http.cat/)
   
 ### Design Documents
 - [Project Plan](DesignFiles/ProjectPlan.md)
