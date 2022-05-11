@@ -40,7 +40,7 @@
 | 2022.05.08 | 11:00 | [Indy Project](#036)                      |
 | 2022.05.09 | 2:30  | [Indy Project](#037)                      |
 | 2022.05.10 | 14:00 | [Indy Project](#038)                      |
-| 2022.05.11 |       | [Indy Project](#039)                      | start @ 7:15
+| 2022.05.11 |       | [Indy Project](#039)                      | 
 
 | Total Hours |     |
 |:------------|----:|
@@ -397,6 +397,8 @@ Played around for probably longer than necessary setting a context variable for 
 ### <a id="039"></a>2022.05.10 - Indy Project
 - Error page setup
 - Profile Page
+  - Dynamically build page based on who is logged in and who owns the page
+  - 
 
 #### Day's Reflection:
 Very happy to be able to roll consuming an API and error status code handling all into one... 
