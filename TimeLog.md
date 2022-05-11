@@ -39,7 +39,7 @@
 | 2022.05.07 | 11:05 | [Indy Project](#035)                      |
 | 2022.05.08 | 11:00 | [Indy Project](#036)                      |
 | 2022.05.09 | 2:30  | [Indy Project](#037)                      |
-| 2022.05.10 |       | [Indy Project](#038)                      |  9:00 + start@ 6:30
+| 2022.05.10 | 14:00 | [Indy Project](#038)                      |
 
 | Total Hours |     |
 |:------------|----:|
@@ -372,7 +372,7 @@ Turns out the logging error I have been getting forever was pretty easily fixed 
 #### Day's Reflection:
 Getting cognito running in the local environment wasn't too bad. In working on saving the user to the session, I came across [this answer](https://stackoverflow.com/a/33482404) on stack overflow that made a good point about storing only the id to the session, and since I am planning to use a servlet to load every jsp anyway, this works, as I can just retrieve the full user and pass it per request to keep it as up to date as possible. Only thing I am wondering here is if instatiating a DAO on every servlet is best practice, but at this point it's what I'm going with. Getting up and running on aws was actually not too bad. Following along with the video made it pretty simple, and after a wierd false start that I think was caused by my authentication in aws timing out (had to re-log after a refresh), I got my war file deployed and everything acted as expected. I thing most of the hard part is behind me, as I have all this foundational stuff in place. I still have a whole app to build, but I feel decent about what's ahead of me, although it is a lot.
 
-### <a id="037"></a>2022.05.08 - Indy Project
+### <a id="037"></a>2022.05.09 - Indy Project
 - Set up trello board to keep my head on straight for the next 3 days
 - Go over feedback from checkpoints
   - Add some tests
@@ -382,12 +382,13 @@ Getting cognito running in the local environment wasn't too bad. In working on s
 #### Day's Reflection:
 Not much to report today, just getting some things set up in preparation for the final push the next two days. I think the trello board will really help me track progress and prioritize user stories.
 
-### <a id="037"></a>2022.05.08 - Indy Project
+### <a id="038"></a>2022.05.10 - Indy Project
 - Get all core JSPs set up and mapped
 - Get all display servlets initially set up and mapped
 - Get Navigation functional
 - Get Log out functional
-
+- Create header
+- Finish Navigation
 
 #### Day's Reflection:
 Played around for probably longer than necessary setting a context variable for the context path so I could dynamically use it for any internal links in my JSPs. I wasn't sure that the path would be the same on AWS, and didn't want to just deploy it to find out. This way I should be covered no matter what. I sent a link to some family and friends, and now I have a bunch of test users! So that's pretty cool. 
