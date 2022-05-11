@@ -1,3 +1,3 @@
 <footer>
-  Copyright 2022
+  <p class="row text-secondary">Copyright 2022</p>
 </footer>
