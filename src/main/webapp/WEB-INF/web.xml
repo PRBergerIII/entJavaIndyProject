@@ -135,8 +135,13 @@
   </servlet>
 
   <servlet>
-    <servlet-name>ErrorServlet</servlet-name>
-    <servlet-class>com.prberger3.flexregistry.controller.ErrorServlet</servlet-class>
+    <servlet-name>ErrorDisplay</servlet-name>
+    <servlet-class>com.prberger3.flexregistry.controller.ErrorDisplay</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Error</servlet-name>
+    <jsp-file>/jsp/errorPages/error.jsp</jsp-file>
   </servlet>
 
 
@@ -261,41 +266,20 @@
   </servlet-mapping>
 
   <servlet-mapping>
-    <servlet-name>ErrorServlet</servlet-name>
+    <servlet-name>ErrorDisplay</servlet-name>
     <url-pattern>/error</url-pattern>
   </servlet-mapping>
 
-
+  <servlet-mapping>
+    <servlet-name>Error</servlet-name>
+    <url-pattern>/error-jsp</url-pattern>
+  </servlet-mapping>
 
   <!-- ********************************************************************* -->
-  <!-- Error Pages ********************************************************* -->
+  <!-- Error Routing ******************************************************* -->
   <!-- ********************************************************************* -->
 
-<!--  <error-page>-->
-<!--    &lt;!&ndash; Missing login &ndash;&gt;-->
-<!--    <error-code>401</error-code>-->
-<!--    <location>/https://http.cat/401/</location>-->
-<!--  </error-page>-->
-<!--  <error-page>-->
-<!--    &lt;!&ndash; Forbidden directory listing &ndash;&gt;-->
-<!--    <error-code>403</error-code>-->
-<!--    <location>/https://http.cat/403</location>-->
-<!--  </error-page>-->
-<!--  <error-page>-->
-<!--    &lt;!&ndash; Missing resource &ndash;&gt;-->
-<!--    <error-code>404</error-code>-->
-<!--    <location>/https://http.cat/404</location>-->
-<!--  </error-page>-->
-<!--  <error-page>-->
-<!--    &lt;!&ndash; Uncaught exception &ndash;&gt;-->
-<!--    <error-code>500</error-code>-->
-<!--    <location>/https://http.cat/500</location>-->
-<!--  </error-page>-->
-<!--  <error-page>-->
-<!--    &lt;!&ndash; Unsupported servlet method &ndash;&gt;-->
-<!--    <error-code>503</error-code>-->
-<!--    <location>/https://http.cat/503</location>-->
-<!--  </error-page>-->
+
   <error-page>
     <!-- All Errors -->
     <location>/error</location>
