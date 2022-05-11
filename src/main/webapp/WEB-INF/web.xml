@@ -134,6 +134,12 @@
     <servlet-class>com.prberger3.flexregistry.controller.LogOutServlet</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>ErrorServlet</servlet-name>
+    <servlet-class>com.prberger3.flexregistry.controller.ErrorServlet</servlet-class>
+  </servlet>
+
+
   <!-- ********************************************************************* -->
   <!-- Servlet Mappings **************************************************** -->
   <!-- ********************************************************************* -->
@@ -253,5 +259,46 @@
     <servlet-name>LogOutServlet</servlet-name>
     <url-pattern>/log-out-servlet</url-pattern>
   </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>ErrorServlet</servlet-name>
+    <url-pattern>/error</url-pattern>
+  </servlet-mapping>
+
+
+
+  <!-- ********************************************************************* -->
+  <!-- Error Pages ********************************************************* -->
+  <!-- ********************************************************************* -->
+
+<!--  <error-page>-->
+<!--    &lt;!&ndash; Missing login &ndash;&gt;-->
+<!--    <error-code>401</error-code>-->
+<!--    <location>/https://http.cat/401/</location>-->
+<!--  </error-page>-->
+<!--  <error-page>-->
+<!--    &lt;!&ndash; Forbidden directory listing &ndash;&gt;-->
+<!--    <error-code>403</error-code>-->
+<!--    <location>/https://http.cat/403</location>-->
+<!--  </error-page>-->
+<!--  <error-page>-->
+<!--    &lt;!&ndash; Missing resource &ndash;&gt;-->
+<!--    <error-code>404</error-code>-->
+<!--    <location>/https://http.cat/404</location>-->
+<!--  </error-page>-->
+<!--  <error-page>-->
+<!--    &lt;!&ndash; Uncaught exception &ndash;&gt;-->
+<!--    <error-code>500</error-code>-->
+<!--    <location>/https://http.cat/500</location>-->
+<!--  </error-page>-->
+<!--  <error-page>-->
+<!--    &lt;!&ndash; Unsupported servlet method &ndash;&gt;-->
+<!--    <error-code>503</error-code>-->
+<!--    <location>/https://http.cat/503</location>-->
+<!--  </error-page>-->
+  <error-page>
+    <!-- All Errors -->
+    <location>/error</location>
+  </error-page>
 
 </web-app>
