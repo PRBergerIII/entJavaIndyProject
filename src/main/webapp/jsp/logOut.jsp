@@ -10,6 +10,7 @@ Individual Project: Flex Registry - Log Out Page
 <c:import url="head"/>
 <body>
 <div class="container">
+  <c:import url="header"/>
 
   <div class="card">
     <div class="card-body"><c:choose>

@@ -9,9 +9,9 @@ Individual Project: Flex Registry - Search Results Page
 <html lang="en" dir="ltr">
 <c:import url="head"/>
 <body>
-<c:import url="header"/>
-<c:import url="/nav"/>
 <div class="container">
+  <c:import url="header"/>
+  <c:import url="/nav"/>
 
   <div class="card">
     <div class="card-body">

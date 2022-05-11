@@ -9,13 +9,13 @@ Individual Project: Flex Registry - Profile Page
 <html lang="en" dir="ltr">
 <c:import url="head"/>
 <body>
-<c:import url="header"/>
-<c:import url="/nav"/>
 <div class="container">
+  <c:import url="header"/>
+  <c:import url="/nav"/>
 
   <div class="card">
     <div class="card-body">
-      ${ownerLabel} Profile Page
+      <p class="text-capitalize">${ownerLabel} Profile Page</p>
     </div>
   </div>
 </div>
