@@ -90,6 +90,11 @@
   </servlet>
 
   <servlet>
+    <servlet-name>EditProfile</servlet-name>
+    <jsp-file>/jsp/editProfile.jsp</jsp-file>
+  </servlet>
+
+  <servlet>
     <servlet-name>UserListsDisplay</servlet-name>
     <servlet-class>com.prberger3.flexregistry.controller.display.UserListsDisplay</servlet-class>
   </servlet>
@@ -218,6 +223,11 @@
   <servlet-mapping>
     <servlet-name>Profile</servlet-name>
     <url-pattern>/profile-jsp</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>EditProfile</servlet-name>
+    <url-pattern>/edit-profile-jsp</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
