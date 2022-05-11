@@ -67,7 +67,7 @@ Individual Project: Flex Registry - Profile Page
         View Wish Lists
       </a>
       <a class="btn btn-primary col-md-3 col-sm-5 ml-md-2 col-8 mb-2"
-         href="#" role="button">
+         href="${webApp}/edit-profile" role="button">
         Edit Profile
       </a>
     </div>
