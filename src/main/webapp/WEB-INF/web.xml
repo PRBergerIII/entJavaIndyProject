@@ -136,7 +136,7 @@
 
   <servlet>
     <servlet-name>ErrorDisplay</servlet-name>
-    <servlet-class>com.prberger3.flexregistry.controller.ErrorDisplay</servlet-class>
+    <servlet-class>com.prberger3.flexregistry.controller.display.ErrorDisplay</servlet-class>
   </servlet>
 
   <servlet>
