@@ -36,7 +36,7 @@
 
   <servlet>
     <servlet-name>Index</servlet-name>
-    <jsp-file>/index.jsp</jsp-file>
+    <jsp-file>jsp/index.jsp</jsp-file>
   </servlet>
 
   <servlet>
@@ -151,7 +151,7 @@
 
   <servlet-mapping>
     <servlet-name>IndexDisplay</servlet-name>
-    <url-pattern>/</url-pattern>
+    <url-pattern></url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
@@ -253,13 +253,5 @@
     <servlet-name>LogOutServlet</servlet-name>
     <url-pattern>/log-out-servlet</url-pattern>
   </servlet-mapping>
-
-  <!-- ********************************************************************* -->
-  <!-- Home Page *********************************************************** -->
-  <!-- ********************************************************************* -->
-
-<!--  <welcome-file-list>-->
-<!--    <welcome-file>/</welcome-file>-->
-<!--  </welcome-file-list>-->
 
 </web-app>
