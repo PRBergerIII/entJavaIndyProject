@@ -16,7 +16,7 @@ Individual Project: Flex Registry - Home Page
   <div class="card">
     <div class="card-body">
       <c:choose>
-        <c:when test="${empty user}">
+        <c:when test="${empty userId}">
           <h1>Welcome!</h1>
           <a href = "${webApp}/logIn">Log in</a>
         </c:when>
