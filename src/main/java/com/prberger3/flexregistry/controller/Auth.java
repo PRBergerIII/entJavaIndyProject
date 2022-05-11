@@ -41,7 +41,6 @@ import java.util.Properties;
 import java.util.stream.Collectors;
 
 
-// TODO if something goes wrong it this process, route to an error page. Currently, errors are only caught and logged.
 // TODO: 5/8/2022 javadocs
 /**
  * Inspired by: https://stackoverflow.com/questions/52144721/how-to-get-access-token-using-client-credentials-using-java-code
@@ -82,19 +81,26 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         String url =  "/user-handler";
 
         if (authCode == null) {
-            //TODO forward to an error page or back to the login
+            resp.sendError(401);
+            return;
         } else {
             HttpRequest authRequest = buildAuthRequest(authCode);
             try {
                 TokenResponse tokenResponse = getToken(authRequest);
                 validatedUser = validate(tokenResponse);
+                if (validatedUser == null) {
+                    resp.sendError(503);
+                    return;
+                }
                 req.setAttribute("authenticatedUser", validatedUser);
             } catch (IOException e) {
                 logger.error("Error getting or validating the token: " + e.getMessage(), e);
-                resp.sendRedirect(req.getContextPath() + "/logIn");//TODO forward to an error page
+                resp.sendError(498);
+                return;
             } catch (InterruptedException e) {
                 logger.error("Error getting token from Cognito oauth url " + e.getMessage(), e);
-                resp.sendRedirect(req.getContextPath() + "/logIn");//TODO forward to an error page
+                resp.sendError(417);
+                return;
             }
         }
         RequestDispatcher dispatcher = req.getRequestDispatcher(url);
@@ -142,20 +148,20 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         String keyId = tokenHeader.getKid();
         String alg = tokenHeader.getAlg();
 
-        // todo pick proper key from the two - it just so happens that the first one works for my case
         // Use Keys N and E
         BigInteger modulus = new BigInteger(1, org.apache.commons.codec.binary.Base64.decodeBase64(jwks.getKeys().get(0).getN()));
         BigInteger exponent = new BigInteger(1, org.apache.commons.codec.binary.Base64.decodeBase64(jwks.getKeys().get(0).getE()));
 
-        // TODO the following is "happy path", what if the exceptions are caught?
         // Create a public key
         PublicKey publicKey = null;
         try {
             publicKey = KeyFactory.getInstance("RSA").generatePublic(new RSAPublicKeySpec(modulus, exponent));
         } catch (InvalidKeySpecException e) {
             logger.error("Invalid Key Error " + e.getMessage(), e);
+            return null;
         } catch (NoSuchAlgorithmException e) {
             logger.error("Algorithm Error " + e.getMessage(), e);
+            return null;
         }
 
         // get an algorithm instance

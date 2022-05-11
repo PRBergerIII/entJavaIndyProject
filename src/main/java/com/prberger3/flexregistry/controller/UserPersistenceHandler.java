@@ -46,21 +46,9 @@ public class UserPersistenceHandler extends HttpServlet {
 
         HttpSession session = request.getSession();
         User authenticatedUser = (User) request.getAttribute("authenticatedUser");
-        User foundUser = null;
+        User foundUser = findUser(authenticatedUser.getUsername());
         String contextPath = request.getContextPath();
         String url = contextPath + "/";
-        String errorUrl = contextPath + "/"; // TEMP: 5/10/2022 change this to error page url
-
-        // In case everything authenticates but for some reason the user
-        // is unavailable (this is a fringe case that a test user experienced)
-        try {
-            foundUser = findUser(authenticatedUser.getUsername());
-        } catch (NullPointerException npex) {
-            logger.error("Error getting or validating the token: "
-                        + npex.getMessage(), npex);
-            response.sendRedirect(errorUrl);
-            return;
-        }
 
         if (foundUser != null) {
 
