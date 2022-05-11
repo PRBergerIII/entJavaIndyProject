@@ -13,18 +13,14 @@ Individual Project: Flex Registry - Home Page
   <c:import url="header"/>
   <c:import url="/nav"/>
 
-  <div class="card">
-    <div class="card-body">
-      <c:choose>
-        <c:when test="${empty userId}">
-          <h1>Welcome!</h1>
-        </c:when>
-        <c:otherwise>
-          <h1>Welcome ${user.firstName} ${user.lastName}!</h1>
-        </c:otherwise>
-      </c:choose>
-    </div>
-  </div>
+  <c:choose>
+    <c:when test="${empty userId}">
+      <h1>Welcome!</h1>
+    </c:when>
+    <c:otherwise>
+      <h1>Welcome ${user.firstName} ${user.lastName}!</h1>
+    </c:otherwise>
+  </c:choose>
   <c:import url="footer"/>
 </div>
 <c:import url="bootstrap"/>
