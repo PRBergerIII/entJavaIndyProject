@@ -99,7 +99,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
                 return;
             } catch (InterruptedException e) {
                 logger.error("Error getting token from Cognito oauth url " + e.getMessage(), e);
-                resp.sendError(417);
+                resp.sendError(410);
                 return;
             }
         }

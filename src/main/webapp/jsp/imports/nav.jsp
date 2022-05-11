@@ -26,9 +26,7 @@
           <div class="p-0 m-0 d-inline-flex">
             <input type="text" class="form-control"
                    name="searchTerm" id="searchTerm"
-                   title="Maximum 40 letters" maxlength="40"
-                   required/>
-            <div class="invalid-feedback"></div>
+                   maxlength="40" required/>
             <button type="submit" name="searchBtn" class="d-flex justify-content-center align-items-center col-2 btn btn-secondary"><i class="bi bi-search"></i></button>
           </div>
         </div>
