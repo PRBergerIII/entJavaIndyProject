@@ -17,7 +17,7 @@ Individual Project: Flex Registry - Profile Page
   <dl class="row">
     <dt class="col-md-3 col-xl-2">Name</dt>
     <dd class="col-md-9 col-xl-10">${owner.firstName} ${owner.lastName}</dd>
-    <c:if test="${owner == user || admin == true}">
+    <c:if test="${owner == user || isAdmin == true}">
       <dt class="col-md-3 col-xl-2">Email</dt>
       <dd class="col-md-9 col-xl-10">${owner.email}</dd>
     </c:if>
@@ -26,7 +26,7 @@ Individual Project: Flex Registry - Profile Page
                       && owner.city != null
                       && owner.state != null
                       && owner.zip != null}">
-        <c:if test="${owner == user || owner.addressVisibility == 'public' || admin == true}">
+        <c:if test="${owner == user || owner.addressVisibility == 'public' || isAdmin == true}">
           <dt class="col-md-3 col-xl-2">Shipping Address</dt>
           <dd class="col-md-9 col-xl-10">
             <ul class="list-unstyled mb-0">
