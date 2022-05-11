@@ -18,10 +18,9 @@ Individual Project: Flex Registry - Home Page
       <c:choose>
         <c:when test="${empty userId}">
           <h1>Welcome!</h1>
-          <a href = "${webApp}/logIn">Log in</a>
         </c:when>
         <c:otherwise>
-          <h3>Welcome ${user.firstName} ${user.lastName}!</h3>
+          <h1>Welcome ${user.firstName} ${user.lastName}!</h1>
         </c:otherwise>
       </c:choose>
     </div>
