@@ -56,11 +56,44 @@ public class EditProfileServlet  extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        String url = request.getContextPath() + "/profile";
+        String queryParam = "";
+
+        HttpSession session = request.getSession();
+        Integer loggedUserId = (Integer) session.getAttribute("userId");
+        GenericDao<User> userDao = new GenericDao<>(User.class);
+        User loggedUser = null;
+        User updatedUser = new User();
+
+        if (loggedUserId != null) {
+            loggedUser = userDao.getById(loggedUserId);
+            queryParam = String.format("?ownerId=%d", loggedUserId);
+        } else {
+            response.sendError(403);
+            return;
+        }
+
+        updatedUser.setId(loggedUserId);
+        updatedUser.setUsername(loggedUser.getUsername());
+        updatedUser.setFirstName(request.getParameter("firstName"));
+        updatedUser.setLastName(request.getParameter("lastName"));
+        updatedUser.setEmail(request.getParameter("email"));
+        updatedUser.setStreet(nullifyIfEmpty(request.getParameter("street")));
+        updatedUser.setCity(nullifyIfEmpty(request.getParameter("city")));
+        updatedUser.setState(nullifyIfEmpty(request.getParameter("state")));
+        updatedUser.setZip(nullifyIfEmpty(request.getParameter("zip")));
+        updatedUser.setAddressVisibility(request.getParameter("addressVisibility"));
+        updatedUser.setAbout(nullifyIfEmpty(request.getParameter("about")));
+        updatedUser.setAdmin(loggedUser.isAdmin());
 
         userDao.saveOrUpdate(updatedUser);
 
         response.sendRedirect(url + queryParam);
 
+    }
+// TODO: 5/11/2022 javadoc 
+    private String nullifyIfEmpty(String parameter) {
+        return parameter == "" ? null : parameter;
     }
 
 }
