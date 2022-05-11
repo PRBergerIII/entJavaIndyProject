@@ -12,7 +12,7 @@ Individual Project: Flex Registry - Home Page
 <div class="container">
   <c:import url="header"/>
   <c:import url="/nav"/>
-
+  <img src="images/flex-registry.png" width="45" height="45" alt="Flex Registry">
   <div class="card">
     <div class="card-body">
       <c:choose>

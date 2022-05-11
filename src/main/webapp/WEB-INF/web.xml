@@ -36,7 +36,7 @@
 
   <servlet>
     <servlet-name>Index</servlet-name>
-    <jsp-file>/jsp/index.jsp</jsp-file>
+    <jsp-file>/index.jsp</jsp-file>
   </servlet>
 
   <servlet>
@@ -258,8 +258,8 @@
   <!-- Home Page *********************************************************** -->
   <!-- ********************************************************************* -->
 
-  <welcome-file-list>
-    <welcome-file>/</welcome-file>
-  </welcome-file-list>
+<!--  <welcome-file-list>-->
+<!--    <welcome-file>/</welcome-file>-->
+<!--  </welcome-file-list>-->
 
 </web-app>
