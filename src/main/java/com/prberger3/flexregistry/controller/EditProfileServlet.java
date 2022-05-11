@@ -24,7 +24,24 @@ public class EditProfileServlet  extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        String url = "/edit-profile-jsp";
+        String title = "Edit Profile | Flex Registry";
 
+        HttpSession session = request.getSession();
+        Integer loggedUserId = (Integer) session.getAttribute("userId");
+        GenericDao<User> userDao = new GenericDao<>(User.class);
+
+
+        if (loggedUserId != null) {
+            request.setAttribute("user", userDao.getById(loggedUserId));
+        } else {
+            response.sendError(403);
+            return;
+        }
+
+        request.setAttribute("title", title);
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+        dispatcher.forward(request, response);
 
     }
 
