@@ -17,9 +17,9 @@ Individual Project: Flex Registry - User's Lists Page
     <div class="card-body">
       <p class="text-capitalize">${ownerLabel} Lists</p>
     </div>
-  </div>
+  </div
+  <c:import url="footer"/>
 </div>
 <c:import url="bootstrap"/>
-<c:import url="footer"/>
 </body>
 </html>

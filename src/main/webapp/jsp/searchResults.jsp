@@ -18,8 +18,8 @@ Individual Project: Flex Registry - Search Results Page
       Search Results
     </div>
   </div>
+  <c:import url="footer"/>
 </div>
 <c:import url="bootstrap"/>
-<c:import url="footer"/>
 </body>
 </html>

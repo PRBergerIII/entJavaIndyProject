@@ -16,8 +16,8 @@ Individual Project: Flex Registry - Home Page
   <h2 class="text-center">Whoops!</h2>
   <img class="img-fluid mx-auto d-block mw-75" src="https://http.cat/${statusCode}.jpg">
 
+  <c:import url="footer"/>
 </div>
 <c:import url="bootstrap"/>
-<c:import url="footer"/>
 </body>
 </html>
