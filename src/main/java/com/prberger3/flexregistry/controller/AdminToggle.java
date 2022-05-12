@@ -37,9 +37,21 @@ public class AdminToggle extends HttpServlet {
 
         String url = request.getContextPath() + "/";
         HttpSession session = request.getSession();
+        Integer loggedUserId = (Integer) session.getAttribute("userId");
+        GenericDao<User> userDao = new GenericDao<>(User.class);
+        User loggedUser = null;
 
-        session.getAttribute("user");
+        if (loggedUserId != null) {
+            loggedUser = userDao.getById(loggedUserId);
+        } else {
+            response.sendError(403);
+            return;
+        }
 
+        if (loggedUser == null || !loggedUser.isAdmin()) {
+            response.sendError(401);
+            return;
+        }
 
         boolean isAdmin = (boolean) session.getAttribute("isAdmin");
 
