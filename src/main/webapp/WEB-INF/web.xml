@@ -175,8 +175,8 @@
   </servlet>
 
   <servlet>
-    <servlet-name>SearchResultsDisplay</servlet-name>
-    <servlet-class>com.prberger3.flexregistry.controller.display.SearchResultsDisplay</servlet-class>
+    <servlet-name>SearchServlet</servlet-name>
+    <servlet-class>com.prberger3.flexregistry.controller.SearchServlet</servlet-class>
   </servlet>
 
   <servlet>
@@ -219,7 +219,7 @@
 <!--    <servlet-name>Lab32Servlet</servlet-name>-->
 <!--    <url-pattern>/lab32</url-pattern>-->
 <!--  </servlet-mapping>-->
-  NV3uxlY8A40mC7i4HzH0a2qV8f7D9ZarFNmSdy19I3auMfpdK2ztLEQov24HRojo8eMung
+
   <servlet-mapping>
     <servlet-name>applicationStartup</servlet-name>
     <url-pattern>/flexRegistry-startup</url-pattern>
@@ -371,8 +371,8 @@
   </servlet-mapping>
 
   <servlet-mapping>
-    <servlet-name>SearchResultsDisplay</servlet-name>
-    <url-pattern>/search-results</url-pattern>
+    <servlet-name>SearchServlet</servlet-name>
+    <url-pattern>/search</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>

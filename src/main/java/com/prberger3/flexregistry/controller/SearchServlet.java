@@ -1,4 +1,4 @@
-package com.prberger3.flexregistry.controller.display;
+package com.prberger3.flexregistry.controller;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -10,7 +10,7 @@ import java.io.IOException;
  *
  * @author  Paul Berger
  */
-public class SearchResultsDisplay extends HttpServlet {
+public class SearchServlet extends HttpServlet {
 
     /**
      *  Handles HTTP GET requests.
@@ -24,7 +24,7 @@ public class SearchResultsDisplay extends HttpServlet {
             throws ServletException, IOException {
 
         String url = "/index";
-        String title = "Home - Flex Registry";
+        String title = "Search Results - Flex Registry";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
 
         request.setAttribute("title", title);
