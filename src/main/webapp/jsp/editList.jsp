@@ -140,7 +140,7 @@ Individual Project: Flex Registry - Edit List Page
   <div class  ="row mt">
     <div class="d-sm-flex col-xl-6 col-lg-8 col-md justify-content-md-start justify-content-sm-around justify-content-center">
       <a class="btn btn-primary col-md-3 col-sm-5 mr-md-2 col-8 mb-2"
-           href="${webApp}/add-edit-item" role="button">
+           href="${webApp}/new-item?listId=${wishList.id}" role="button">
           Add Item
       </a>
     </div>

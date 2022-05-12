@@ -140,13 +140,13 @@
   </servlet>
 
   <servlet>
-    <servlet-name>AddEditItemServlet</servlet-name>
+    <servlet-name>NewItemServlet</servlet-name>
     <servlet-class>com.prberger3.flexregistry.controller.NewItemServlet</servlet-class>
   </servlet>
 
   <servlet>
-    <servlet-name>AddEditItem</servlet-name>
-    <jsp-file>/jsp/addEditItem.jsp</jsp-file>
+    <servlet-name>NewItem</servlet-name>
+    <jsp-file>/jsp/newItem.jsp</jsp-file>
   </servlet>
 
   <servlet>
@@ -311,13 +311,13 @@
   </servlet-mapping>
 
   <servlet-mapping>
-    <servlet-name>AddEditItemServlet</servlet-name>
-    <url-pattern>/add-edit-item</url-pattern>
+    <servlet-name>NewItemServlet</servlet-name>
+    <url-pattern>/new-item</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
-    <servlet-name>AddEditItem</servlet-name>
-    <url-pattern>/add-edit-item-jsp</url-pattern>
+    <servlet-name>NewItem</servlet-name>
+    <url-pattern>/new-item-jsp</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
