@@ -44,12 +44,12 @@ public class AdminToggle extends HttpServlet {
         if (loggedUserId != null) {
             loggedUser = userDao.getById(loggedUserId);
         } else {
-            response.sendError(403);
+            response.sendError(401);
             return;
         }
 
         if (loggedUser == null || !loggedUser.isAdmin()) {
-            response.sendError(401);
+            response.sendError(403);
             return;
         }
 

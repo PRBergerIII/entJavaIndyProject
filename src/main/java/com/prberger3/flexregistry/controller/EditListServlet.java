@@ -58,7 +58,8 @@ public class EditListServlet extends HttpServlet {
             return;
         }
 
-        if (loggedUserId != wishList.getOwner().getId()) {
+        if (loggedUserId != wishList.getOwner().getId()
+                && !(boolean) session.getAttribute("isAdmin")) {
             response.sendError(403);
             return;
         }
