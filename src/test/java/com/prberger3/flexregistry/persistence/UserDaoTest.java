@@ -10,9 +10,12 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-// TODO: 4/30/2022 javadocs
-// TODO: 5/5/2022 add tests for wishlists
 
+/**
+ * This class tests DAO operations on User entities.
+ *
+ * @author Paul Berger
+ */
 class UserDaoTest {
 
     GenericDao<User> userDao;
@@ -35,6 +38,9 @@ class UserDaoTest {
 
     }
 
+    /**
+     * Tests for get all success.
+     */
     @Test
     void getAllSuccess() {
 
@@ -43,6 +49,9 @@ class UserDaoTest {
 
     }
 
+    /**
+     * Tests for get by id success.
+     */
     @Test
     void getByIdSuccess() {
 
@@ -56,6 +65,9 @@ class UserDaoTest {
 
     }
 
+    /**
+     * Tests for find by property (equal) success.
+     */
     @Test
     void findByPropertyEqualSuccess() {
 
@@ -73,6 +85,9 @@ class UserDaoTest {
 
     }
 
+    /**
+     * Tests for find by property (like) success.
+     */
     @Test
     void findByPropertyLikeSuccess() {
 
@@ -90,6 +105,9 @@ class UserDaoTest {
 
     }
 
+    /**
+     * Save or update success.
+     */
     @Test
     void saveOrUpdateSuccess() {
 
@@ -104,6 +122,9 @@ class UserDaoTest {
 
     }
 
+    /**
+     * Insert success.
+     */
     @Test
     void insertSuccess() {
 
@@ -116,6 +137,9 @@ class UserDaoTest {
         assertEquals(testUser, userDao.getById(newId));
     }
 
+    /**
+     * Delete success.
+     */
     @Test
     void deleteSuccess() {
 
@@ -130,6 +154,9 @@ class UserDaoTest {
 
     }
 
+    /**
+     * Delete user with list success.
+     */
     @Test
     void deleteUserWithListSuccess() {
 
@@ -145,6 +172,9 @@ class UserDaoTest {
 
     }
 
+    /**
+     * Add follower success.
+     */
     @Test
     void addFollowerSuccess() {
 
@@ -162,6 +192,9 @@ class UserDaoTest {
 
     }
 
+    /**
+     * Accept follow request success.
+     */
     @Test
     void acceptFollowRequestSuccess() {
 
@@ -169,7 +202,7 @@ class UserDaoTest {
         User userFollowed = userDao.getById(3);
 
         assertEquals(3, userConnectionDao.findByPropertyEqual(
-                "accepted", false).size());
+                "accepted", (Boolean) false).size());
 
         userFollowed.acceptFollowRequest(follower);
 
@@ -184,12 +217,15 @@ class UserDaoTest {
         UserConnection updatedConnection = userConnectionDao.getById(connectionId);
 
         assertEquals(2, userConnectionDao.findByPropertyEqual(
-                "accepted", false).size());
+                "accepted", (Boolean) false).size());
         assertTrue(updatedFollower.getUsersFollowed().contains(updatedConnection));
         assertTrue(updatedUserFollowed.getFollowers().contains(updatedConnection));
 
     }
 
+    /**
+     * Add list success.
+     */
     @Test
     void addListSuccess() {
 
@@ -213,6 +249,9 @@ class UserDaoTest {
 
     }
 
+    /**
+     * Remove list success.
+     */
     @Test
     void removeListSuccess() {
 

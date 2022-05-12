@@ -15,21 +15,39 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-// TODO: 4/30/2022 javadocs 
-
+/**
+ * This class is dynamically typed so it can act as a DAO for
+ * any object in the persistence model.
+ *
+ * @param <T> the type parameter
+ */
 public class GenericDao<T> {
 
     private Class<T> type;
     private final Logger logger = LogManager.getLogger(this.getClass());
 
+    /**
+     * Instantiates a new Generic dao.
+     *
+     * @param type the type
+     */
     public GenericDao(Class<T> type) {
         this.type = type;
     }
 
+    /**
+     * Instantiates a new session
+     *
+     */
     private Session getSession() {
         return SessionFactoryProvider.getSessionFactory().openSession();
     }
 
+    /**
+     * Gets all entities of a type.
+     *
+     * @return the all
+     */
     public List<T> getAll() {
 
         Session session = getSession();
@@ -43,6 +61,13 @@ public class GenericDao<T> {
 
     }
 
+    /**
+     * Gets entities by id.
+     *
+     * @param <T> the type parameter
+     * @param id  the id
+     * @return the by id
+     */
     public <T>T getById(int id) {
 
         Session session = getSession();
@@ -52,6 +77,13 @@ public class GenericDao<T> {
 
     }
 
+    /**
+     * Gets entities by composite id.
+     *
+     * @param <T> the type parameter
+     * @param id  the id
+     * @return the by id
+     */
     public <T>T getById(Serializable id) {
 
         Session session = getSession();
@@ -65,8 +97,8 @@ public class GenericDao<T> {
      * Finds entities by one of its properties
      *
      * @param propertyName the property name
-     * @param value the value by which to find
-     * @return
+     * @param value        the value by which to find
+     * @return list
      */
     public List<T> findByPropertyEqual(String propertyName, Object value) {
         Session session = getSession();
@@ -82,25 +114,8 @@ public class GenericDao<T> {
      * Finds entities by one of its properties
      *
      * @param propertyName the property name
-     * @param value the value by which to find
-     * @return
-     */
-    public List<T> findByPropertyEqual(String propertyName, boolean value) {
-        Session session = getSession();
-        CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<T> query = builder.createQuery(type);
-        Root<T> root = query.from(type);
-        query.select(root).where(builder.equal(root.get(propertyName),value));
-
-        return session.createQuery(query).getResultList();
-    }
-
-    /**
-     * Finds entities by one of its properties
-     *
-     * @param propertyName the property name
-     * @param value the value by which to find
-     * @return
+     * @param value        the value by which to find
+     * @return list
      */
     public List<T> findByPropertyLike(String propertyName, String value) {
         value = "%" + value + "%";
@@ -113,6 +128,11 @@ public class GenericDao<T> {
         return session.createQuery(query).getResultList();
     }
 
+    /**
+     * Save or update.
+     *
+     * @param entity the entity
+     */
     public void saveOrUpdate(T entity) {
 
         Session session = getSession();
@@ -123,6 +143,12 @@ public class GenericDao<T> {
 
     }
 
+    /**
+     * Insert int.
+     *
+     * @param entity the entity
+     * @return the int
+     */
     public int insert(T entity) {
 
         int newId = 0;
@@ -137,21 +163,11 @@ public class GenericDao<T> {
 
     }
 
-    // TODO: 5/5/2022 delete if not needed
-//    public UserConnectionId insertConnection(T entity) {
-//
-//        UserConnectionId newId;
-//        Session session = getSession();
-//        Transaction transaction = session.beginTransaction();
-//
-//        newId = (UserConnectionId)session.save(entity);
-//        transaction.commit();
-//        session.close();
-//
-//        return newId;
-//
-//    }
-
+    /**
+     * Delete.
+     *
+     * @param entity the entity
+     */
     public void delete(T entity) {
 
         Session session = getSession();
@@ -161,27 +177,5 @@ public class GenericDao<T> {
         session.close();
 
     }
-
-    // TODO: 5/5/2022 delete if not needed
-//    /**
-//     * Finds entities by multiple properties.
-//     * Inspired by https://stackoverflow.com/questions/11138118/really-dynamic-jpa-criteriabuilder
-//     *
-//     * @param propertyMap property and value pairs
-//     * @return entities with properties equal to those passed in the map
-//     */
-//    public List<T> findByPropertyEqual(Map<String, Object> propertyMap) {
-//        Session session = getSession();
-//        CriteriaBuilder builder = session.getCriteriaBuilder();
-//        CriteriaQuery<T> query = builder.createQuery(type);
-//        Root<T> root = query.from(type);
-//        List<Predicate> predicates = new ArrayList<Predicate>();
-//        for (Map.Entry entry: propertyMap.entrySet()) {
-//            predicates.add(builder.equal(root.get((String) entry.getKey()), entry.getValue()));
-//        }
-//        query.select(root).where(builder.and(predicates.toArray(new Predicate[predicates.size()])));
-//
-//        return session.createQuery(query).getResultList();
-//    }
 
 }
