@@ -70,9 +70,6 @@ Individual Project: Flex Registry - Edit Profile Page
                name="street"
                value="${user.street}"
                placeholder="Your Street Address">
-        <div class="invalid-feedback">
-          Please provide your street address.
-        </div>
       </div>
     </div>
 
@@ -84,9 +81,6 @@ Individual Project: Flex Registry - Edit Profile Page
                name="city"
                value="${user.city}"
                placeholder="Your city">
-        <div class="invalid-feedback">
-          Please provide your city.
-        </div>
       </div>
     </div>
 
@@ -167,7 +161,7 @@ Individual Project: Flex Registry - Edit Profile Page
 
     <div class="form-group row">
       <label for="addressVisibility" class="col-md-2 col-form-label">
-        Address Visibility
+        Address Visibility<span class="text-danger font-weight-bold">*</span>
         <small>
           <i class="bi bi-info-circle-fill ml-1 text-muted align-top"
              title="This decides who can see your full address"></i>
@@ -199,9 +193,6 @@ Individual Project: Flex Registry - Edit Profile Page
         <textarea name="about" id="about"
                   placeholder="Anything about yourself. Sizes, favorite colors, or just a bio, your choice!"
                   class="form-control" rows="3">${user.about}</textarea>
-        <div class="invalid-feedback">
-          Please provide a valid email address.
-        </div>
       </div>
     </div>
 
