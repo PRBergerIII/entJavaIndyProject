@@ -58,6 +58,12 @@ public class EditListServlet extends HttpServlet {
             return;
         }
 
+        if (loggedUserId != wishList.getOwner().getId()) {
+            response.sendError(403);
+            return;
+        }
+
+
         List<WishListItem> listItems = new ArrayList<>(wishList.getItems());
         Collections.sort(listItems, Comparator.comparingInt(WishListItem::getId));
         priorities.put(1, "Lowest");

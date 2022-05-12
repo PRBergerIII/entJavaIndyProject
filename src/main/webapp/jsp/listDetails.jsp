@@ -73,8 +73,10 @@ Individual Project: Flex Registry - List Details Page
       </c:if>
       <a class="btn btn-secondary col-md-3 col-sm-4 ml-md-2 mr-md-2 col mb-2"
          href="${webApp}/user-lists?ownerId=${owner.id}" role="button">Go Back</a>
+      <c:if test="${user.equals(owner) || isAdmin}">
       <a class="btn btn-danger col-md-3 col-sm-4 ml-md-2 col mb-2"
          href="${webApp}/delete-list?listId=${wishList.id}" role="button">Delete</a>
+      </c:if>
     </div>
   </div>
   <c:import url="footer"/>

@@ -66,10 +66,12 @@ Individual Project: Flex Registry - Profile Page
          href="${webApp}/user-lists?ownerId=${owner.id}" role="button">
         View Wish Lists
       </a>
-      <a class="btn btn-primary col-md-3 col-sm-5 ml-md-2 col-8 mb-2"
-         href="${webApp}/edit-profile" role="button">
-        Edit Profile
-      </a>
+      <c:if test="${user.equals(owner) || isAdmin}">
+        <a class="btn btn-primary col-md-3 col-sm-5 ml-md-2 col-8 mb-2"
+           href="${webApp}/edit-profile" role="button">
+          Edit Profile
+        </a>
+      </c:if>
     </div>
   </div>
   <c:import url="footer"/>
