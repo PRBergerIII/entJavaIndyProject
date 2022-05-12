@@ -10,10 +10,13 @@ Individual Project: Flex Registry - Home Page
 <c:import url="head"/>
 <body>
 <div class="container">
-  <c:import url="header"/>
+  <div class="row">
+    <header class="jumbotron jumbotron-fluid mb-0 w-100 text-dark text-center py-md-3 py-1">
+      <h1 class="display-3 text-dark">Whoops!</h1>
+    </header>
+  </div>
   <c:import url="/nav"/>
 
-  <h2 class="text-center">Whoops!</h2>
   <img class="img-fluid mx-auto d-block mw-75" src="https://http.cat/${statusCode}.jpg">
 
   <c:import url="footer"/>
