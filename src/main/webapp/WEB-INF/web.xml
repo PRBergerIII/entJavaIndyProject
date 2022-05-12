@@ -120,6 +120,16 @@
   </servlet>
 
   <servlet>
+    <servlet-name>NewListServlet</servlet-name>
+    <servlet-class>com.prberger3.flexregistry.controller.NewListServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>NewList</servlet-name>
+    <jsp-file>/jsp/newList.jsp</jsp-file>
+  </servlet>
+
+  <servlet>
     <servlet-name>SearchResultsDisplay</servlet-name>
     <servlet-class>com.prberger3.flexregistry.controller.display.SearchResultsDisplay</servlet-class>
   </servlet>
@@ -258,6 +268,16 @@
   <servlet-mapping>
     <servlet-name>ListDetails</servlet-name>
     <url-pattern>/list-details-jsp</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>NewListServlet</servlet-name>
+    <url-pattern>/new-list</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>NewList</servlet-name>
+    <url-pattern>/new-list-jsp</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
