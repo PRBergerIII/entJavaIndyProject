@@ -27,6 +27,7 @@ public class DeleteItemServlet extends HttpServlet {
 
         String url = "/edit-list";
         String title = "Edit List | Flex Registry";
+        String queryParam = "";
 
         HttpSession session = request.getSession();
         Integer loggedUserId = (Integer) session.getAttribute("userId");
@@ -50,10 +51,14 @@ public class DeleteItemServlet extends HttpServlet {
             listItem = itemDao.getById(itemId);
         }
 
-        itemDao.delete(listItem);
+        if (listItem != null) {
+            queryParam = "?listId=" + String.valueOf(listItem.getWishList().getId());
+            itemDao.delete(listItem);
+        }
 
         request.setAttribute("title", title);
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+        RequestDispatcher dispatcher = getServletContext()
+                                      .getRequestDispatcher(url + queryParam);
         dispatcher.forward(request, response);
 
     }

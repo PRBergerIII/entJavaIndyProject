@@ -155,6 +155,11 @@
   </servlet>
 
   <servlet>
+    <servlet-name>DeleteItemServlet</servlet-name>
+    <servlet-class>com.prberger3.flexregistry.controller.DeleteItemServlet</servlet-class>
+  </servlet>
+
+  <servlet>
     <servlet-name>EditItem</servlet-name>
     <jsp-file>/jsp/editItem.jsp</jsp-file>
   </servlet>
@@ -338,6 +343,11 @@
   <servlet-mapping>
     <servlet-name>EditItem</servlet-name>
     <url-pattern>/edit-item-jsp</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>DeleteItemServlet</servlet-name>
+    <url-pattern>/delete-item</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>

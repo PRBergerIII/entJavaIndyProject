@@ -126,7 +126,7 @@ Individual Project: Flex Registry - Edit List Page
           <td>${priorities.get(item.priority)}</td>
           <td>${item.priceRange}</td>
           <td><a href="${webApp}/edit-item?itemId=${item.id}" class="text-primary px-0"><i class="bi bi-pencil-square"></i></a></td>
-          <td><a href="#" class="text-danger px-0"><i class="bi bi-trash"></i></a></td>
+          <td><a href="${webApp}/delete-item?itemId=${item.id}" class="text-danger px-0"><i class="bi bi-trash"></i></a></td>
         </tr>
         </c:forEach>
       </table>
