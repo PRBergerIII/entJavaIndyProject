@@ -58,7 +58,7 @@ public class NewListServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String url = request.getContextPath() + "/user-lists"; // TODO: 5/12/2022 route to edit list, this will need different parameters
+        String url = request.getContextPath() + "/edit-list"; // TODO: 5/12/2022 route to edit list, this will need different parameters
         String queryParam = "";
 
         HttpSession session = request.getSession();
@@ -71,7 +71,6 @@ public class NewListServlet extends HttpServlet {
 
         if (loggedUserId != null) {
             loggedUser = userDao.getById(loggedUserId);
-            queryParam = String.format("?ownerId=%d", loggedUserId);
         } else {
             response.sendError(403);
             return;
@@ -85,8 +84,9 @@ public class NewListServlet extends HttpServlet {
             newList.setEventDate(LocalDate.parse(request.getParameter("eventDate")));
         }
 
-        listDao.insert(newList);
+        int newId = listDao.insert(newList);
 
+        queryParam = String.format("?listId=%d", newId);
         response.sendRedirect(url + queryParam);
 
     }
