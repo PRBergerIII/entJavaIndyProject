@@ -6,7 +6,7 @@ Date: 2022.05.09
 Individual Project: Flex Registry - Search Results Page
 -->
 
-html lang="en" dir="ltr">
+<html lang="en" dir="ltr">
 <c:import url="head"/>
 <body>
 <div class="container">
@@ -26,7 +26,7 @@ html lang="en" dir="ltr">
           <th scope="col">Email</th>
         </thead>
         <tbody>
-        <c:forEach items="${users}" var="item">
+        <c:forEach items="${users}" var="user">
         <tr>
           <td><a href="${webApp}/profile?ownerId=${user.id}">${user.username}</a></td>
           <td>${user.firstName}</td>

@@ -29,7 +29,7 @@ public class SearchServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String url = "/index";
+        String url = "/search-results-jsp";
         String title = "Search Results - Flex Registry";
         String searhType = (String) request.getParameter("search");
         List<User> users = new ArrayList<>();
