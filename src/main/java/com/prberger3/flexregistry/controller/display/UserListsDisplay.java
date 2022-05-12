@@ -1,6 +1,7 @@
 package com.prberger3.flexregistry.controller.display;
 
 import com.prberger3.flexregistry.entity.User;
+import com.prberger3.flexregistry.entity.WishList;
 import com.prberger3.flexregistry.persistence.GenericDao;
 
 import javax.servlet.RequestDispatcher;
@@ -10,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A servlet for  todo
@@ -39,6 +42,7 @@ public class UserListsDisplay extends HttpServlet {
                         ? null : Integer.valueOf(idParam);
         GenericDao<User> userDao = new GenericDao<>(User.class);
         User owner = null;
+        List<WishList> ownerLists = new ArrayList<>();
         String ownerLabel = "";
 
         if (loggedUserId != null) {
