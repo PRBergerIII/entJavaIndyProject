@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -65,6 +67,8 @@ public class UserListsDisplay extends HttpServlet {
 
         ownerLists = new ArrayList<>(owner.getWishLists());
 
+        Collections.sort(ownerLists, Comparator.comparingInt(WishList::getId));
+
         request.setAttribute("ownerLists", ownerLists);
         request.setAttribute("ownerLabel", ownerLabel);
         request.setAttribute("title", ownerLabel + " " + title);
@@ -72,5 +76,7 @@ public class UserListsDisplay extends HttpServlet {
         dispatcher.forward(request, response);
 
     }
+
+
 
 }

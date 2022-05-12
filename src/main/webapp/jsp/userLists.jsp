@@ -16,7 +16,7 @@ Individual Project: Flex Registry - User's Lists Page
   <h2 class="text-capitalize mt-2 mb-4">${ownerLabel} Wish Lists</h2>
 
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-start">
-    <!-- start loop -->
+    <c:forEach items="${ownerLists}" var="wishList">
     <div class="col">
       <div class="card mb-4">
         <div class="card-header bg-success text-dark">
@@ -24,27 +24,33 @@ Individual Project: Flex Registry - User's Lists Page
         </div>
         <div class="card-body bg-light p-2">
           <ul class="list-group list-group-flush bg-light my-0">
-            <li class="list-group-item bg-light">List type: ${wishList.listType}</li>
-            <li class="list-group-item bg-light">Event Date: ${wishList.eventDate}</li>
-            <li class="list-group-item bg-light">Number of Items: ${wishList.items.size()}</li>
+            <c:if test="${wishList.listType != null}">
+              <li class="list-group-item bg-light">List type: ${wishList.listType}</li>
+            </c:if>
+            <c:if test="${wishList.eventDate != null}">
+              <li class="list-group-item bg-light">Event Date: ${wishList.eventDate}</li>
+            </c:if>
+            <c:if test="${wishList.items.size() != null}">
+              <li class="list-group-item bg-light">Number of Items: ${wishList.items.size()}</li>
+            </c:if>
           </ul>
         </div>
-        <a href="#" class="stretched-link"></a>
+        <a href="${webApp}/list-details?listId=${wishList.id}" class="stretched-link"></a>
       </div>
     </div>
-    <!-- end loop -->
+    </c:forEach>
   </div>
 
-
-<%-- only if owner is user --%>
-  <div class="row mt">
-    <div class="d-sm-flex col-xl-6 col-lg-8 col-md justify-content-md-start justify-content-sm-around justify-content-center">
-      <a class="btn btn-primary col-md-3 col-sm-5 mr-md-2 col-8 mb-2"
-         href="${webApp}/user-lists?ownerId=${owner.id}" role="button">
-        New Wish List
-      </a>
+  <c:if test="${user == owner}">
+    <div class="row mt">
+      <div class="d-sm-flex col-xl-6 col-lg-8 col-md justify-content-md-start justify-content-sm-around justify-content-center">
+        <a class="btn btn-primary col-md-3 col-sm-5 mr-md-2 col-8 mb-2"
+           href="${webApp}/user-lists?ownerId=${owner.id}" role="button">
+          New Wish List
+        </a>
+      </div>
     </div>
-  </div>
+  </c:if>
   <c:import url="footer"/>
 </div>
 <c:import url="bootstrap"/>

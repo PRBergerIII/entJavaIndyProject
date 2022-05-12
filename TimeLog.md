@@ -399,7 +399,8 @@ Played around for probably longer than necessary setting a context variable for 
 - Profile Page
   - Dynamically build page based on who is logged in and who owns the page
   - Add editing capability
-- 
+- Wish List Pages
+  - Learned about comparators for odering complex objects [here](https://stackoverflow.com/questions/13380908/sort-arraylist-of-complex-objects-alphabetically)
 
 #### Day's Reflection:
 Very happy to be able to roll consuming an API and error status code handling all into one... 
