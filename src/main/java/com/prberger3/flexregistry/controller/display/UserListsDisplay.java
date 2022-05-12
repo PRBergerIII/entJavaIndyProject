@@ -44,7 +44,6 @@ public class UserListsDisplay extends HttpServlet {
                         ? null : Integer.valueOf(idParam);
         GenericDao<User> userDao = new GenericDao<>(User.class);
         User owner = null;
-        List<WishList> ownerLists = new ArrayList<>();
         String ownerLabel = "";
 
         if (loggedUserId != null) {
@@ -65,8 +64,7 @@ public class UserListsDisplay extends HttpServlet {
             ownerLabel = String.format("%s's", owner.getUsername());
         }
 
-        ownerLists = new ArrayList<>(owner.getWishLists());
-
+        List<WishList> ownerLists = new ArrayList<>(owner.getWishLists());
         Collections.sort(ownerLists, Comparator.comparingInt(WishList::getId));
 
         request.setAttribute("ownerLists", ownerLists);

@@ -23,27 +23,33 @@ Individual Project: Flex Registry - List Details Page
       <li>Event Date: ${wishList.eventDate}</li>
     </c:if>
   </ul>
-
-  <table class="table table-sm table-responsive-md">
-    <thead>
-    <tr>
-      <th scope="col">Item</th>
-      <th scope="col">Specific?</th>
-      <th scope="col">Details</th>
-      <th scope="col">Priority</th>
-      <th scope="col">Price Range</th>
-    </thead>
-    <tbody>
-    <!-- start loop -->
-    <tr>
-      <th scope="row">${item.name}</th>
-      <td>${item.specificItem}</td>
-      <td>${item.detais}</td>
-      <td>${item.priority}</td>
-      <td>${item.priceRange}</td>
-    </tr>
-    <!-- stop loop -->
-  </table>
+  <c:choose>
+    <c:when test="${listItems.size() > 0}">
+      <table class="table table-sm table-responsive-md">
+        <thead>
+        <tr>
+          <th scope="col">Item</th>
+          <th scope="col">Specific?</th>
+          <th scope="col">Details</th>
+          <th scope="col">Priority</th>
+          <th scope="col">Price Range</th>
+        </thead>
+        <tbody>
+        <c:forEach items="${listItems}" var="item">
+        <tr>
+          <th scope="row">${item.name}</th>
+          <td>${item.specificItem ? "Yes" : "No"}</td>
+          <td>${item.details}</td>
+          <td>${item.priority}</td>
+          <td>${item.priceRange}</td>
+        </tr>
+        </c:forEach>
+      </table>
+    </c:when>
+    <c:otherwise>
+      <p>No items on this list yet!</p>
+    </c:otherwise>
+  </c:choose>
 
   <c:if test="${user == owner || isAdmin == true}">
     <div class="row mt">
