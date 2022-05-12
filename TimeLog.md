@@ -40,7 +40,7 @@
 | 2022.05.08 | 11:00 | [Indy Project](#036)                      |
 | 2022.05.09 | 2:30  | [Indy Project](#037)                      |
 | 2022.05.10 | 14:00 | [Indy Project](#038)                      |
-| 2022.05.11 |       | [Indy Project](#039)                      | 9:15 + start @ 18:15
+| 2022.05.11 | 29:15 | [Indy Project](#039)                      | 9:15 + start @ 18:15
 
 | Total Hours |     |
 |:------------|----:|
@@ -401,6 +401,9 @@ Played around for probably longer than necessary setting a context variable for 
   - Add editing capability
 - Wish List Pages
   - Learned about comparators for odering complex objects [here](https://stackoverflow.com/questions/13380908/sort-arraylist-of-complex-objects-alphabetically)
+- The rest of it.
 
 #### Day's Reflection:
 Very happy to be able to roll consuming an API and error status code handling all into one... 
+
+Yeah, you read that right. 29 hours. Honestly, I don't even know what to put here at this point. I'm going to bed. 
