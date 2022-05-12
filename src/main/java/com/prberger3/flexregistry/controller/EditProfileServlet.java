@@ -93,7 +93,7 @@ public class EditProfileServlet  extends HttpServlet {
     }
 // TODO: 5/11/2022 javadoc 
     private String nullifyIfEmpty(String parameter) {
-        return parameter == "" ? null : parameter;
+        return parameter.equals("") ? null : parameter;
     }
 
 }

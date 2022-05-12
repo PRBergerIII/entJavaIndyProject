@@ -1,10 +1,15 @@
 package com.prberger3.flexregistry.controller.display;
 
+import com.prberger3.flexregistry.entity.User;
+import com.prberger3.flexregistry.entity.WishList;
+import com.prberger3.flexregistry.persistence.GenericDao;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
@@ -28,6 +33,31 @@ public class ListDetailsDisplay extends HttpServlet {
         String url = "/list-details-jsp";
         String title = "List Details | Flex Registry";
 
+        HttpSession session = request.getSession();
+        Integer loggedUserId = (Integer) session.getAttribute("userId");
+        String idParam = request.getParameter("listId");
+        Integer listId = idParam.equals("") || idParam == null
+                ? null : Integer.valueOf(idParam);
+        WishList wishList = null;
+
+        GenericDao<User> userDao = new GenericDao<>(User.class);
+        GenericDao<WishList> listDao = new GenericDao<>(WishList.class);
+
+        if (loggedUserId != null) {
+            request.setAttribute("user", userDao.getById(loggedUserId));
+        }
+
+        if (listId != null) {
+            wishList = listDao.getById(listId);
+        }
+
+        if (wishList == null) {
+            response.sendError(404);
+            return;
+        }
+
+        request.setAttribute("wishList", wishList);
+        request.setAttribute("owner", wishList.getOwner());
         request.setAttribute("title", title);
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);
