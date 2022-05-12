@@ -66,13 +66,15 @@ Individual Project: Flex Registry - List Details Page
   <div class  ="row mt">
     <div class="d-sm-flex col-xl-6 col-lg-8 col-md justify-content-md-start justify-content-sm-around justify-content-center">
       <c:if test="${user.equals(owner) || isAdmin}">
-        <a class="btn btn-primary col-md-3 col-sm-5 mr-md-2 col-8 mb-2"
-           href="${webApp}/edit-list?listId=${wishList.id}" role="button">
-          Edit Wish List
-        </a>
+      <a class="btn btn-primary col-md-3 col-sm-4 mr-md-2 col mb-2"
+         href="${webApp}/edit-list?listId=${wishList.id}" role="button">
+        Edit Wish List
+      </a>
       </c:if>
-      <a class="btn btn-secondary col-md-3 col-sm-5 ml-md-2 col-8 mb-2"
+      <a class="btn btn-secondary col-md-3 col-sm-4 ml-md-2 mr-md-2 col mb-2"
          href="${webApp}/user-lists?ownerId=${owner.id}" role="button">Go Back</a>
+      <a class="btn btn-danger col-md-3 col-sm-4 ml-md-2 col mb-2"
+         href="${webApp}/user-lists?ownerId=${owner.id}" role="button">Delete</a>
     </div>
   </div>
   <c:import url="footer"/>
