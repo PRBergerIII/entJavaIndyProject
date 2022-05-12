@@ -69,7 +69,7 @@ public class NewItemServlet extends HttpServlet {
         String url = request.getContextPath() + "/edit-list";
         String queryParam = "";
         String idParam = request.getParameter("listId");
-        Integer listId = idParam.equals("") || idParam == null
+        Integer listId = idParam == null || idParam.equals("")
                 ? null : Integer.valueOf(idParam);
         WishListItem newItem = new WishListItem();
 

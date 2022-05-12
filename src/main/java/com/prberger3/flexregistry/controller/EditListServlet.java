@@ -34,7 +34,7 @@ public class EditListServlet extends HttpServlet {
         HttpSession session = request.getSession();
         Integer loggedUserId = (Integer) session.getAttribute("userId");
         String idParam = request.getParameter("listId");
-        Integer listId = idParam.equals("") || idParam == null
+        Integer listId = idParam == null || idParam.equals("")
                 ? null : Integer.valueOf(idParam);
         WishList wishList = null;
         Map<Integer, String> priorities = new HashMap<>();
@@ -94,7 +94,7 @@ public class EditListServlet extends HttpServlet {
         Integer loggedUserId = (Integer) session.getAttribute("userId");
         User loggedUser = null;
         String idParam = request.getParameter("listIdToUpdate");
-        Integer listId = idParam.equals("") || idParam == null
+        Integer listId = idParam == null || idParam.equals("")
                 ? null : Integer.valueOf(idParam);
         WishList updatedList = new WishList();
 

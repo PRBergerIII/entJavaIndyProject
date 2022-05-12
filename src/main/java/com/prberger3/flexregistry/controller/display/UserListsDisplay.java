@@ -40,7 +40,7 @@ public class UserListsDisplay extends HttpServlet {
         HttpSession session = request.getSession(); // TODO: look at consolodating code with other servlets
         Integer loggedUserId = (Integer) session.getAttribute("userId");
         String idParam = request.getParameter("ownerId");
-        Integer ownerId = idParam.equals("") || idParam == null
+        Integer ownerId = idParam == null || idParam.equals("")
                         ? null : Integer.valueOf(idParam);
         GenericDao<User> userDao = new GenericDao<>(User.class);
         User owner = null;
