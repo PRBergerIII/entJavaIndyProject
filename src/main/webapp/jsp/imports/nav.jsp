@@ -21,11 +21,11 @@
               <c:when test="${isAdmin}">
                 <li class="nav-item"><a href="${webApp}/search?search=admin" class="nav-link text-danger">User List</a></li>
                 <li class="nav-item"><a href="${webApp}/NV3uxlY8A40mC7i4HzH0a2qV8f7D9ZarFNmSdy19I3auMfpdK2ztLEQov24HRojo8eMung"
-                                        class="nav-link text-danger">ADMIN RIGHTS ON</a></li>
+                                        class="nav-link text-danger" title="Click to disable">ADMIN RIGHTS ON</a></li>
               </c:when>
               <c:otherwise>
                 <li class="nav-item"><a href="${webApp}/NV3uxlY8A40mC7i4HzH0a2qV8f7D9ZarFNmSdy19I3auMfpdK2ztLEQov24HRojo8eMung"
-                                        class="nav-link text-success">ADMIN RIGHTS OFF</a></li>
+                                        class="nav-link text-success" title="Click to enable">ADMIN RIGHTS OFF</a></li>
               </c:otherwise>
             </c:choose>
           </c:if>
