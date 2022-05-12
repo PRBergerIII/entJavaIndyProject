@@ -3,7 +3,7 @@
 <!--
 Author: Paul Berger
 Date: 2022.05.11
-Individual Project: Flex Registry - Add / Edit Item Page
+Individual Project: Flex Registry - Edit Item Page
 -->
 
 <html lang="en" dir="ltr">
