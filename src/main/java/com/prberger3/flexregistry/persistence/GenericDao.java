@@ -24,7 +24,6 @@ public class GenericDao<T> {
 
     public GenericDao(Class<T> type) {
         this.type = type;
-        logger.debug(String.format("Firing up a %s DAO", type));
     }
 
     private Session getSession() {
