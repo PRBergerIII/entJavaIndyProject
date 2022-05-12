@@ -15,9 +15,13 @@ Individual Project: Flex Registry - List Details Page
 
   <h2 class="text-capitalize mt-2 mb-0">${wishList.title}</h2>
   <ul class="ml-0 list-unstyled mb-4">
-    <li>By: ${owner.username}</li>
-    <li>List type: ${wishList.listType}</li>
-    <li>Event Date: ${wishList.eventDate}</li>
+    <li class="text-capitalize">By: ${owner.username}</li>
+    <c:if test="${wishList.listType != null}">
+      <li>List type: ${wishList.listType}</li>
+    </c:if>
+    <c:if test="${wishList.eventDate != null}">
+      <li>Event Date: ${wishList.eventDate}</li>
+    </c:if>
   </ul>
 
   <table class="table table-sm table-responsive-md">
@@ -28,8 +32,6 @@ Individual Project: Flex Registry - List Details Page
       <th scope="col">Details</th>
       <th scope="col">Priority</th>
       <th scope="col">Price Range</th>
-      <th scope="col"></th>
-      <th scope="col"></th>
     </thead>
     <tbody>
     <!-- start loop -->
