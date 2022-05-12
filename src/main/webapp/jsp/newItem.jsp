@@ -14,7 +14,7 @@ Individual Project: Flex Registry - Add / Edit Item Page
   <c:import url="/nav"/>
 
   <h2 class="mt-2 mb-0">Add an Item</h2>
-  <form class="mt-0 needs-validation" action="${webApp}/edit-profile" method="POST" novalidate>
+  <form class="mt-0 needs-validation" action="${webApp}/new-item" method="POST" novalidate>
 
     <div class="form-group row mb-4">
       <p class="text-danger mb-0 ml-3">Required fields - *</p>
@@ -26,7 +26,8 @@ Individual Project: Flex Registry - Add / Edit Item Page
       <div class="col-lg-4 col-md-6">
         <input type="text" class="form-control" id="name"
                name="name"
-               placeholder="Your first name" required>
+               value="${listItem.name}"
+               placeholder="The Item" required>
         <div class="invalid-feedback">
           Please provide a name for the item.
         </div>
@@ -45,8 +46,8 @@ Individual Project: Flex Registry - Add / Edit Item Page
       <div class="col-lg-4 col-md-6">
         <select class="custom-select" id="specificItem"
                 name="specificItem">
-          <option value="false" selected>No</option>
-          <option value="true">Yes</option>
+          <option value="false" ${!listItem.specificItem ? 'selected' : ''}>No</option>
+          <option value="true" ${listItem.specificItem ? 'selected' : ''}>Yes</option>
         </select>
         <div class="invalid-feedback">
           Please select whether or not this is for a specific item.
@@ -66,7 +67,7 @@ Individual Project: Flex Registry - Add / Edit Item Page
       <div class="col-lg-4 col-md-6">
           <textarea name="details" id="details"
                     placeholder="A link if it's specific, some ideas if it's not!"
-                    class="form-control" rows="3"></textarea>
+                    class="form-control" rows="3">${listItem.details}</textarea>
       </div>
     </div>
 
@@ -82,11 +83,11 @@ Individual Project: Flex Registry - Add / Edit Item Page
       <div class="col-lg-4 col-md-6">
         <select class="custom-select" id="priority"
                 name="priority">
-          <option value="1">Lowest</option>
-          <option value="2">Low</option>
-          <option value="3" selected>Medium</option>
-          <option value="4">High</option>
-          <option value="5">Highest</option>
+          <option value="1" ${listItem.priority == 1 ? 'selected' : ''}>Lowest</option>
+          <option value="2" ${listItem.priority == 2 ? 'selected' : ''}>Low</option>
+          <option value="3" ${listItem.priority == 3 || listItem == null ? 'selected' : ''}>Medium</option>
+          <option value="4" ${listItem.priority == 4 ? 'selected' : ''}>High</option>
+          <option value="5" ${listItem.priority == 5 ? 'selected' : ''}>Highest</option>
         </select>
       </div>
     </div>
@@ -98,10 +99,7 @@ Individual Project: Flex Registry - Add / Edit Item Page
         <input type="text" class="form-control" id="priceRange"
                name="priceRange"
                value="${listItem.priceRange}"
-               placeholder="Your first name" required>
-        <div class="invalid-feedback">
-          Please provide a name for the item.
-        </div>
+               placeholder="Estimate or exact!">
       </div>
     </div>
 

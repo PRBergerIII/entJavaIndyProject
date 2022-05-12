@@ -2,6 +2,7 @@ package com.prberger3.flexregistry.controller;
 
 import com.prberger3.flexregistry.entity.User;
 import com.prberger3.flexregistry.entity.WishList;
+import com.prberger3.flexregistry.entity.WishListItem;
 import com.prberger3.flexregistry.persistence.GenericDao;
 
 import javax.servlet.RequestDispatcher;
@@ -65,37 +66,46 @@ public class NewItemServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-//        String url = request.getContextPath() + "/edit-list";
-//        String queryParam = "";
-//
-//        HttpSession session = request.getSession();
-//        Integer loggedUserId = (Integer) session.getAttribute("userId");
-//        User loggedUser = null;
-//        WishList newList = new WishList();
-//
-//        GenericDao<User> userDao = new GenericDao<>(User.class);
-//        GenericDao<WishList> listDao = new GenericDao<>(WishList.class);
-//
-//        if (loggedUserId != null) {
-//            loggedUser = userDao.getById(loggedUserId);
-//        } else {
-//            response.sendError(403);
-//            return;
-//        }
-//
-//        newList.setOwner(loggedUser);
-//        newList.setTitle(request.getParameter("title"));
-//        newList.setVisibility(request.getParameter("visibility"));
-//        newList.setListType(request.getParameter("listType"));
-//        if (!request.getParameter("eventDate").equals("")) {
-//            newList.setEventDate(LocalDate.parse(request.getParameter("eventDate")));
-//        }
-//
-//        int newId = listDao.insert(newList);
-//
-//        queryParam = String.format("?listId=%d", newId);
-//        response.sendRedirect(url + queryParam);
+        String url = request.getContextPath() + "/edit-list";
+        String queryParam = "";
+        String idParam = request.getParameter("listId");
+        Integer listId = idParam.equals("") || idParam == null
+                ? null : Integer.valueOf(idParam);
+        WishListItem newItem = new WishListItem();
 
+        HttpSession session = request.getSession();
+        Integer loggedUserId = (Integer) session.getAttribute("userId");
+
+        GenericDao<WishList> listDao = new GenericDao<>(WishList.class);
+        GenericDao<WishListItem> itemDao = new GenericDao<>(WishListItem.class);
+
+        if (loggedUserId == null) {
+            response.sendError(403);
+            return;
+        }
+
+        if (listId == null) {
+            response.sendError(424);
+            return;
+        }
+
+        newItem.setWishList(listDao.getById(listId));
+        newItem.setName(request.getParameter("name"));
+        newItem.setSpecificItem(Boolean.parseBoolean(
+                                request.getParameter("specificItem")));
+        newItem.setDetails(nullifyIfEmpty(request.getParameter("details")));
+        newItem.setPriority(Integer.parseInt(request.getParameter("priority")));
+        newItem.setPriceRange(nullifyIfEmpty(request.getParameter("priceRange")));
+
+        itemDao.insert(newItem);
+
+        queryParam = String.format("?listId=%d", listId);
+        response.sendRedirect(url + queryParam);
+
+    }
+    // TODO: 5/11/2022 javadoc
+    private String nullifyIfEmpty(String parameter) {
+        return parameter.equals("") ? null : parameter;
     }
 
 }
