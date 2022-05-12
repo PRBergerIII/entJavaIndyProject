@@ -109,9 +109,10 @@ Individual Project: Flex Registry - Add / Edit Item Page
     <div class="form-group row mt-4">
       <div class="d-sm-flex col-xl-6 col-lg-8 col-md justify-content-md-start justify-content-sm-around justify-content-center">
         <button class="btn btn-primary col-md-3 col-sm-5 mr-md-2 col-8 mb-2" type="submit">Submit</button>
-        <a class="btn btn-secondary col-md-3 col-sm-5 ml-md-2 col-8 mb-2" href="${webApp}/edit-list?listId=${wishListId}" role="button">Back to List</a>
+        <a class="btn btn-secondary col-md-3 col-sm-5 ml-md-2 col-8 mb-2" href="${webApp}/edit-list?listId=${listId}" role="button">Back to List</a>
       </div>
     </div>
+    <input type="hidden" name="listId" value="${listId}">
   </form>
   <c:import url="footer"/>
 </div>
