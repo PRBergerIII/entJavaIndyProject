@@ -70,4 +70,11 @@ public class UserListsDisplay extends HttpServlet {
 
     }
 
+    private void buildOwnerLists(User owner, GenericDao<User> userDao) {
+
+        GenericDao<WishList> listDao = new GenericDao<>(WishList.class);
+
+
+    }
+
 }
