@@ -45,7 +45,7 @@ Individual Project: Flex Registry - User's Lists Page
     <div class="row mt">
       <div class="d-sm-flex col-xl-6 col-lg-8 col-md justify-content-md-start justify-content-sm-around justify-content-center">
         <a class="btn btn-primary col-md-3 col-sm-5 mr-md-2 col-8 mb-2"
-           href="#" role="button"> <%--     // TODO: 5/11/2022 link to new list page      --%>
+           href="${webApp}/new-list" role="button">
           New Wish List
         </a>
       </div>

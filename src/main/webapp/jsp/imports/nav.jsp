@@ -15,7 +15,7 @@
         <c:otherwise>
           <li class="nav-item"><a href="${webApp}/profile?ownerId=${userId}" class="nav-link">My Profile</a></li>
           <li class="nav-item"><a href="${webApp}/user-lists?ownerId=${userId}" class="nav-link">My Lists</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">New List</a></li>
+          <li class="nav-item"><a href="${webApp}/new-list" class="nav-link">New List</a></li>
           <li class="nav-item"><a href="${webApp}/log-out" class="nav-link">Log Out</a></li>
         </c:otherwise>
       </c:choose>
