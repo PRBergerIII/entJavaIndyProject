@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Properties;
 
-// TODO: 5/8/2022 javadocs
-/** Begins the authentication process using AWS Cognito
+/**
+ * Begins the authentication process using AWS Cognito
  *
  */
 public class LogIn extends HttpServlet implements PropertiesLoader {
@@ -32,7 +32,8 @@ public class LogIn extends HttpServlet implements PropertiesLoader {
     }
 
     /**
-     * todo
+     * Loads all the properties into static class variables.
+     *
      */
     private void getProperties() {
 

@@ -12,12 +12,14 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-// TODO: 4/30/2022 javadocs
-
+/**
+ * This class tests DAO operations on User entities.
+ *
+ * @author Paul Berger
+ */
 class WishListDaoTest {
 
     User testUser;
-
     GenericDao<WishList> listDao;
     GenericDao<WishListItem> itemDao;
 
@@ -41,6 +43,9 @@ class WishListDaoTest {
 
     }
 
+    /**
+     * Tests for get all success.
+     */
     @Test
     void getAllSuccess() {
 
@@ -49,6 +54,9 @@ class WishListDaoTest {
 
     }
 
+    /**
+     * Get by id success.
+     */
     @Test
     void getByIdSuccess() {
 
@@ -61,8 +69,11 @@ class WishListDaoTest {
 
     }
 
+    /**
+     * Find by property equal success.
+     */
     @Test
-    void findByPropertyEqual() {
+    void findByPropertyEqualSuccess() {
 
         WishList testList = new WishList(
                 testUser, "My Birthday List", "public", true, "Birthday",
@@ -77,6 +88,9 @@ class WishListDaoTest {
 
     }
 
+    /**
+     * Save or update success.
+     */
     @Test
     void saveOrUpdateSuccess() {
 
@@ -90,6 +104,9 @@ class WishListDaoTest {
 
     }
 
+    /**
+     * Insert success.
+     */
     @Test
     void insertSuccess() {
 
@@ -102,6 +119,9 @@ class WishListDaoTest {
 
     }
 
+    /**
+     * Delete success.
+     */
     @Test
     void deleteSuccess() {
 
@@ -116,6 +136,9 @@ class WishListDaoTest {
 
     }
 
+    /**
+     * Delete list with items success.
+     */
     @Test
     void deleteListWithItemsSuccess() {
 
@@ -131,6 +154,9 @@ class WishListDaoTest {
 
     }
 
+    /**
+     * Insert list with item success.
+     */
     @Test
     void insertListWithItemSuccess() {
 
@@ -157,6 +183,9 @@ class WishListDaoTest {
 
     }
 
+    /**
+     * Add list item success.
+     */
     @Test
     void addListItemSuccess() {
 
@@ -181,6 +210,9 @@ class WishListDaoTest {
 
     }
 
+    /**
+     * Remove list item success.
+     */
     @Test
     void removeListItemSuccess() {
 

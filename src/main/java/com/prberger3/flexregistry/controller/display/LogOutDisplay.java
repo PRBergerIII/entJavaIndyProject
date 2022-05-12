@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
- * A servlet for  todo
+ * A servlet displaying the log out page.
  *
  * @author  Paul Berger
  */

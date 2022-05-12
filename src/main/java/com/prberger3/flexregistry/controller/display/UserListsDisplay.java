@@ -17,7 +17,7 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * A servlet for  todo
+ * A servlet for displaying the page that shows a user's lists.
  *
  * @author  Paul Berger
  */
@@ -37,7 +37,7 @@ public class UserListsDisplay extends HttpServlet {
         String url = "/user-lists-jsp";
         String title = "Lists | Flex Registry";
 
-        HttpSession session = request.getSession(); // TODO: look at consolodating code with other servlets
+        HttpSession session = request.getSession();
         Integer loggedUserId = (Integer) session.getAttribute("userId");
         String idParam = request.getParameter("ownerId");
         Integer ownerId = idParam == null || idParam.equals("")
@@ -74,7 +74,5 @@ public class UserListsDisplay extends HttpServlet {
         dispatcher.forward(request, response);
 
     }
-
-
 
 }

@@ -40,9 +40,9 @@ import java.util.HashMap;
 import java.util.Properties;
 import java.util.stream.Collectors;
 
-
-// TODO: 5/8/2022 javadocs
 /**
+ * The class responsible for handling cognito authorization.
+ *
  * Inspired by: https://stackoverflow.com/questions/52144721/how-to-get-access-token-using-client-credentials-using-java-code
  */
 
@@ -243,7 +243,8 @@ public class Auth extends HttpServlet implements PropertiesLoader {
     }
 
     /**
-     * todo
+     * Loads all the properties into static class variables.
+     *
      */
     private void getProperties() {
 

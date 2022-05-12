@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.time.LocalDate;
 
 public class EditItemServlet extends HttpServlet {
 
@@ -114,7 +113,14 @@ public class EditItemServlet extends HttpServlet {
         response.sendRedirect(url + queryParam);
 
     }
-    // TODO: 5/11/2022 javadoc
+
+    /**
+     * Converts empty strings to null values for proper database default
+     * utilization.
+     *
+     * @param parameter
+     * @return null if an empty string, the original string otherwise
+     */
     private String nullifyIfEmpty(String parameter) {
         return parameter.equals("") ? null : parameter;
     }

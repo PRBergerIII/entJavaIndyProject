@@ -103,7 +103,14 @@ public class NewItemServlet extends HttpServlet {
         response.sendRedirect(url + queryParam);
 
     }
-    // TODO: 5/11/2022 javadoc
+
+    /**
+     * Converts empty strings to null values for proper database default
+     * utilization.
+     *
+     * @param parameter
+     * @return null if an empty string, the original string otherwise
+     */
     private String nullifyIfEmpty(String parameter) {
         return parameter.equals("") ? null : parameter;
     }

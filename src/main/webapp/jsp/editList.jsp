@@ -47,7 +47,6 @@ Individual Project: Flex Registry - Edit List Page
                 name="visibility" required>
           <option value="public" ${wishList.visibility != 'private' ? 'selected' : ''}>Public</option>
           <option value="private" ${wishList.visibility == 'private' ? 'selected' : ''}>Private</option>
-          <!-- TODO: add followers option once that system is set up -->
         </select>
         <div class="invalid-feedback">
           Please select a visibility.

@@ -13,12 +13,14 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
-// TODO: 4/30/2022 javadocs
-
+/**
+ * This class tests DAO operations on User entities.
+ *
+ * @author Paul Berger
+ */
 class WishListItemDaoTest {
 
     GenericDao<WishListItem> itemDao;
-
     User testUser;
     WishList testList;
 
@@ -45,6 +47,9 @@ class WishListItemDaoTest {
 
     }
 
+    /**
+     * Get all success.
+     */
     @Test
     void getAllSuccess() {
 
@@ -53,6 +58,9 @@ class WishListItemDaoTest {
 
     }
 
+    /**
+     * Get by id success.
+     */
     @Test
     void getByIdSuccess() {
 
@@ -66,6 +74,9 @@ class WishListItemDaoTest {
 
     }
 
+    /**
+     * Save or update success.
+     */
     @Test
     void saveOrUpdateSuccess() {
 
@@ -80,6 +91,9 @@ class WishListItemDaoTest {
 
     }
 
+    /**
+     * Insert success.
+     */
     @Test
     void insertSuccess() {
 
@@ -93,6 +107,9 @@ class WishListItemDaoTest {
 
     }
 
+    /**
+     * Delete success.
+     */
     @Test
     void deleteSuccess() {
 

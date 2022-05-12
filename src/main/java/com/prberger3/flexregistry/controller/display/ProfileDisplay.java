@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
- * A servlet for  todo
+ * A servlet for displaying a user's profile page.
  *
  * @author  Paul Berger
  */

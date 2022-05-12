@@ -7,8 +7,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * This class is responsible for handling error status codes and forwarding
+ * to the JSP.
+ *
+ * @author Paul Berger
+ */
 public class ErrorDisplay extends HttpServlet {
-// TODO: javadoc
+
     /**
      *  Handles HTTP GET requests.
      *
@@ -25,7 +31,6 @@ public class ErrorDisplay extends HttpServlet {
         String title = String.format("%d | Flex Registry", statusCode);
 
         request.setAttribute("statusCode", statusCode);
-//        response.setStatus(200);
 
         request.setAttribute("title", title);
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);

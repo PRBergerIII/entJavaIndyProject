@@ -5,11 +5,10 @@ import java.util.Objects;
 
 import javax.persistence.*;
 
-// TODO: 5/3/2022  add jacvadocs
 /**
- * Adapted from the Composiite ID class in solution #2 at:
- *      https://www.codejava.net/frameworks/hibernate/hibernate-many-to-many-
- *      association-with-extra-columns-in-join-table-example
+ * Adapted from the Composite ID class in solution #2 at:
+ * https://www.codejava.net/frameworks/hibernate/hibernate-many-to-many-
+ * association-with-extra-columns-in-join-table-example
  */
 @Embeddable
 public class UserConnectionId implements Serializable {
@@ -21,26 +20,55 @@ public class UserConnectionId implements Serializable {
     @ManyToOne(cascade = CascadeType.ALL)
     private User userFollowed;
 
+    /**
+     * Instantiates a new User connection id.
+     */
     public UserConnectionId() {
     }
 
+    /**
+     * Instantiates a new User connection id.
+     *
+     * @param follower     the follower
+     * @param userFollowed the user followed
+     */
     public UserConnectionId(User follower, User userFollowed) {
         this.follower = follower;
         this.userFollowed = userFollowed;
     }
 
+    /**
+     * Gets follower.
+     *
+     * @return the follower
+     */
     public User getFollower() {
         return follower;
     }
 
+    /**
+     * Sets follower.
+     *
+     * @param follower the follower
+     */
     public void setFollower(User follower) {
         this.follower = follower;
     }
 
+    /**
+     * Gets user followed.
+     *
+     * @return the user followed
+     */
     public User getUserFollowed() {
         return userFollowed;
     }
 
+    /**
+     * Sets user followed.
+     *
+     * @param userFollowed the user followed
+     */
     public void setUserFollowed(User userFollowed) {
         this.userFollowed = userFollowed;
     }

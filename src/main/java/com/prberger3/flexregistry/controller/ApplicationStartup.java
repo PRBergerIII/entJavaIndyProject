@@ -10,10 +10,8 @@ import javax.servlet.http.HttpServlet;
 import java.io.IOException;
 import java.util.Properties;
 
-// TODO: 5/8/2022 javadocs
-
 /**
- * todo
+ * A class for setting up the application environment.
  *
  * @author  Paul Berger
  */
@@ -24,7 +22,8 @@ public class ApplicationStartup extends HttpServlet implements PropertiesLoader 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     /**
-     * todo
+     * The init method, which loads the cognito properties, and also
+     * assigns a context attribute to the context path for easy access
      *
      * @throws ServletException  if there is a Servlet failure
      */

@@ -46,7 +46,6 @@ Individual Project: Flex Registry - New List Page
                 name="visibility" required>
           <option value="public" selected>Public</option>
           <option value="private">Private</option>
-          <!-- TODO: add followers option once that system is set up -->
         </select>
         <div class="invalid-feedback">
           Please select a visibility.

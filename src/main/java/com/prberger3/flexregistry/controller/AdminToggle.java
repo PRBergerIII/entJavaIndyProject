@@ -18,7 +18,8 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * A servlet for  todo
+ * A servlet for setting or revoking admin rights on the session, depending
+ * on their current status.
  *
  * @author  Paul Berger
  */

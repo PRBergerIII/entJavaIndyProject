@@ -14,7 +14,11 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
-// TODO: 5/8/2022 javadoc
+
+/**
+ * This class stores new users to the database, and checks any users that
+ * log in to confirm they are already there.
+ */
 public class UserPersistenceHandler extends HttpServlet {
 
     GenericDao<User> userDao;
@@ -22,7 +26,7 @@ public class UserPersistenceHandler extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     /**
-     * todo
+     * Instantiates the DAO
      *
      * @throws ServletException  if there is a Servlet failure
      */

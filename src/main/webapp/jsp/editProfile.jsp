@@ -172,7 +172,6 @@ Individual Project: Flex Registry - Edit Profile Page
                 name="addressVisibility">
           <option value="private" ${user.addressVisibility == 'private' ? 'selected' : ''}>Private</option>
           <option value="public" ${user.addressVisibility == 'public' ? 'selected' : ''}>Public</option>
-          <!-- TODO: add followers option once that system is set up -->
         </select>
         <div class="invalid-feedback">
           Please select a visibility.

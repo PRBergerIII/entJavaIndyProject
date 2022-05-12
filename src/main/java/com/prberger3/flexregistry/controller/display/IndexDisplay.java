@@ -9,12 +9,13 @@ import java.io.IOException;
 
 
 /**
- * A servlet for todo.
+ * A servlet for building the title attribute for and forwarding requests to
+ * the home page.
  *
  * @author  Paul Berger
  */
 public class IndexDisplay extends HttpServlet {
-// TODO: make a display servlet that all these extend? Or an interface for repeated code in doGet?
+
     /**
      *  Handles HTTP GET requests.
      *

@@ -5,8 +5,11 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.util.Objects;
 
-// TODO: 5/5/2022 add javadocs
-
+/**
+ * This is the WishListItem class for the Flex Registry app.
+ *
+ * @author Paul Berger
+ */
 @Entity(name = "WishListItem")
 @Table(name = "wish_list_item")
 public class WishListItem {
@@ -29,8 +32,23 @@ public class WishListItem {
     @Column(name = "purchased_message")
     private String purchasedMessage;
 
+    /**
+     * Instantiates a new Wish list item.
+     */
     public WishListItem() {}
 
+    /**
+     * Instantiates a new Wish list item.
+     *
+     * @param wishList         the wish list
+     * @param name             the name
+     * @param specificItem     the specific item
+     * @param details          the details
+     * @param priority         the priority
+     * @param priceRange       the price range
+     * @param purchased        the purchased
+     * @param purchasedMessage the purchased message
+     */
     public WishListItem(WishList wishList, String name, Boolean specificItem,
                         String details, int priority, String priceRange,
                         boolean purchased, String purchasedMessage) {
@@ -46,74 +64,164 @@ public class WishListItem {
 
     }
 
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * Sets id.
+     *
+     * @param id the id
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     * Gets wish list.
+     *
+     * @return the wish list
+     */
     public WishList getWishList() {
         return wishList;
     }
 
+    /**
+     * Sets wish list.
+     *
+     * @param wishList the wish list
+     */
     public void setWishList(WishList wishList) {
         this.wishList = wishList;
     }
 
+    /**
+     * Gets name.
+     *
+     * @return the name
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Sets name.
+     *
+     * @param name the name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * Gets specific item.
+     *
+     * @return the specific item
+     */
     public boolean getSpecificItem() {
         return specificItem;
     }
 
+    /**
+     * Sets specific item.
+     *
+     * @param specificItem the specific item
+     */
     public void setSpecificItem(boolean specificItem) {
         this.specificItem = specificItem;
     }
 
+    /**
+     * Gets details.
+     *
+     * @return the details
+     */
     public String getDetails() {
         return details;
     }
 
+    /**
+     * Sets details.
+     *
+     * @param details the details
+     */
     public void setDetails(String details) {
         this.details = details;
     }
 
+    /**
+     * Gets priority.
+     *
+     * @return the priority
+     */
     public int getPriority() {
         return priority;
     }
 
+    /**
+     * Sets priority.
+     *
+     * @param priority the priority
+     */
     public void setPriority(int priority) {
         this.priority = priority;
     }
 
+    /**
+     * Gets price range.
+     *
+     * @return the price range
+     */
     public String getPriceRange() {
         return priceRange;
     }
 
+    /**
+     * Sets price range.
+     *
+     * @param priceRange the price range
+     */
     public void setPriceRange(String priceRange) {
         this.priceRange = priceRange;
     }
 
+    /**
+     * Is purchased boolean.
+     *
+     * @return the boolean
+     */
     public boolean isPurchased() {
         return purchased;
     }
 
+    /**
+     * Sets purchased.
+     *
+     * @param purchased the purchased
+     */
     public void setPurchased(boolean purchased) {
         this.purchased = purchased;
     }
 
+    /**
+     * Gets purchased message.
+     *
+     * @return the purchased message
+     */
     public String getPurchasedMessage() {
         return purchasedMessage;
     }
 
+    /**
+     * Sets purchased message.
+     *
+     * @param purchasedMessage the purchased message
+     */
     public void setPurchasedMessage(String purchasedMessage) {
         this.purchasedMessage = purchasedMessage;
     }

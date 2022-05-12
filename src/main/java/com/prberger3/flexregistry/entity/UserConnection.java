@@ -3,8 +3,9 @@ package com.prberger3.flexregistry.entity;
 import javax.persistence.*;
 import java.util.Objects;
 
-// TODO: 5/5/2022 javadoc
-
+/**
+ * The type User connection.
+ */
 @Entity(name = "UserConnection")
 @Table(name = "user_connection")
 @AssociationOverrides({
@@ -19,44 +20,93 @@ public class UserConnection {
     private UserConnectionId primaryKey = new UserConnectionId();
     private boolean accepted;
 
+    /**
+     * Instantiates a new User connection.
+     */
     public UserConnection() {
     }
 
+    /**
+     * Instantiates a new User connection.
+     *
+     * @param follower     the follower
+     * @param userFollowed the user followed
+     */
     public UserConnection(User follower, User userFollowed) {
         this.primaryKey = new UserConnectionId(follower, userFollowed);
         accepted = false;
     }
 
+    /**
+     * Gets primary key.
+     *
+     * @return the primary key
+     */
     public UserConnectionId getPrimaryKey() {
         return primaryKey;
     }
 
+    /**
+     * Sets primary key.
+     *
+     * @param primaryKey the primary key
+     */
     public void setPrimaryKey(UserConnectionId primaryKey) {
         this.primaryKey = primaryKey;
     }
 
+    /**
+     * Gets follower.
+     *
+     * @return the follower
+     */
     @Transient
     public User getFollower() {
         return getPrimaryKey().getFollower();
     }
 
+    /**
+     * Sets follower.
+     *
+     * @param user the user
+     */
     public void setFollower(User user) {
         getPrimaryKey().setFollower(user);
     }
 
+    /**
+     * Gets user followed.
+     *
+     * @return the user followed
+     */
     @Transient
     public User getUserFollowed() {
         return getPrimaryKey().getUserFollowed();
     }
 
+    /**
+     * Sets user followed.
+     *
+     * @param group the group
+     */
     public void setUserFollowed(User group) {
         getPrimaryKey().setUserFollowed(group);
     }
 
+    /**
+     * Is accepted boolean.
+     *
+     * @return the boolean
+     */
     public boolean isAccepted() {
         return accepted;
     }
 
+    /**
+     * Sets accepted.
+     *
+     * @param accepted the accepted
+     */
     public void setAccepted(boolean accepted) {
         this.accepted = accepted;
     }

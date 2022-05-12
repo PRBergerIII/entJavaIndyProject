@@ -15,7 +15,8 @@ import java.io.IOException;
 import java.util.*;
 
 /**
- * A servlet for  todo
+ * A servlet for doing some initial processing before forwarding the request
+ * to the list details JSP.
  *
  * @author  Paul Berger
  */

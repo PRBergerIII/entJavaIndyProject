@@ -1,12 +1,9 @@
 package com.prberger3.flexregistry.entity;
 
-import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.*;
-
-// TODO: 4/28/2022 add javadocs
 
 /**
  * This is the user class for the Flex Registry app.
@@ -51,8 +48,19 @@ public class User {
             orphanRemoval = true)
     private Set<WishList> wishLists = new HashSet<>();
 
+    /**
+     * Instantiates a new User.
+     */
     public User() {}
 
+    /**
+     * Instantiates a new User.
+     *
+     * @param username  the username
+     * @param firstName the first name
+     * @param lastName  the last name
+     * @param email     the email
+     */
     public User(String username,
                 String firstName,
                 String lastName,
@@ -65,6 +73,21 @@ public class User {
         this.admin = false;
     }
 
+    /**
+     * Instantiates a new User.
+     *
+     * @param username          the username
+     * @param firstName         the first name
+     * @param lastName          the last name
+     * @param email             the email
+     * @param street            the street
+     * @param city              the city
+     * @param state             the state
+     * @param zip               the zip
+     * @param addressVisibility the address visibility
+     * @param about             the about
+     * @param admin             the admin
+     */
     public User(String username,
                 String firstName,
                 String lastName,
@@ -89,126 +112,281 @@ public class User {
         this.admin = admin;
     }
 
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * Sets id.
+     *
+     * @param id the id
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     * Gets username.
+     *
+     * @return the username
+     */
     public String getUsername() {
         return username;
     }
 
+    /**
+     * Sets username.
+     *
+     * @param username the username
+     */
     public void setUsername(String username) {
         this.username = username;
     }
 
+    /**
+     * Gets first name.
+     *
+     * @return the first name
+     */
     public String getFirstName() {
         return firstName;
     }
 
+    /**
+     * Sets first name.
+     *
+     * @param firstName the first name
+     */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
+    /**
+     * Gets last name.
+     *
+     * @return the last name
+     */
     public String getLastName() {
         return lastName;
     }
 
+    /**
+     * Sets last name.
+     *
+     * @param lastName the last name
+     */
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
+    /**
+     * Gets email.
+     *
+     * @return the email
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * Sets email.
+     *
+     * @param email the email
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+     * Gets street.
+     *
+     * @return the street
+     */
     public String getStreet() {
         return street;
     }
 
+    /**
+     * Sets street.
+     *
+     * @param street the street
+     */
     public void setStreet(String street) {
         this.street = street;
     }
 
+    /**
+     * Gets city.
+     *
+     * @return the city
+     */
     public String getCity() {
         return city;
     }
 
+    /**
+     * Sets city.
+     *
+     * @param city the city
+     */
     public void setCity(String city) {
         this.city = city;
     }
 
+    /**
+     * Gets state.
+     *
+     * @return the state
+     */
     public String getState() {
         return state;
     }
 
+    /**
+     * Sets state.
+     *
+     * @param state the state
+     */
     public void setState(String state) {
         this.state = state;
     }
 
+    /**
+     * Gets zip.
+     *
+     * @return the zip
+     */
     public String getZip() {
         return zip;
     }
 
+    /**
+     * Sets zip.
+     *
+     * @param zip the zip
+     */
     public void setZip(String zip) {
         this.zip = zip;
     }
 
+    /**
+     * Gets address visibility.
+     *
+     * @return the address visibility
+     */
     public String getAddressVisibility() {
         return addressVisibility;
     }
 
+    /**
+     * Sets address visibility.
+     *
+     * @param addressVisibility the address visibility
+     */
     public void setAddressVisibility(String addressVisibility) {
         this.addressVisibility = addressVisibility;
     }
 
+    /**
+     * Gets about.
+     *
+     * @return the about
+     */
     public String getAbout() {
         return about;
     }
 
+    /**
+     * Sets about.
+     *
+     * @param about the about
+     */
     public void setAbout(String about) {
         this.about = about;
     }
 
+    /**
+     * Is admin boolean.
+     *
+     * @return the boolean
+     */
     public boolean isAdmin() {
         return admin;
     }
 
+    /**
+     * Sets admin.
+     *
+     * @param admin the admin
+     */
     public void setAdmin(boolean admin) {
         this.admin = admin;
     }
 
+    /**
+     * Gets followers.
+     *
+     * @return the followers
+     */
     public Set<UserConnection> getFollowers() {
         return followers;
     }
 
+    /**
+     * Sets followers.
+     *
+     * @param followers the followers
+     */
     public void setFollowers(Set<UserConnection> followers) {
         this.followers = followers;
     }
 
+    /**
+     * Gets users followed.
+     *
+     * @return the users followed
+     */
     public Set<UserConnection> getUsersFollowed() {
         return usersFollowed;
     }
 
+    /**
+     * Sets users followed.
+     *
+     * @param usersFollowed the users followed
+     */
     public void setUsersFollowed(Set<UserConnection> usersFollowed) {
         this.usersFollowed = usersFollowed;
     }
 
+    /**
+     * Gets wish lists.
+     *
+     * @return the wish lists
+     */
     public Set<WishList> getWishLists() {
         return wishLists;
     }
 
+    /**
+     * Sets wish lists.
+     *
+     * @param wishLists the wish lists
+     */
     public void setWishLists(Set<WishList> wishLists) {
         this.wishLists = wishLists;
     }
 
+    /**
+     * Follow user.
+     *
+     * @param userFollowed the user followed
+     */
     public void followUser(User userFollowed) {
 
         UserConnection userConnection = new UserConnection(this, userFollowed);
@@ -218,6 +396,11 @@ public class User {
 
     }
 
+    /**
+     * Accept follow request.
+     *
+     * @param follower the follower
+     */
     public void acceptFollowRequest(User follower) {
 
         for (UserConnection connection : followers) {
@@ -241,8 +424,13 @@ public class User {
 
     }
 
-    // TODO: 5/7/2022 add get accepted followers list method
+    // future: add get accepted followers list method
 
+    /**
+     * Add wish list.
+     *
+     * @param newWishList the new wish list
+     */
     public void addWishList(WishList newWishList) {
 
         newWishList.setOwner(this);
@@ -250,6 +438,11 @@ public class User {
 
     }
 
+    /**
+     * Remove wish list.
+     *
+     * @param removedWishList the removed wish list
+     */
     public void removeWishList(WishList removedWishList) {
 
         wishLists.remove(removedWishList);
