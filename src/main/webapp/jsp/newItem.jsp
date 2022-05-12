@@ -97,7 +97,7 @@ Individual Project: Flex Registry - Add / Edit Item Page
       <div class="col-lg-4 col-md-6">
         <input type="text" class="form-control" id="priceRange"
                name="priceRange"
-               placeholder="Estimate or exact!">
+               placeholder="A range or exact">
       </div>
     </div>
 

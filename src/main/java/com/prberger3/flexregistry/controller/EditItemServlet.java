@@ -74,18 +74,16 @@ public class EditItemServlet extends HttpServlet {
 
         String url = request.getContextPath() + "/edit-list";
         String queryParam = "";
-        String listIdParam = request.getParameter("listId");
-        Integer listId = listIdParam == null || listIdParam.equals("")
-                ? null : Integer.valueOf(listIdParam);
         String itemIdParam = request.getParameter("itemId");
         Integer itemId = itemIdParam == null || itemIdParam.equals("")
                 ? null : Integer.valueOf(itemIdParam);
-        WishListItem newItem = new WishListItem();
+        WishList ownerList = null;
+        WishListItem oldItem = null;
+        WishListItem updatedItem = new WishListItem();
 
         HttpSession session = request.getSession();
         Integer loggedUserId = (Integer) session.getAttribute("userId");
 
-        GenericDao<WishList> listDao = new GenericDao<>(WishList.class);
         GenericDao<WishListItem> itemDao = new GenericDao<>(WishListItem.class);
 
         if (loggedUserId == null) {
@@ -93,23 +91,26 @@ public class EditItemServlet extends HttpServlet {
             return;
         }
 
-        if (listId == null) {
+        if (itemId != null) {
+            oldItem = itemDao.getById(itemId);
+        } else {
             response.sendError(424);
             return;
         }
 
-        newItem.setId(itemId);
-        newItem.setWishList(listDao.getById(listId));
-        newItem.setName(request.getParameter("name"));
-        newItem.setSpecificItem(Boolean.parseBoolean(
+        ownerList = oldItem.getWishList();
+        updatedItem.setId(itemId);
+        updatedItem.setWishList(ownerList);
+        updatedItem.setName(request.getParameter("name"));
+        updatedItem.setSpecificItem(Boolean.parseBoolean(
                 request.getParameter("specificItem")));
-        newItem.setDetails(nullifyIfEmpty(request.getParameter("details")));
-        newItem.setPriority(Integer.parseInt(request.getParameter("priority")));
-        newItem.setPriceRange(nullifyIfEmpty(request.getParameter("priceRange")));
+        updatedItem.setDetails(nullifyIfEmpty(request.getParameter("details")));
+        updatedItem.setPriority(Integer.parseInt(request.getParameter("priority")));
+        updatedItem.setPriceRange(nullifyIfEmpty(request.getParameter("priceRange")));
 
-        itemDao.saveOrUpdate(newItem);
+        itemDao.saveOrUpdate(updatedItem);
 
-        queryParam = String.format("?listId=%d", listId);
+        queryParam = String.format("?listId=%d", ownerList.getId());
         response.sendRedirect(url + queryParam);
 
     }

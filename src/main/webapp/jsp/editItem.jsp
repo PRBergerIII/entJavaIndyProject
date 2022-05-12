@@ -14,7 +14,7 @@ Individual Project: Flex Registry - Add / Edit Item Page
   <c:import url="/nav"/>
 
   <h2 class="mt-2 mb-0">Add an Item</h2>
-  <form class="mt-0 needs-validation" action="${webApp}/edit-profile" method="POST" novalidate>
+  <form class="mt-0 needs-validation" action="${webApp}/edit-item" method="POST" novalidate>
 
     <div class="form-group row mb-4">
       <p class="text-danger mb-0 ml-3">Required fields - *</p>
@@ -27,7 +27,7 @@ Individual Project: Flex Registry - Add / Edit Item Page
         <input type="text" class="form-control" id="name"
                name="name"
                value="${listItem.name}"
-               placeholder="Your first name" required>
+               placeholder="A name for the item" required>
         <div class="invalid-feedback">
           Please provide a name for the item.
         </div>
@@ -99,10 +99,7 @@ Individual Project: Flex Registry - Add / Edit Item Page
         <input type="text" class="form-control" id="priceRange"
                name="priceRange"
                value="${listItem.priceRange}"
-               placeholder="Your first name" required>
-        <div class="invalid-feedback">
-          Please provide a name for the item.
-        </div>
+               placeholder="A range or exact">
       </div>
     </div>
 
