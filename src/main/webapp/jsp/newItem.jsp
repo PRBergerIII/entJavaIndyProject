@@ -26,7 +26,6 @@ Individual Project: Flex Registry - Add / Edit Item Page
       <div class="col-lg-4 col-md-6">
         <input type="text" class="form-control" id="name"
                name="name"
-               value="${listItem.name}"
                placeholder="Your first name" required>
         <div class="invalid-feedback">
           Please provide a name for the item.
@@ -46,8 +45,8 @@ Individual Project: Flex Registry - Add / Edit Item Page
       <div class="col-lg-4 col-md-6">
         <select class="custom-select" id="specificItem"
                 name="specificItem">
-          <option value="false" ${!listItem.specificItem ? 'selected' : ''}>No</option>
-          <option value="true" ${listItem.specificItem ? 'selected' : ''}>Yes</option>
+          <option value="false" selected>No</option>
+          <option value="true">Yes</option>
         </select>
         <div class="invalid-feedback">
           Please select whether or not this is for a specific item.
@@ -67,7 +66,7 @@ Individual Project: Flex Registry - Add / Edit Item Page
       <div class="col-lg-4 col-md-6">
           <textarea name="details" id="details"
                     placeholder="A link if it's specific, some ideas if it's not!"
-                    class="form-control" rows="3">${listItem.details}</textarea>
+                    class="form-control" rows="3"></textarea>
       </div>
     </div>
 
@@ -83,11 +82,11 @@ Individual Project: Flex Registry - Add / Edit Item Page
       <div class="col-lg-4 col-md-6">
         <select class="custom-select" id="priority"
                 name="priority">
-          <option value="1" ${listItem.priority == 1 ? 'selected' : ''}>Lowest</option>
-          <option value="2" ${listItem.priority == 2 ? 'selected' : ''}>Low</option>
-          <option value="3" ${listItem.priority == 3 ? 'selected' : ''}>Medium</option>
-          <option value="4" ${listItem.priority == 4 ? 'selected' : ''}>High</option>
-          <option value="5" ${listItem.priority == 5 ? 'selected' : ''}>Highest</option>
+          <option value="1">Lowest</option>
+          <option value="2">Low</option>
+          <option value="3" selected>Medium</option>
+          <option value="4">High</option>
+          <option value="5">Highest</option>
         </select>
       </div>
     </div>

@@ -141,7 +141,7 @@
 
   <servlet>
     <servlet-name>AddEditItemServlet</servlet-name>
-    <servlet-class>com.prberger3.flexregistry.controller.AddEditItemServlet</servlet-class>
+    <servlet-class>com.prberger3.flexregistry.controller.NewItemServlet</servlet-class>
   </servlet>
 
   <servlet>
