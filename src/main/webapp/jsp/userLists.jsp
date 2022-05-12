@@ -19,7 +19,7 @@ Individual Project: Flex Registry - User's Lists Page
     <c:forEach items="${ownerLists}" var="wishList">
       <c:if test="${user.equals(owner) || wishList.visibility.equals(\"public\") || isAdmin}">
         <div class="col">
-          <div class="card mb-4">
+          <div class="card mb-4 border-info">
             <div class="card-header bg-muted text-dark border-info">
               <h3 class="mb-0">${wishList.title}</h3>
             </div>
