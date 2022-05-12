@@ -1,7 +1,7 @@
 # Paul Berger Independent Project
 
 This repository is for all files related to my independent project for Enterprise Java at Madison College: An 
-independent gift registry web application.
+independent gift registry web application called Flex Registry.
 
 ## Problem statement:
 
@@ -10,6 +10,10 @@ Gift registries are largely dependent on retailers, which often leads to a perso
 This application offers an independent, flexible gift registry that allows users to create a list of items and 
 define the specificity of each. For example, a user could add an item for "Tennis shoes, red, size 7", possibly with 
 some links for inspiration, but other users are free to check off this item without having to buy a specific pair of shoes from a specific retailer. The user could also indicate that the item *must* be a specific item, and provide a link to the item. Links and descriptions are optional, which gives the users maximum flexibility. 
+
+### Links
+- [Deployed application on AWS](http://entjavaprb3.us-east-2.elasticbeanstalk.com/)
+- [Youtube Demo](https://youtu.be/Sxn52XwTVEw)
 
 ### Project Technologies Used
 - Database
