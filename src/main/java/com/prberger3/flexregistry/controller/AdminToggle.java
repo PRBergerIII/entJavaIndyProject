@@ -35,22 +35,21 @@ public class AdminToggle extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String url = request.getContextPath();
+        String url = request.getContextPath() + "/";
         HttpSession session = request.getSession();
 
         session.getAttribute("user");
 
 
-        Boolean isAdmin = (Boolean) session.getAttribute("isAdmin");
+        boolean isAdmin = (boolean) session.getAttribute("isAdmin");
 
         if (isAdmin) {
-            session.removeAttribute("isAdmin");
+            session.setAttribute("isAdmin", false);
         } else {
             session.setAttribute("isAdmin", true);
         }
 
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
-        dispatcher.forward(request, response);
+        response.sendRedirect(url);
 
     }
 

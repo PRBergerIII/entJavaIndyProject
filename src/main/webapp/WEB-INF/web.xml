@@ -55,6 +55,11 @@
   </servlet>
 
   <servlet>
+    <servlet-name>AdminToggle</servlet-name>
+    <servlet-class>com.prberger3.flexregistry.controller.AdminToggle</servlet-class>
+  </servlet>
+
+  <servlet>
     <servlet-name>Bootstrap</servlet-name>
     <jsp-file>/jsp/imports/bootstrap.jsp</jsp-file>
   </servlet>
@@ -214,7 +219,7 @@
 <!--    <servlet-name>Lab32Servlet</servlet-name>-->
 <!--    <url-pattern>/lab32</url-pattern>-->
 <!--  </servlet-mapping>-->
-
+  NV3uxlY8A40mC7i4HzH0a2qV8f7D9ZarFNmSdy19I3auMfpdK2ztLEQov24HRojo8eMung
   <servlet-mapping>
     <servlet-name>applicationStartup</servlet-name>
     <url-pattern>/flexRegistry-startup</url-pattern>
@@ -243,6 +248,11 @@
   <servlet-mapping>
     <servlet-name>Navigation</servlet-name>
     <url-pattern>/nav</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>AdminToggle</servlet-name>
+    <url-pattern>/NV3uxlY8A40mC7i4HzH0a2qV8f7D9ZarFNmSdy19I3auMfpdK2ztLEQov24HRojo8eMung</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
