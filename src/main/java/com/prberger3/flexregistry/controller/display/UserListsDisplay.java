@@ -63,17 +63,13 @@ public class UserListsDisplay extends HttpServlet {
             ownerLabel = String.format("%s's", owner.getUsername());
         }
 
+        ownerLists = new ArrayList<>(owner.getWishLists());
+
+        request.setAttribute("ownerLists", ownerLists);
         request.setAttribute("ownerLabel", ownerLabel);
         request.setAttribute("title", ownerLabel + " " + title);
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);
-
-    }
-
-    private void buildOwnerLists(User owner, GenericDao<User> userDao) {
-
-        GenericDao<WishList> listDao = new GenericDao<>(WishList.class);
-
 
     }
 
