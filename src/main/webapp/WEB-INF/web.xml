@@ -150,6 +150,16 @@
   </servlet>
 
   <servlet>
+    <servlet-name>EditItemServlet</servlet-name>
+    <servlet-class>com.prberger3.flexregistry.controller.EditItemServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>EditItem</servlet-name>
+    <jsp-file>/jsp/editItem.jsp</jsp-file>
+  </servlet>
+
+  <servlet>
     <servlet-name>SearchResultsDisplay</servlet-name>
     <servlet-class>com.prberger3.flexregistry.controller.display.SearchResultsDisplay</servlet-class>
   </servlet>
@@ -318,6 +328,16 @@
   <servlet-mapping>
     <servlet-name>NewItem</servlet-name>
     <url-pattern>/new-item-jsp</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>EditItemServlet</servlet-name>
+    <url-pattern>/edit-item</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>EditItem</servlet-name>
+    <url-pattern>/edit-item-jsp</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
