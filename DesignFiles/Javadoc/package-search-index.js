@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.prberger3.flexregistry.auth"},{"l":"com.prberger3.flexregistry.controller"},{"l":"com.prberger3.flexregistry.controller.display"},{"l":"com.prberger3.flexregistry.entity"},{"l":"com.prberger3.flexregistry.persistence"},{"l":"com.prberger3.flexregistry.util"}]

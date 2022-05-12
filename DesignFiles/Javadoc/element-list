@@ -1,0 +1,6 @@
+com.prberger3.flexregistry.auth
+com.prberger3.flexregistry.controller
+com.prberger3.flexregistry.controller.display
+com.prberger3.flexregistry.entity
+com.prberger3.flexregistry.persistence
+com.prberger3.flexregistry.util
