@@ -27,12 +27,11 @@ public class EditItemServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String url = request.getContextPath() + "/new-item-jsp";
-        String title = "New Item | Flex Registry";
+        String url = "/edit-item-jsp";
+        String title = "Edit Item | Flex Registry";
 
         HttpSession session = request.getSession();
         Integer loggedUserId = (Integer) session.getAttribute("userId");
-        String listId = request.getParameter("listId");
         String idParam = request.getParameter("itemId");
         Integer itemId = idParam == null || idParam.equals("")
                 ? null : Integer.valueOf(idParam);
@@ -49,11 +48,6 @@ public class EditItemServlet extends HttpServlet {
             return;
         }
 
-        if (listId == null) {
-            response.sendError(404);
-            return;
-        }
-
         if (itemId != null) {
             listItem = itemDao.getById(itemId);
             if (listItem != null) {
@@ -61,7 +55,6 @@ public class EditItemServlet extends HttpServlet {
             }
         }
 
-        request.setAttribute("listId", listId);
         request.setAttribute("title", title);
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);

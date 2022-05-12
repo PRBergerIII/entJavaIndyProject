@@ -112,7 +112,7 @@ Individual Project: Flex Registry - Add / Edit Item Page
         <a class="btn btn-secondary col-md-3 col-sm-5 ml-md-2 col-8 mb-2" href="${webApp}/edit-list?listId=${listId}" role="button">Back to List</a>
       </div>
     </div>
-    <input type="hidden" name="listId" value="${listId}">
+    <input type="hidden" name="itemId" value="${listItem.id}">
   </form>
   <c:import url="footer"/>
 </div>
