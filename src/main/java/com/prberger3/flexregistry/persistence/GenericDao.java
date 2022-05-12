@@ -102,12 +102,13 @@ public class GenericDao<T> {
      * @param value the value by which to find
      * @return
      */
-    public List<T> findByPropertyLike(String propertyName, Object value) {
+    public List<T> findByPropertyLike(String propertyName, String value) {
+        value = "%" + value + "%";
         Session session = getSession();
         CriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<T> query = builder.createQuery(type);
         Root<T> root = query.from(type);
-        query.select(root).where(builder.equal(root.get(propertyName),value));
+        query.select(root).where(builder.like(root.get(propertyName), value));
 
         return session.createQuery(query).getResultList();
     }
