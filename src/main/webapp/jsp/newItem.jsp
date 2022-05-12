@@ -110,6 +110,9 @@ Individual Project: Flex Registry - Add / Edit Item Page
       </div>
     </div>
     <input type="hidden" name="listId" value="${listId}">
+    <c:if test="${listItem != null}">
+      <input type="hidden" name="itemId" value="#{listItem.id}">
+    </c:if>
   </form>
   <c:import url="footer"/>
 </div>

@@ -33,7 +33,13 @@ public class NewItemServlet extends HttpServlet {
         HttpSession session = request.getSession();
         Integer loggedUserId = (Integer) session.getAttribute("userId");
         String listId = request.getParameter("listId");
+        String idParam = request.getParameter("itemId");
+        Integer itemId = idParam == null || idParam.equals("")
+                ? null : Integer.valueOf(idParam);
+        WishListItem listItem = new WishListItem();
+
         GenericDao<User> userDao = new GenericDao<>(User.class);
+        GenericDao<WishListItem> itemDao = new GenericDao<>(WishListItem.class);
 
 
         if (loggedUserId != null) {
@@ -46,6 +52,13 @@ public class NewItemServlet extends HttpServlet {
         if (listId == null) {
             response.sendError(404);
             return;
+        }
+
+        if (itemId != null) {
+            listItem = itemDao.getById(itemId);
+            if (listItem != null) {
+                request.setAttribute("listItem", listItem);
+            }
         }
 
         request.setAttribute("listId", listId);
@@ -68,9 +81,12 @@ public class NewItemServlet extends HttpServlet {
 
         String url = request.getContextPath() + "/edit-list";
         String queryParam = "";
-        String idParam = request.getParameter("listId");
-        Integer listId = idParam.equals("") || idParam == null
-                ? null : Integer.valueOf(idParam);
+        String listIdParam = request.getParameter("listId");
+        Integer listId = listIdParam == null || listIdParam.equals("")
+                ? null : Integer.valueOf(listIdParam);
+        String itemIdParam = request.getParameter("itemId");
+        Integer itemId = itemIdParam == null || itemIdParam.equals("")
+                ? null : Integer.valueOf(itemIdParam);
         WishListItem newItem = new WishListItem();
 
         HttpSession session = request.getSession();
@@ -89,15 +105,11 @@ public class NewItemServlet extends HttpServlet {
             return;
         }
 
-        newItem.setWishList(listDao.getById(listId));
-        newItem.setName(request.getParameter("name"));
-        newItem.setSpecificItem(Boolean.parseBoolean(
-                                request.getParameter("specificItem")));
-        newItem.setDetails(nullifyIfEmpty(request.getParameter("details")));
-        newItem.setPriority(Integer.parseInt(request.getParameter("priority")));
-        newItem.setPriceRange(nullifyIfEmpty(request.getParameter("priceRange")));
-
-        itemDao.insert(newItem);
+        if (itemId == null) {
+            doAdd(newItem, listId, request, listDao, itemDao);
+        } else {
+            doEdit(itemId, newItem, listId, request, listDao, itemDao);
+        }
 
         queryParam = String.format("?listId=%d", listId);
         response.sendRedirect(url + queryParam);
@@ -106,6 +118,44 @@ public class NewItemServlet extends HttpServlet {
     // TODO: 5/11/2022 javadoc
     private String nullifyIfEmpty(String parameter) {
         return parameter.equals("") ? null : parameter;
+    }
+
+    private void doAdd(WishListItem newItem,
+                       Integer listId,
+                       HttpServletRequest request,
+                       GenericDao<WishList> listDao,
+                       GenericDao<WishListItem> itemDao) {
+
+        newItem.setWishList(listDao.getById(listId));
+        newItem.setName(request.getParameter("name"));
+        newItem.setSpecificItem(Boolean.parseBoolean(
+                request.getParameter("specificItem")));
+        newItem.setDetails(nullifyIfEmpty(request.getParameter("details")));
+        newItem.setPriority(Integer.parseInt(request.getParameter("priority")));
+        newItem.setPriceRange(nullifyIfEmpty(request.getParameter("priceRange")));
+
+        itemDao.insert(newItem);
+
+    }
+
+    private void doEdit(Integer itemId,
+                        WishListItem newItem,
+                        Integer listId,
+                        HttpServletRequest request,
+                        GenericDao<WishList> listDao,
+                        GenericDao<WishListItem> itemDao) {
+
+        newItem.setId(itemId);
+        newItem.setWishList(listDao.getById(listId));
+        newItem.setName(request.getParameter("name"));
+        newItem.setSpecificItem(Boolean.parseBoolean(
+                request.getParameter("specificItem")));
+        newItem.setDetails(nullifyIfEmpty(request.getParameter("details")));
+        newItem.setPriority(Integer.parseInt(request.getParameter("priority")));
+        newItem.setPriceRange(nullifyIfEmpty(request.getParameter("priceRange")));
+
+        itemDao.saveOrUpdate(newItem);
+
     }
 
 }
