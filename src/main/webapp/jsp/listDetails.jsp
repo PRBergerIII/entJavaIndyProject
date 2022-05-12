@@ -65,7 +65,7 @@ Individual Project: Flex Registry - List Details Page
 
   <div class  ="row mt">
     <div class="d-sm-flex col-xl-6 col-lg-8 col-md justify-content-md-start justify-content-sm-around justify-content-center">
-      <c:if test="${user == owner || isAdmin == true}">
+      <c:if test="${user.equals(owner) || isAdmin}">
         <a class="btn btn-primary col-md-3 col-sm-5 mr-md-2 col-8 mb-2"
            href="#" role="button"> <%--     // TODO: 5/11/2022 this goes to edit page      --%>
           Edit Wish List

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class NewListServlet extends HttpServlet {
 
@@ -57,14 +58,16 @@ public class NewListServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String url = request.getContextPath() + "/profile";
+        String url = request.getContextPath() + "/user-lists"; // TODO: 5/12/2022 route to edit list, this will need different parameters
         String queryParam = "";
 
         HttpSession session = request.getSession();
         Integer loggedUserId = (Integer) session.getAttribute("userId");
-        GenericDao<User> userDao = new GenericDao<>(User.class);
         User loggedUser = null;
-        User updatedUser = new User();
+        WishList newList = new WishList();
+
+        GenericDao<User> userDao = new GenericDao<>(User.class);
+        GenericDao<WishList> listDao = new GenericDao<>(WishList.class);
 
         if (loggedUserId != null) {
             loggedUser = userDao.getById(loggedUserId);
@@ -74,27 +77,18 @@ public class NewListServlet extends HttpServlet {
             return;
         }
 
-        updatedUser.setId(loggedUserId);
-        updatedUser.setUsername(loggedUser.getUsername());
-        updatedUser.setFirstName(request.getParameter("firstName"));
-        updatedUser.setLastName(request.getParameter("lastName"));
-        updatedUser.setEmail(request.getParameter("email"));
-        updatedUser.setStreet(nullifyIfEmpty(request.getParameter("street")));
-        updatedUser.setCity(nullifyIfEmpty(request.getParameter("city")));
-        updatedUser.setState(nullifyIfEmpty(request.getParameter("state")));
-        updatedUser.setZip(nullifyIfEmpty(request.getParameter("zip")));
-        updatedUser.setAddressVisibility(request.getParameter("addressVisibility"));
-        updatedUser.setAbout(nullifyIfEmpty(request.getParameter("about")));
-        updatedUser.setAdmin(loggedUser.isAdmin());
+        newList.setOwner(loggedUser);
+        newList.setTitle(request.getParameter("title"));
+        newList.setVisibility(request.getParameter("visibility"));
+        newList.setListType(request.getParameter("listType"));
+        if (!request.getParameter("eventDate").equals("")) {
+            newList.setEventDate(LocalDate.parse(request.getParameter("eventDate")));
+        }
 
-        userDao.saveOrUpdate(updatedUser);
+        listDao.insert(newList);
 
         response.sendRedirect(url + queryParam);
 
-    }
-    // TODO: 5/11/2022 javadoc
-    private String nullifyIfEmpty(String parameter) {
-        return parameter.equals("") ? null : parameter;
     }
 
 }
