@@ -140,6 +140,11 @@
   </servlet>
 
   <servlet>
+    <servlet-name>DeleteListServlet</servlet-name>
+    <servlet-class>com.prberger3.flexregistry.controller.DeleteListServlet</servlet-class>
+  </servlet>
+
+  <servlet>
     <servlet-name>NewItemServlet</servlet-name>
     <servlet-class>com.prberger3.flexregistry.controller.NewItemServlet</servlet-class>
   </servlet>
@@ -323,6 +328,11 @@
   <servlet-mapping>
     <servlet-name>EditList</servlet-name>
     <url-pattern>/edit-list-jsp</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>DeleteListServlet</servlet-name>
+    <url-pattern>/delete-list</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
