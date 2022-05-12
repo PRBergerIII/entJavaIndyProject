@@ -1,6 +1,7 @@
 package com.prberger3.flexregistry.controller;
 
 import com.prberger3.flexregistry.entity.User;
+import com.prberger3.flexregistry.entity.WishList;
 import com.prberger3.flexregistry.entity.WishListItem;
 import com.prberger3.flexregistry.persistence.GenericDao;
 
@@ -25,19 +26,20 @@ public class DeleteListServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String url = "/edit-list";
+        String url = "/user-lists";
         String title = "Edit List | Flex Registry";
         String queryParam = "";
 
         HttpSession session = request.getSession();
         Integer loggedUserId = (Integer) session.getAttribute("userId");
-        String idParam = request.getParameter("itemId");
-        Integer itemId = idParam == null || idParam.equals("")
+        String idParam = request.getParameter("listId");
+        Integer listId = idParam == null || idParam.equals("")
                 ? null : Integer.valueOf(idParam);
-        WishListItem listItem = new WishListItem();
+        Integer ownerId = null;
+        WishList wishList = new WishList();
 
         GenericDao<User> userDao = new GenericDao<>(User.class);
-        GenericDao<WishListItem> itemDao = new GenericDao<>(WishListItem.class);
+        GenericDao<WishList> listDao = new GenericDao<>(WishList.class);
 
 
         if (loggedUserId != null) {
@@ -47,14 +49,16 @@ public class DeleteListServlet extends HttpServlet {
             return;
         }
 
-        if (itemId != null) {
-            listItem = itemDao.getById(itemId);
+        if (listId != null) {
+            wishList = listDao.getById(listId);
         }
 
-        if (listItem != null) {
-            queryParam = "?listId=" + String.valueOf(listItem.getWishList().getId());
-            itemDao.delete(listItem);
+        if (wishList != null) {
+            ownerId = wishList.getOwner().getId();
+            listDao.delete(wishList);
         }
+
+        queryParam = "?ownerId=" + ownerId;
 
         request.setAttribute("title", title);
         RequestDispatcher dispatcher = getServletContext()
