@@ -32,7 +32,6 @@ public class NewListServlet extends HttpServlet {
         HttpSession session = request.getSession();
         Integer loggedUserId = (Integer) session.getAttribute("userId");
         GenericDao<User> userDao = new GenericDao<>(User.class);
-        GenericDao<WishList> listDao = new GenericDao<>(WishList.class);
 
         if (loggedUserId != null) {
             request.setAttribute("user", userDao.getById(loggedUserId));
@@ -58,7 +57,7 @@ public class NewListServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String url = request.getContextPath() + "/edit-list"; // TODO: 5/12/2022 route to edit list, this will need different parameters
+        String url = request.getContextPath() + "/edit-list";
         String queryParam = "";
 
         HttpSession session = request.getSession();
