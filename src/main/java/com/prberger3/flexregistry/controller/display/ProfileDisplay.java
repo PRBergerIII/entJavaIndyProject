@@ -32,7 +32,7 @@ public class ProfileDisplay extends HttpServlet {
         String url = "/profile-jsp";
         String title = "Profile | Flex Registry";
 
-        HttpSession session = request.getSession(); // TODO: look at consolodating code with other servlets
+        HttpSession session = request.getSession();
         Integer loggedUserId = (Integer) session.getAttribute("userId");
         String idParam = request.getParameter("ownerId");
         Integer ownerId = idParam == null || idParam.equals("")

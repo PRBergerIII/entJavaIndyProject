@@ -18,6 +18,12 @@ import java.util.List;
  */
 public class SearchServlet extends HttpServlet {
 
+
+    private List<User> users;
+    private List<WishList> wishLists;
+    GenericDao<User> userDao;
+    GenericDao<WishList> listDao;
+
     /**
      *  Handles HTTP GET requests.
      *
@@ -29,19 +35,25 @@ public class SearchServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        HttpSession session = request.getSession();
+        Integer loggedUserId = (Integer) session.getAttribute("userId");
+
         String url = "/search-results-jsp";
         String title = "Search Results - Flex Registry";
-        String searhType = (String) request.getParameter("search");
-        List<User> users = new ArrayList<>();
-        List<WishList> wishLists = new ArrayList<>();
+        String searhType = request.getParameter("search");
+        String searchTerm = request.getParameter("searchTerm");
 
-        GenericDao<User> userDao = new GenericDao<>(User.class);
-        GenericDao<WishList> listDao = new GenericDao<>(WishList.class);
+        userDao = new GenericDao<>(User.class);
+        listDao = new GenericDao<>(WishList.class);
 
-        if (searhType.equals("admin")) {
+        if (searhType != null && searhType.equals("admin")) {
             users = userDao.getAll();
         } else {
-            keyWordSearch(users, wishLists, userDao, listDao);
+            keyWordSearch(searchTerm);
+        }
+
+        if (loggedUserId != null) {
+            request.setAttribute("user", userDao.getById(loggedUserId));
         }
 
         request.setAttribute("users", users);
@@ -52,10 +64,13 @@ public class SearchServlet extends HttpServlet {
 
     }
 
-    private void keyWordSearch(List<User> users,
-                               List<WishList> wishLists,
-                               GenericDao<User> userDao,
-                               GenericDao<WishList> listDao) {
+    private void keyWordSearch(String searchTerm) {
+
+        users = userDao.findByPropertyLike("firstName", searchTerm);
+        users.addAll(userDao.findByPropertyLike("lastName", searchTerm));
+        users.addAll(userDao.findByPropertyLike("username", searchTerm));
+
+        wishLists = listDao.findByPropertyLike("title", searchTerm);
 
     }
 

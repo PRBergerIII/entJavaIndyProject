@@ -34,13 +34,13 @@
       </c:choose>
     </ul>
     <div class="navbar-nav ml-auto">
-      <form action="#" class="needs-validation w-100 m-0 p-0 align-middle" novalidate>
+      <form action="${webApp}/search" class="needs-validation w-100 m-0 p-0 align-middle" novalidate>
         <div class="form-group form-row m-0">
           <div class="p-0 m-0 d-inline-flex">
             <input type="text" class="form-control"
                    name="searchTerm" id="searchTerm"
                    maxlength="40" required/>
-            <button type="submit" name="searchBtn" class="d-flex justify-content-center align-items-center col-2 btn btn-secondary"><i class="bi bi-search"></i></button>
+            <button type="submit" class="d-flex justify-content-center align-items-center col-2 btn btn-secondary"><i class="bi bi-search"></i></button>
           </div>
         </div>
       </form>
