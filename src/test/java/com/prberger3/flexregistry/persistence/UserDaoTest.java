@@ -57,7 +57,7 @@ class UserDaoTest {
     }
 
     @Test
-    void findByPropertyEqual() {
+    void findByPropertyEqualSuccess() {
 
         User testUser = new User(
                 "pberger", "Paul", "Berger", "pberger@madisoncollege.edu",
@@ -70,6 +70,23 @@ class UserDaoTest {
 
         assertTrue(foundUsers.contains(testUser));
         assertEquals(1, foundUsers.size());
+
+    }
+
+    @Test
+    void findByPropertyLikeSuccess() {
+
+        User testUser = new User(
+                "pberger", "Paul", "Berger", "pberger@madisoncollege.edu",
+                "123 main st", "place", "WI", "12324", "private",
+                "I am a size 6", true);
+        testUser.setId(1);
+
+        List<User> foundUsers = userDao.findByPropertyLike("lastName",
+                "er");
+
+        assertTrue(foundUsers.contains(testUser));
+        assertEquals(2, foundUsers.size());
 
     }
 
