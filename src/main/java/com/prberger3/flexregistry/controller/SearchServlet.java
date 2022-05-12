@@ -1,8 +1,14 @@
 package com.prberger3.flexregistry.controller;
 
+import com.prberger3.flexregistry.entity.User;
+import com.prberger3.flexregistry.entity.WishList;
+import com.prberger3.flexregistry.persistence.GenericDao;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A servlet for Flex Registry whose sole purpose is to forward the request and
@@ -25,10 +31,31 @@ public class SearchServlet extends HttpServlet {
 
         String url = "/index";
         String title = "Search Results - Flex Registry";
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+        String searhType = (String) request.getParameter("search");
+        List<User> users = new ArrayList<>();
+        List<WishList> wishLists = new ArrayList<>();
 
+        GenericDao<User> userDao = new GenericDao<>(User.class);
+        GenericDao<WishList> listDao = new GenericDao<>(WishList.class);
+
+        if (searhType.equals("admin")) {
+            users = userDao.getAll();
+        } else {
+            keyWordSearch(users, wishLists, userDao, listDao);
+        }
+
+        request.setAttribute("users", users);
+        request.setAttribute("wishLists", wishLists);
         request.setAttribute("title", title);
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);
+
+    }
+
+    private void keyWordSearch(List<User> users,
+                               List<WishList> wishLists,
+                               GenericDao<User> userDao,
+                               GenericDao<WishList> listDao) {
 
     }
 
