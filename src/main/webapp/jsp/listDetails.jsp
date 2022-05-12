@@ -29,8 +29,8 @@ Individual Project: Flex Registry - List Details Page
         <thead>
         <tr>
           <th scope="col">Item</th>
-          <th scope="col">Specific?</th>
-          <th scope="col">Details</th>
+          <th scope="col">Specific</th>
+          <th scope="col">Details or Link</th>
           <th scope="col">Priority</th>
           <th scope="col">Price Range</th>
         </thead>
@@ -39,8 +39,19 @@ Individual Project: Flex Registry - List Details Page
         <tr>
           <th scope="row">${item.name}</th>
           <td>${item.specificItem ? "Yes" : "No"}</td>
-          <td>${item.details}</td>
-          <td>${item.priority}</td>
+          <c:choose>
+            <c:when test="${item.details.startsWith(\"http\")}">
+              <td>
+                <a href="${item.details}" target="_blank">
+                  Link to Item <i class="bi bi-box-arrow-up-right"></i>
+                </a>
+              </td>
+            </c:when>
+            <c:otherwise>
+              <td>${item.details}</td>
+            </c:otherwise>
+          </c:choose>
+          <td>${priorities.get(item.priority)}</td>
           <td>${item.priceRange}</td>
         </tr>
         </c:forEach>
@@ -51,16 +62,19 @@ Individual Project: Flex Registry - List Details Page
     </c:otherwise>
   </c:choose>
 
-  <c:if test="${user == owner || isAdmin == true}">
-    <div class="row mt">
-      <div class="d-sm-flex col-xl-6 col-lg-8 col-md justify-content-md-start justify-content-sm-around justify-content-center">
+
+  <div class  ="row mt">
+    <div class="d-sm-flex col-xl-6 col-lg-8 col-md justify-content-md-start justify-content-sm-around justify-content-center">
+      <c:if test="${user == owner || isAdmin == true}">
         <a class="btn btn-primary col-md-3 col-sm-5 mr-md-2 col-8 mb-2"
-           href="${webApp}/user-lists?ownerId=${owner.id}" role="button">
+           href="#" role="button"> <%--     // TODO: 5/11/2022 this goes to edit page      --%>
           Edit Wish List
         </a>
-      </div>
+      </c:if>
+      <a class="btn btn-secondary col-md-3 col-sm-5 ml-md-2 col-8 mb-2"
+         href="${webApp}/user-lists?ownerId=${owner.id}" role="button">Go Back</a>
     </div>
-  </c:if>
+  </div>
   <c:import url="footer"/>
 </div>
 <c:import url="bootstrap"/>

@@ -12,10 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 /**
  * A servlet for  todo
@@ -44,6 +41,7 @@ public class ListDetailsDisplay extends HttpServlet {
         Integer listId = idParam.equals("") || idParam == null
                 ? null : Integer.valueOf(idParam);
         WishList wishList = null;
+        Map<Integer, String> priorities = new HashMap<>();
 
         GenericDao<User> userDao = new GenericDao<>(User.class);
         GenericDao<WishList> listDao = new GenericDao<>(WishList.class);
@@ -63,7 +61,13 @@ public class ListDetailsDisplay extends HttpServlet {
 
         List<WishListItem> listItems = new ArrayList<>(wishList.getItems());
         Collections.sort(listItems, Comparator.comparingInt(WishListItem::getId));
+        priorities.put(1, "Lowest");
+        priorities.put(2, "Low");
+        priorities.put(3, "Medium");
+        priorities.put(4, "High");
+        priorities.put(5, "Highest");
 
+        request.setAttribute("priorities", priorities);
         request.setAttribute("listItems", listItems);
         request.setAttribute("wishList", wishList);
         request.setAttribute("owner", wishList.getOwner());
