@@ -394,7 +394,7 @@ Not much to report today, just getting some things set up in preparation for the
 #### Day's Reflection:
 Played around for probably longer than necessary setting a context variable for the context path so I could dynamically use it for any internal links in my JSPs. I wasn't sure that the path would be the same on AWS, and didn't want to just deploy it to find out. This way I should be covered no matter what. I sent a link to some family and friends, and now I have a bunch of test users! So that's pretty cool. Had some serious headaches today but don't have the time or energy to detail them here. Thankfully they are at least resolved, and I can move on. 
 
-### <a id="039"></a>2022.05.10 - Indy Project
+### <a id="039"></a>2022.05.11 - Indy Project
 - Error page setup
 - Profile Page
   - Dynamically build page based on who is logged in and who owns the page
